@@ -50,7 +50,7 @@ const Footer = () => {
               <div className="w-8 h-8 bg-gradient-primary rounded-lg flex items-center justify-center">
                 <Play className="w-4 h-4 text-primary-foreground fill-current" />
               </div>
-              <span className="text-xl font-bold text-gradient">Abplay TV</span>
+              <span className="text-xl font-bold text-gradient">Horizon Cast TV</span>
             </Link>
             <p className="text-muted-foreground text-sm leading-relaxed mb-4">
               Premium streaming entertainment platform owned and operated by AB Textiles. 
@@ -110,7 +110,7 @@ const Footer = () => {
         {/* Bottom Bar */}
         <div className="border-t border-border mt-12 pt-8 flex flex-col lg:flex-row justify-between items-center space-y-4 lg:space-y-0">
           <div className="text-muted-foreground text-sm">
-            © {new Date().getFullYear()} Abplay TV. A product of AB Textiles. All rights reserved.
+            © {new Date().getFullYear()} Horizon Cast TV. Premium Streaming Entertainment. All rights reserved.
           </div>
           
           <div className="flex items-center space-x-6">

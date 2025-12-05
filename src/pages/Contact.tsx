@@ -1,5 +1,5 @@
 import { useState } from "react";
-import { Mail, Phone, MapPin, Clock, Send, CheckCircle, MessageSquare, HeadphonesIcon, Globe } from "lucide-react";
+import { Mail, Phone, MessageSquare, Globe, Send, CheckCircle, Clock, HeadphonesIcon, MapPin, Zap } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Card } from "@/components/ui/card";
 import { Input } from "@/components/ui/input";
@@ -8,6 +8,7 @@ import { Label } from "@/components/ui/label";
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@/components/ui/select";
 import Layout from "@/components/Layout";
 import AnimatedSection from "@/components/AnimatedSection";
+import contactBg from "@/assets/customize-bg.jpg";
 
 const Contact = () => {
   const [formData, setFormData] = useState({
@@ -33,47 +34,49 @@ const Contact = () => {
     e.preventDefault();
     setIsSubmitting(true);
     
-    // Simulate form submission
     await new Promise(resolve => setTimeout(resolve, 2000));
     
     setIsSubmitting(false);
     setIsSubmitted(true);
     
-    // Reset form after 3 seconds
     setTimeout(() => {
       setIsSubmitted(false);
       setFormData({ name: "", email: "", subject: "", category: "", message: "" });
     }, 3000);
   };
 
-  const contactInfo = [
+  const contactMethods = [
     {
       icon: Mail,
       title: "Email Support",
-      description: "Get help within 24 hours",
-      contact: "support@abplaytv.com",
-      action: "mailto:support@abplaytv.com"
+      description: "Response within 24 hours",
+      contact: "support@horizoncasttv.com",
+      action: "mailto:support@horizoncasttv.com",
+      color: "from-blue-500 to-cyan-500"
     },
     {
       icon: Phone,
       title: "Phone Support", 
       description: "Mon-Fri 9AM-6PM EST",
       contact: "(833) 814-7663",
-      action: "tel:+18338147663"
+      action: "tel:+18338147663",
+      color: "from-purple-500 to-pink-500"
     },
     {
       icon: MessageSquare,
       title: "Live Chat",
       description: "Available 24/7",
-      contact: "Start Live Chat",
-      action: "#"
+      contact: "Start Chat",
+      action: "#",
+      color: "from-green-500 to-emerald-500"
     },
     {
       icon: Globe,
       title: "Help Center",
       description: "Browse FAQs & guides",
-      contact: "Visit Help Center",
-      action: "#"
+      contact: "Visit Hub",
+      action: "#",
+      color: "from-orange-500 to-red-500"
     }
   ];
 
@@ -100,241 +103,292 @@ const Contact = () => {
 
   return (
     <Layout>
-      {/* Hero Section */}
-      <section className="section-spacing bg-gradient-to-br from-background via-card/30 to-background">
-        <div className="container mx-auto px-4 sm:px-6 lg:px-8">
+      {/* Hero Section - Full Width */}
+      <section className="relative min-h-screen flex items-center justify-center overflow-hidden w-full">
+        <div 
+          className="absolute inset-0 bg-cover bg-center bg-no-repeat"
+          style={{ backgroundImage: `url(${contactBg})` }}
+        />
+        <div className="absolute inset-0 bg-gradient-to-b from-black/80 via-black/60 to-background" />
+        
+        <div className="relative z-10 w-full content-wrapper py-20">
           <AnimatedSection>
-            <div className="text-center mb-16">
-              <h1 className="text-4xl lg:text-6xl font-bold mb-6">
-                Get in <span className="text-gradient">Touch</span>
+            <div className="text-center max-w-5xl mx-auto">
+              <div className="inline-block bg-gradient-to-r from-primary/20 to-purple-500/20 text-primary px-8 py-3 rounded-full text-sm font-bold mb-8 border border-primary/30">
+                � CONTACT US
+              </div>
+              <h1 className="text-5xl sm:text-6xl lg:text-8xl font-bold mb-8 leading-tight">
+                We're Here to
+                <span className="text-gradient block mt-2">Help You</span>
               </h1>
-              <p className="text-xl text-muted-foreground max-w-3xl mx-auto">
-                Need help with your Abplay TV experience? Our support team is here to assist you 24/7.
-                Reach out to us and we'll get back to you as soon as possible.
+              <p className="text-2xl sm:text-3xl text-muted-foreground mb-8 leading-relaxed">
+                Multiple ways to reach our expert support team
               </p>
-            </div>
-          </AnimatedSection>
-
-          {/* Contact Methods */}
-          <AnimatedSection delay={200}>
-            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 mb-16">
-              {contactInfo.map((item, index) => (
-                <Card key={item.title} className="card-premium p-6 text-center hover:shadow-glow transition-all duration-300">
-                  <div className="w-12 h-12 bg-gradient-primary rounded-xl flex items-center justify-center mx-auto mb-4">
-                    <item.icon className="w-6 h-6 text-primary-foreground" />
-                  </div>
-                  <h3 className="font-semibold mb-2">{item.title}</h3>
-                  <p className="text-sm text-muted-foreground mb-3">{item.description}</p>
-                  <a 
-                    href={item.action}
-                    className="text-primary hover:text-primary/80 font-medium transition-colors"
-                  >
-                    {item.contact}
-                  </a>
-                </Card>
-              ))}
+              <p className="text-xl text-muted-foreground mb-12 max-w-3xl mx-auto">
+                Questions about Horizon Cast TV? We're ready to assist you 24/7
+              </p>
             </div>
           </AnimatedSection>
         </div>
       </section>
 
-      {/* Contact Form & Info */}
-      <section className="section-spacing">
-        <div className="container mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-16">
+      {/* Contact Methods - Full Width */}
+      <section className="w-full py-24 bg-gradient-to-b from-background to-card/20">
+        <div className="content-wrapper">
+          <AnimatedSection>
+            <div className="text-center mb-20">
+              <div className="inline-block bg-gradient-to-r from-blue-500/10 to-cyan-500/10 text-blue-400 px-6 py-2 rounded-full text-sm font-semibold mb-6">
+                ⚡ REACH OUT
+              </div>
+              <h2 className="text-5xl lg:text-6xl font-bold mb-6">
+                Get in <span className="text-gradient">Touch</span>
+              </h2>
+              <p className="text-xl text-muted-foreground max-w-3xl mx-auto">
+                Choose your preferred way to contact our support team
+              </p>
+            </div>
+          </AnimatedSection>
+
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 max-w-7xl mx-auto">
+            {contactMethods.map((method, index) => (
+              <AnimatedSection key={method.title} delay={index * 100}>
+                <Card className="bg-card/50 backdrop-blur-sm border border-border/50 p-8 text-center hover:scale-105 transition-all duration-300 h-full">
+                  <div className={`w-16 h-16 bg-gradient-to-br ${method.color} rounded-2xl flex items-center justify-center mx-auto mb-6`}>
+                    <method.icon className="w-8 h-8 text-white" />
+                  </div>
+                  <h3 className="text-xl font-bold mb-2">{method.title}</h3>
+                  <p className="text-muted-foreground text-sm mb-6">{method.description}</p>
+                  <a 
+                    href={method.action}
+                    className="inline-flex items-center justify-center w-full px-4 py-2 bg-primary/10 text-primary rounded-lg hover:bg-primary/20 transition-colors font-medium"
+                  >
+                    {method.contact}
+                  </a>
+                </Card>
+              </AnimatedSection>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* Contact Form & Locations - Full Width */}
+      <section className="w-full py-24 bg-background">
+        <div className="content-wrapper">
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 max-w-6xl mx-auto">
             {/* Contact Form */}
             <AnimatedSection>
-              <div>
-                <h2 className="text-3xl font-bold mb-6">Send us a Message</h2>
-                <p className="text-muted-foreground mb-8">
-                  Fill out the form below and we'll get back to you within 24 hours.
-                </p>
+              <h2 className="text-4xl font-bold mb-2">Send a Message</h2>
+              <p className="text-muted-foreground text-lg mb-10">
+                Fill out the form and we'll get back within 24 hours
+              </p>
 
-                {!isSubmitted ? (
-                  <form onSubmit={handleSubmit} className="space-y-6">
-                    <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
-                      <div>
-                        <Label htmlFor="name">Full Name *</Label>
-                        <Input
-                          id="name"
-                          name="name"
-                          value={formData.name}
-                          onChange={handleInputChange}
-                          placeholder="John Doe"
-                          required
-                          className="mt-1"
-                        />
-                      </div>
-                      <div>
-                        <Label htmlFor="email">Email Address *</Label>
-                        <Input
-                          id="email"
-                          name="email"
-                          type="email"
-                          value={formData.email}
-                          onChange={handleInputChange}
-                          placeholder="john@example.com"
-                          required
-                          className="mt-1"
-                        />
-                      </div>
-                    </div>
-
+              {!isSubmitted ? (
+                <form onSubmit={handleSubmit} className="space-y-6">
+                  <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
                     <div>
-                      <Label htmlFor="category">Category</Label>
-                      <Select onValueChange={handleSelectChange}>
-                        <SelectTrigger className="mt-1">
-                          <SelectValue placeholder="Select a category" />
-                        </SelectTrigger>
-                        <SelectContent>
-                          <SelectItem value="technical">Technical Support</SelectItem>
-                          <SelectItem value="billing">Billing & Subscription</SelectItem>
-                          <SelectItem value="content">Content & Channels</SelectItem>
-                          <SelectItem value="account">Account Management</SelectItem>
-                          <SelectItem value="feedback">Feedback & Suggestions</SelectItem>
-                          <SelectItem value="other">Other</SelectItem>
-                        </SelectContent>
-                      </Select>
-                    </div>
-
-                    <div>
-                      <Label htmlFor="subject">Subject *</Label>
+                      <Label htmlFor="name" className="text-base font-semibold mb-2 block">Full Name</Label>
                       <Input
-                        id="subject"
-                        name="subject"
-                        value={formData.subject}
+                        id="name"
+                        name="name"
+                        value={formData.name}
                         onChange={handleInputChange}
-                        placeholder="Brief description of your inquiry"
+                        placeholder="Your name"
                         required
-                        className="mt-1"
+                        className="bg-card/50 border-border/50 h-12"
                       />
                     </div>
-
                     <div>
-                      <Label htmlFor="message">Message *</Label>
-                      <Textarea
-                        id="message"
-                        name="message"
-                        value={formData.message}
+                      <Label htmlFor="email" className="text-base font-semibold mb-2 block">Email</Label>
+                      <Input
+                        id="email"
+                        name="email"
+                        type="email"
+                        value={formData.email}
                         onChange={handleInputChange}
-                        placeholder="Please provide detailed information about your inquiry..."
+                        placeholder="your@email.com"
                         required
-                        rows={5}
-                        className="mt-1"
+                        className="bg-card/50 border-border/50 h-12"
                       />
                     </div>
-
-                    <Button 
-                      type="submit" 
-                      className="btn-hero w-full"
-                      disabled={isSubmitting}
-                    >
-                      {isSubmitting ? (
-                        <>
-                          <div className="w-4 h-4 border-2 border-white/30 border-t-white rounded-full animate-spin mr-2" />
-                          Sending...
-                        </>
-                      ) : (
-                        <>
-                          <Send className="w-4 h-4 mr-2" />
-                          Send Message
-                        </>
-                      )}
-                    </Button>
-                  </form>
-                ) : (
-                  <div className="text-center py-12">
-                    <CheckCircle className="w-16 h-16 text-green-500 mx-auto mb-4" />
-                    <h3 className="text-2xl font-bold mb-2">Message Sent!</h3>
-                    <p className="text-muted-foreground">
-                      Thank you for contacting us. We'll get back to you within 24 hours.
-                    </p>
                   </div>
-                )}
-              </div>
+
+                  <div>
+                    <Label htmlFor="category" className="text-base font-semibold mb-2 block">Category</Label>
+                    <Select onValueChange={handleSelectChange}>
+                      <SelectTrigger className="bg-card/50 border-border/50 h-12">
+                        <SelectValue placeholder="Select a category" />
+                      </SelectTrigger>
+                      <SelectContent>
+                        <SelectItem value="technical">Technical Support</SelectItem>
+                        <SelectItem value="billing">Billing & Subscription</SelectItem>
+                        <SelectItem value="content">Content & Channels</SelectItem>
+                        <SelectItem value="account">Account Management</SelectItem>
+                        <SelectItem value="feedback">Feedback & Suggestions</SelectItem>
+                        <SelectItem value="other">Other</SelectItem>
+                      </SelectContent>
+                    </Select>
+                  </div>
+
+                  <div>
+                    <Label htmlFor="subject" className="text-base font-semibold mb-2 block">Subject</Label>
+                    <Input
+                      id="subject"
+                      name="subject"
+                      value={formData.subject}
+                      onChange={handleInputChange}
+                      placeholder="Brief description"
+                      required
+                      className="bg-card/50 border-border/50 h-12"
+                    />
+                  </div>
+
+                  <div>
+                    <Label htmlFor="message" className="text-base font-semibold mb-2 block">Message</Label>
+                    <Textarea
+                      id="message"
+                      name="message"
+                      value={formData.message}
+                      onChange={handleInputChange}
+                      placeholder="Tell us more details..."
+                      required
+                      rows={6}
+                      className="bg-card/50 border-border/50"
+                    />
+                  </div>
+
+                  <Button 
+                    type="submit" 
+                    className="btn-hero w-full text-lg py-6"
+                    disabled={isSubmitting}
+                  >
+                    {isSubmitting ? (
+                      <>
+                        <div className="w-4 h-4 border-2 border-white/30 border-t-white rounded-full animate-spin mr-2" />
+                        Sending...
+                      </>
+                    ) : (
+                      <>
+                        <Send className="w-5 h-5 mr-2" />
+                        Send Message
+                      </>
+                    )}
+                  </Button>
+                </form>
+              ) : (
+                <div className="text-center py-16 bg-card/30 rounded-2xl border border-border/50">
+                  <CheckCircle className="w-20 h-20 text-green-500 mx-auto mb-6" />
+                  <h3 className="text-3xl font-bold mb-3">Message Sent!</h3>
+                  <p className="text-muted-foreground text-lg">
+                    Thank you for reaching out. We'll respond within 24 hours.
+                  </p>
+                </div>
+              )}
             </AnimatedSection>
 
-            {/* Company Info */}
-            <AnimatedSection delay={300}>
-              <div>
-                <h2 className="text-3xl font-bold mb-6">Our Offices</h2>
-                <p className="text-muted-foreground mb-8">
-                  Visit us at one of our locations worldwide or reach out digitally.
-                </p>
+            {/* Locations & Hours */}
+            <AnimatedSection delay={200}>
+              <h2 className="text-4xl font-bold mb-2">Our Offices</h2>
+              <p className="text-muted-foreground text-lg mb-10">
+                Visit us worldwide or reach out digitally anytime
+              </p>
 
-                <div className="space-y-6">
-                  {officeLocations.map((office, index) => (
-                    <Card key={office.city} className="card-premium p-6">
-                      <div className="flex items-start space-x-4">
-                        <div className="w-10 h-10 bg-gradient-primary rounded-lg flex items-center justify-center flex-shrink-0">
-                          <MapPin className="w-5 h-5 text-primary-foreground" />
-                        </div>
-                        <div>
-                          <h4 className="font-semibold text-lg mb-1">{office.city}</h4>
-                          <p className="text-muted-foreground text-sm mb-1">{office.address}</p>
-                          <p className="text-muted-foreground text-sm mb-2">{office.zipcode}</p>
-                          <p className="text-primary font-medium text-sm">{office.phone}</p>
-                        </div>
+              <div className="space-y-6 mb-10">
+                {officeLocations.map((office) => (
+                  <Card key={office.city} className="bg-card/50 backdrop-blur-sm border border-border/50 p-6 hover:border-primary/30 transition-all">
+                    <div className="flex items-start space-x-4">
+                      <div className="w-12 h-12 bg-gradient-to-br from-primary to-purple-500 rounded-xl flex items-center justify-center flex-shrink-0">
+                        <MapPin className="w-6 h-6 text-white" />
                       </div>
-                    </Card>
-                  ))}
-                </div>
-
-                {/* Business Hours */}
-                <Card className="card-premium p-6 mt-8">
-                  <div className="flex items-start space-x-4">
-                    <div className="w-10 h-10 bg-gradient-primary rounded-lg flex items-center justify-center flex-shrink-0">
-                      <Clock className="w-5 h-5 text-primary-foreground" />
+                      <div>
+                        <h4 className="text-xl font-bold mb-1">{office.city}</h4>
+                        <p className="text-muted-foreground text-sm mb-1">{office.address}</p>
+                        <p className="text-muted-foreground text-sm mb-3">{office.zipcode}</p>
+                        <a href={`tel:${office.phone}`} className="text-primary font-semibold hover:text-primary/80">
+                          {office.phone}
+                        </a>
+                      </div>
                     </div>
-                    <div>
-                      <h4 className="font-semibold text-lg mb-2">Business Hours</h4>
-                      <div className="space-y-1 text-sm text-muted-foreground">
-                        <p>Monday - Friday: 9:00 AM - 6:00 PM EST</p>
-                        <p>Saturday: 10:00 AM - 4:00 PM EST</p>
-                        <p>Sunday: Closed</p>
-                        <p className="text-primary font-medium mt-2">
-                          <HeadphonesIcon className="w-4 h-4 inline mr-1" />
-                          24/7 Live Chat Available
-                        </p>
-                      </div>
+                  </Card>
+                ))}
+              </div>
+
+              {/* Business Hours */}
+              <Card className="bg-gradient-to-br from-primary/10 to-purple-500/10 backdrop-blur-sm border border-primary/20 p-8">
+                <div className="flex items-start space-x-4">
+                  <div className="w-12 h-12 bg-gradient-to-br from-primary to-purple-500 rounded-xl flex items-center justify-center flex-shrink-0">
+                    <Clock className="w-6 h-6 text-white" />
+                  </div>
+                  <div>
+                    <h4 className="text-xl font-bold mb-4">Business Hours</h4>
+                    <div className="space-y-2 text-muted-foreground">
+                      <p>📅 Monday - Friday: 9:00 AM - 6:00 PM EST</p>
+                      <p>📅 Saturday: 10:00 AM - 4:00 PM EST</p>
+                      <p>📅 Sunday: Closed</p>
+                      <p className="text-primary font-semibold mt-4 pt-4 border-t border-primary/20">
+                        <HeadphonesIcon className="w-5 h-5 inline mr-2" />
+                        24/7 Live Chat Support
+                      </p>
                     </div>
                   </div>
-                </Card>
-              </div>
+                </div>
+              </Card>
             </AnimatedSection>
           </div>
         </div>
       </section>
 
-      {/* FAQ Quick Links */}
-      <section className="section-spacing bg-card/30">
-        <div className="container mx-auto px-4 sm:px-6 lg:px-8">
+      {/* Quick Links - Full Width */}
+      <section className="w-full py-24 bg-gradient-to-b from-card/20 to-background">
+        <div className="content-wrapper">
           <AnimatedSection>
-            <div className="text-center mb-12">
-              <h2 className="text-3xl font-bold mb-4">Need Quick Help?</h2>
-              <p className="text-muted-foreground">
-                Check out these common questions before reaching out
+            <div className="text-center mb-20">
+              <div className="inline-block bg-gradient-to-r from-purple-500/10 to-pink-500/10 text-purple-400 px-6 py-2 rounded-full text-sm font-semibold mb-6">
+                💡 QUICK HELP
+              </div>
+              <h2 className="text-5xl lg:text-6xl font-bold mb-6">
+                Need Quick <span className="text-gradient">Answers?</span>
+              </h2>
+              <p className="text-xl text-muted-foreground max-w-3xl mx-auto">
+                Check these common topics before reaching out
               </p>
             </div>
           </AnimatedSection>
 
-          <AnimatedSection delay={200}>
-            <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
-              {[
-                { title: "Account Issues", description: "Login problems, password reset, account settings" },
-                { title: "Billing Support", description: "Payment issues, subscription changes, refunds" },
-                { title: "Technical Help", description: "Streaming problems, app issues, device setup" }
-              ].map((item, index) => (
-                <Card key={item.title} className="card-premium p-6 text-center hover:shadow-glow transition-all duration-300 cursor-pointer">
-                  <h3 className="font-semibold mb-3">{item.title}</h3>
-                  <p className="text-muted-foreground text-sm mb-4">{item.description}</p>
-                  <Button variant="outline" size="sm">
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-8 max-w-5xl mx-auto">
+            {[
+              { 
+                icon: Zap, 
+                title: "Account Issues", 
+                description: "Login, password reset, settings & profile management",
+                color: "from-blue-500 to-cyan-500"
+              },
+              { 
+                icon: Mail, 
+                title: "Billing Support", 
+                description: "Payment issues, subscription changes & refunds",
+                color: "from-purple-500 to-pink-500"
+              },
+              { 
+                icon: HeadphonesIcon, 
+                title: "Technical Help", 
+                description: "Streaming problems, app issues & device setup",
+                color: "from-green-500 to-emerald-500"
+              }
+            ].map((item, index) => (
+              <AnimatedSection key={item.title} delay={index * 100}>
+                <Card className="bg-card/50 backdrop-blur-sm border border-border/50 p-8 text-center hover:scale-105 transition-all duration-300 h-full">
+                  <div className={`w-14 h-14 bg-gradient-to-br ${item.color} rounded-2xl flex items-center justify-center mx-auto mb-6`}>
+                    <item.icon className="w-7 h-7 text-white" />
+                  </div>
+                  <h3 className="text-xl font-bold mb-3">{item.title}</h3>
+                  <p className="text-muted-foreground mb-6">{item.description}</p>
+                  <Button variant="outline" className="w-full border-border/50 hover:bg-primary/10">
                     Learn More
                   </Button>
                 </Card>
-              ))}
-            </div>
-          </AnimatedSection>
+              </AnimatedSection>
+            ))}
+          </div>
         </div>
       </section>
     </Layout>

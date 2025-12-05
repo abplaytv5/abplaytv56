@@ -24,105 +24,115 @@ import contentGrid from "@/assets/content-grid.jpg";
 const Services = () => {
   const subscriptionPlans = [
     {
-      name: "Basic",
-      price: 29.99,
+      name: "Starter",
+      price: 24.99,
       popular: false,
+      badge: "Best Value",
       features: [
-        "50+ Live TV Channels",
-        "Limited Cloud DVR (20 hours)",
-        "1 Simultaneous Stream",
+        "60+ Live TV Channels",
+        "50 Hours Cloud DVR",
+        "2 Simultaneous Streams",
         "3 User Profiles",
-        "HD Quality Streaming",
-        "Mobile & Web Access"
+        "Full HD 1080p Quality",
+        "Mobile & TV Access",
+        "Cancel Anytime"
       ],
-      ideal: "Perfect for individual viewers"
+      ideal: "Great for solo streamers"
     },
     {
-      name: "Pro",
+      name: "Family",
       price: 49.99,
       popular: true,
+      badge: "Most Popular",
       features: [
-        "85+ Live TV Channels",
+        "100+ Live TV Channels",
         "Unlimited Cloud DVR",
-        "3 Simultaneous Streams",
+        "4 Simultaneous Streams",
         "6 User Profiles",
-        "4K Ultra HD Quality",
-        "All Device Access",
+        "4K Ultra HD + HDR",
+        "All Devices Included",
         "Offline Downloads",
-        "Premium Support"
+        "Priority Support",
+        "No Contracts"
       ],
-      ideal: "Best for families and households"
+      ideal: "Perfect for families"
     },
     {
-      name: "Premium",
-      price: 69.99,
+      name: "Ultimate",
+      price: 79.99,
       popular: false,
+      badge: "Premium",
       features: [
-        "Everything in Pro",
-        "Premium Sports Networks",
-        "Premium Movie Channels",
-        "Exclusive Original Content",
-        "Early Access to New Releases",
-        "Priority Customer Support",
+        "Everything in Family",
+        "Premium Sports Package",
+        "HBO, Showtime & More",
+        "Exclusive Originals",
+        "Early Movie Releases",
+        "VIP Customer Support",
         "Dolby Atmos Audio",
-        "Multiple Language Support"
+        "8K Ready Streaming",
+        "Global Access"
       ],
-      ideal: "Ultimate entertainment experience"
+      ideal: "Ultimate experience"
     }
   ];
 
-  const streamingServices = [
+  const coreServices = [
     {
-      name: "Live TV Streaming",
+      name: "Live TV Excellence",
       icon: Tv,
-      description: "Watch 85+ live channels including news, sports, entertainment, and more",
+      description: "Stream 100+ premium channels with zero buffering and crystal-clear picture quality",
       features: [
-        "Major network channels (ABC, CBS, NBC, Fox)",
-        "24/7 news channels (CNN, Fox News, MSNBC)",
-        "Sports networks (ESPN, Fox Sports, NFL Network)",
-        "Entertainment channels (AMC, Comedy Central, FX)",
-        "Local channel availability",
-        "Real-time streaming with minimal delay"
-      ]
+        "Every major broadcast network",
+        "Round-the-clock news coverage",
+        "Complete sports lineup",
+        "Premium entertainment channels",
+        "Local stations in your area",
+        "Live events in real-time"
+      ],
+      color: "from-blue-500 to-cyan-500"
     },
     {
-      name: "On-Demand Library",
+      name: "Massive Content Library",
       icon: Play,
-      description: "Access thousands of movies, TV shows, and documentaries anytime",
+      description: "Explore 100,000+ hours of on-demand movies, series, and exclusive originals",
       features: [
-        "10,000+ hours of content",
-        "New releases added weekly",
-        "Award-winning documentaries",
-        "Classic movies and TV series",
-        "Kids and family programming",
-        "Multiple genres and categories"
-      ]
+        "Latest blockbuster releases",
+        "Award-winning original series",
+        "Timeless classic collections",
+        "International cinema",
+        "Family-friendly programming",
+        "Fresh content added daily"
+      ],
+      color: "from-purple-500 to-pink-500"
     },
     {
-      name: "Cloud DVR Service",
+      name: "Infinite Cloud DVR",
       icon: Cloud,
-      description: "Record unlimited shows and watch them whenever you want",
+      description: "Never miss a moment with unlimited recording and 12-month storage",
       features: [
-        "Unlimited storage space",
-        "Keep recordings for 9 months",
-        "Fast-forward through commercials",
-        "Record multiple shows simultaneously",
-        "Access recordings from any device",
-        "Automatic series recording"
-      ]
+        "Truly unlimited storage",
+        "Keep recordings for a full year",
+        "Skip ads with ease",
+        "Record 10 shows at once",
+        "Watch on any device",
+        "Smart series recording"
+      ],
+      color: "from-green-500 to-emerald-500"
     },
     {
-      name: "Multi-User Profiles",
+      name: "Personalized Profiles",
       icon: Users,
-      description: "Personalized experiences for every family member",
+      description: "Everyone gets their own personalized entertainment hub with AI-powered recommendations",
       features: [
-        "Up to 6 individual profiles",
-        "Personalized recommendations",
-        "Individual watch history",
-        "Parental controls and restrictions",
-        "Custom watchlists",
-        "Age-appropriate content filtering"
-      ]
+        "6 fully customized profiles",
+        "AI content suggestions",
+        "Individual viewing history",
+        "Advanced parental controls",
+        "Personal watchlists",
+        "Smart content filtering"
+      ],
+      color: "from-orange-500 to-red-500"
     }
   ];
 
@@ -188,191 +198,171 @@ const Services = () => {
 
   return (
     <Layout>
-      {/* Hero Section */}
-      <section className="relative min-h-screen flex items-center justify-center overflow-hidden">
+      {/* Hero Section - Full Width */}
+      <section className="relative min-h-screen flex items-center justify-center overflow-hidden w-full">
         <div 
           className="absolute inset-0 bg-cover bg-center bg-no-repeat"
           style={{ backgroundImage: `url(${contentGrid})` }}
         />
-        <div className="hero-overlay" />
+        <div className="absolute inset-0 bg-gradient-to-b from-black/80 via-black/60 to-background" />
         
-        <div className="relative z-10 container mx-auto px-4 sm:px-6 lg:px-8 text-center">
+        <div className="relative z-10 w-full content-wrapper py-20">
           <AnimatedSection>
-            <h1 className="text-4xl sm:text-6xl lg:text-7xl font-bold mb-6 leading-tight">
-              Premium Services
-              <span className="text-gradient block">Tailored for You</span>
-            </h1>
-            <p className="text-xl sm:text-2xl text-muted-foreground mb-8 max-w-3xl mx-auto leading-relaxed">
-              Discover our comprehensive range of streaming services, subscription plans, and premium bundles
-            </p>
-          </AnimatedSection>
-          
-          <AnimatedSection delay={200}>
-            <Button className="btn-hero text-xl px-12 py-6">
-              Explore Services
-            </Button>
+            <div className="text-center max-w-5xl mx-auto">
+              <div className="inline-block bg-gradient-to-r from-primary/20 to-purple-500/20 text-primary px-8 py-3 rounded-full text-sm font-bold mb-8 border border-primary/30">
+                💎 PREMIUM PLANS & SERVICES
+              </div>
+              <h1 className="text-5xl sm:text-6xl lg:text-8xl font-bold mb-8 leading-tight">
+                Entertainment
+                <span className="text-gradient block mt-2">Your Way</span>
+              </h1>
+              <p className="text-2xl sm:text-3xl text-muted-foreground mb-8 leading-relaxed">
+                Flexible plans. Unlimited possibilities. Zero compromises.
+              </p>
+              <p className="text-xl text-muted-foreground mb-12 max-w-3xl mx-auto">
+                Choose the perfect plan for your lifestyle with premium features, unlimited content, and the freedom to cancel anytime.
+              </p>
+            </div>
           </AnimatedSection>
         </div>
       </section>
 
-      {/* Service Tabs */}
-      <section className="section-spacing">
-        <div className="container mx-auto px-4 sm:px-6 lg:px-8">
+      {/* Subscription Plans - Full Width */}
+      <section className="w-full py-24 bg-gradient-to-b from-background to-card/20">
+        <div className="content-wrapper">
           <AnimatedSection>
-            <div className="text-center mb-16">
-              <h2 className="text-3xl lg:text-4xl font-bold mb-6">
-                Our <span className="text-gradient">Services</span>
+            <div className="text-center mb-20">
+              <div className="inline-block bg-gradient-to-r from-green-500/10 to-emerald-500/10 text-green-400 px-6 py-2 rounded-full text-sm font-semibold mb-6">
+                💰 FLEXIBLE PRICING
+              </div>
+              <h2 className="text-5xl lg:text-6xl font-bold mb-6">
+                Choose Your <span className="text-gradient">Perfect Plan</span>
               </h2>
-              <p className="text-xl text-muted-foreground">
-                Everything you need for the ultimate streaming experience
+              <p className="text-xl text-muted-foreground max-w-3xl mx-auto">
+                All plans include 14-day free trial. No credit card required. Cancel anytime.
               </p>
             </div>
           </AnimatedSection>
 
-          <Tabs defaultValue="plans" className="w-full">
-            <TabsList className="grid w-full grid-cols-1 md:grid-cols-3 mb-12">
-              <TabsTrigger value="plans" className="text-lg py-3">Subscription Plans</TabsTrigger>
-              <TabsTrigger value="streaming" className="text-lg py-3">Streaming Services</TabsTrigger>
-              <TabsTrigger value="bundles" className="text-lg py-3">Premium Bundles</TabsTrigger>
-            </TabsList>
-
-            <TabsContent value="plans">
-              <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-8 max-w-7xl mx-auto">
                 {subscriptionPlans.map((plan, index) => (
-                  <AnimatedSection key={plan.name} delay={index * 150}>
-                    <Card 
-                      className={`card-premium p-8 relative ${
-                        plan.popular ? "ring-2 ring-primary shadow-glow" : ""
-                      }`}
-                    >
+                  <AnimatedSection key={plan.name} delay={index * 100}>
+                    <div className={`group relative h-full ${plan.popular ? 'md:-translate-y-4' : ''}`}>
                       {plan.popular && (
-                        <div className="absolute -top-4 left-1/2 transform -translate-x-1/2">
-                          <div className="bg-gradient-primary text-primary-foreground px-4 py-2 rounded-full text-sm font-semibold">
-                            Most Popular
+                        <div className="absolute -inset-1 bg-gradient-to-r from-primary to-purple-500 rounded-3xl opacity-75 blur transition-all group-hover:opacity-100"></div>
+                      )}
+                      <Card className={`relative bg-card/50 backdrop-blur-sm border-2 p-10 h-full ${
+                        plan.popular ? "border-primary/50" : "border-border/50"
+                      } hover:scale-105 transition-all duration-300`}>
+                        <div className="absolute -top-4 right-8">
+                          <div className={`px-4 py-2 rounded-full text-xs font-bold ${
+                            plan.popular 
+                              ? 'bg-gradient-to-r from-primary to-purple-500 text-white' 
+                              : 'bg-muted text-muted-foreground'
+                          }`}>
+                            {plan.badge}
                           </div>
                         </div>
-                      )}
-                      
-                      <div className="text-center mb-8">
-                        <h3 className="text-2xl font-bold mb-2">{plan.name}</h3>
-                        <p className="text-muted-foreground mb-4">{plan.ideal}</p>
-                        <div className="mb-6">
-                          <span className="text-4xl font-bold">${plan.price}</span>
-                          <span className="text-muted-foreground">/month</span>
+                        
+                        <div className="text-center mb-8 mt-4">
+                          <h3 className="text-3xl font-bold mb-3">{plan.name}</h3>
+                          <p className="text-muted-foreground text-lg mb-6">{plan.ideal}</p>
+                          <div className="mb-6">
+                            <span className="text-6xl font-bold text-primary">${plan.price}</span>
+                            <span className="text-muted-foreground text-xl">/mo</span>
+                          </div>
                         </div>
-                      </div>
 
-                      <ul className="space-y-3 mb-8">
-                        {plan.features.map((feature, i) => (
-                          <li key={i} className="flex items-center space-x-3">
-                            <CheckCircle className="w-5 h-5 text-primary flex-shrink-0" />
-                            <span className="text-sm">{feature}</span>
-                          </li>
-                        ))}
-                      </ul>
+                        <ul className="space-y-4 mb-8">
+                          {plan.features.map((feature, i) => (
+                            <li key={i} className="flex items-center space-x-3">
+                              <div className="w-6 h-6 bg-primary/10 rounded-full flex items-center justify-center flex-shrink-0">
+                                <CheckCircle className="w-4 h-4 text-primary" />
+                              </div>
+                              <span className="text-base">{feature}</span>
+                            </li>
+                          ))}
+                        </ul>
 
-                      <Button className={plan.popular ? "btn-hero w-full" : "btn-outline-hero w-full"}>
-                        Choose {plan.name}
-                      </Button>
-                    </Card>
+                        <Button className={plan.popular ? "btn-hero w-full text-lg py-6" : "btn-outline-hero w-full text-lg py-6"}>
+                          Start Free Trial
+                        </Button>
+                      </Card>
+                    </div>
                   </AnimatedSection>
                 ))}
               </div>
-            </TabsContent>
+            </div>
+          </section>
 
-            <TabsContent value="streaming">
-              <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
-                {streamingServices.map((service, index) => (
-                  <AnimatedSection key={service.name} delay={index * 150}>
-                    <Card className="card-premium p-8 h-full">
-                      <div className="flex items-start space-x-6 mb-6">
-                        <div className="w-16 h-16 bg-gradient-primary rounded-2xl flex items-center justify-center flex-shrink-0">
-                          <service.icon className="w-8 h-8 text-primary-foreground" />
-                        </div>
-                        <div>
-                          <h3 className="text-2xl font-semibold mb-3">{service.name}</h3>
-                          <p className="text-muted-foreground leading-relaxed">{service.description}</p>
-                        </div>
-                      </div>
-
-                      <ul className="space-y-2">
-                        {service.features.map((feature, i) => (
-                          <li key={i} className="flex items-start space-x-2">
-                            <div className="w-1.5 h-1.5 bg-primary rounded-full mt-2 flex-shrink-0" />
-                            <span className="text-sm text-muted-foreground">{feature}</span>
-                          </li>
-                        ))}
-                      </ul>
-                    </Card>
-                  </AnimatedSection>
-                ))}
-              </div>
-            </TabsContent>
-
-            <TabsContent value="bundles">
-              <div className="grid grid-cols-1 lg:grid-cols-3 gap-8">
-                {bundles.map((bundle, index) => (
-                  <AnimatedSection key={bundle.name} delay={index * 150}>
-                    <Card className="card-premium p-8 text-center">
-                      <h3 className="text-2xl font-bold mb-4">{bundle.name}</h3>
-                      <p className="text-muted-foreground mb-6">{bundle.description}</p>
-                      
-                      <div className="mb-6">
-                        <div className="text-lg text-muted-foreground line-through mb-1">
-                          ${bundle.originalPrice.toFixed(2)}
-                        </div>
-                        <div className="text-4xl font-bold text-primary mb-1">
-                          ${bundle.bundlePrice.toFixed(2)}
-                        </div>
-                        <div className="text-sm text-green-500 font-semibold">
-                          Save ${bundle.savings.toFixed(2)}/month
-                        </div>
-                      </div>
-
-                      <ul className="space-y-2 mb-8">
-                        {bundle.services.map((service, i) => (
-                          <li key={i} className="flex items-center justify-center space-x-2">
-                            <Star className="w-4 h-4 text-primary" />
-                            <span className="text-sm">{service}</span>
-                          </li>
-                        ))}
-                      </ul>
-
-                      <Button className="btn-hero w-full">
-                        Get Bundle
-                      </Button>
-                    </Card>
-                  </AnimatedSection>
-                ))}
-              </div>
-            </TabsContent>
-          </Tabs>
-        </div>
-      </section>
-
-      {/* Additional Services */}
-      <section className="section-spacing bg-card/30">
-        <div className="container mx-auto px-4 sm:px-6 lg:px-8">
+      {/* Core Services - Full Width */}
+      <section className="w-full py-24 bg-gradient-to-b from-card/20 to-background">
+        <div className="content-wrapper">
           <AnimatedSection>
-            <div className="text-center mb-16">
-              <h2 className="text-3xl lg:text-4xl font-bold mb-6">
-                Additional <span className="text-gradient">Services</span>
+            <div className="text-center mb-20">
+              <div className="inline-block bg-gradient-to-r from-blue-500/10 to-purple-500/10 text-blue-400 px-6 py-2 rounded-full text-sm font-semibold mb-6">
+                ⚡ POWERFUL FEATURES
+              </div>
+              <h2 className="text-5xl lg:text-6xl font-bold mb-6">
+                Everything You <span className="text-gradient">Need</span>
               </h2>
-              <p className="text-xl text-muted-foreground">
-                Extra services to enhance your streaming experience
+              <p className="text-xl text-muted-foreground max-w-3xl mx-auto">
+                Premium features that elevate your streaming experience
               </p>
             </div>
           </AnimatedSection>
 
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-            {additionalServices.map((service, index) => (
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 max-w-6xl mx-auto">
+            {coreServices.map((service, index) => (
               <AnimatedSection key={service.name} delay={index * 100}>
-                <Card className="card-premium p-6 text-center h-full">
-                  <div className="w-16 h-16 bg-gradient-primary rounded-2xl flex items-center justify-center mx-auto mb-6">
-                    <service.icon className="w-8 h-8 text-primary-foreground" />
+                <div className="group relative h-full">
+                  <div className={`absolute -inset-1 bg-gradient-to-r ${service.color} rounded-3xl opacity-20 group-hover:opacity-30 blur-xl transition-all`}></div>
+                  <Card className="relative bg-card/50 backdrop-blur-sm border border-border/50 p-10 h-full hover:scale-105 transition-all duration-300">
+                    <div className={`w-20 h-20 bg-gradient-to-br ${service.color} rounded-2xl flex items-center justify-center mb-6`}>
+                      <service.icon className="w-10 h-10 text-white" />
+                    </div>
+                    <h3 className="text-3xl font-bold mb-4">{service.name}</h3>
+                    <p className="text-muted-foreground text-lg mb-6 leading-relaxed">{service.description}</p>
+                    
+                    <ul className="space-y-3">
+                      {service.features.map((feature, i) => (
+                        <li key={i} className="flex items-start space-x-3">
+                          <div className="w-2 h-2 bg-primary rounded-full mt-2 flex-shrink-0" />
+                          <span className="text-muted-foreground">{feature}</span>
+                        </li>
+                      ))}
+                    </ul>
+                  </Card>
+                </div>
+              </AnimatedSection>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* Additional Services - Full Width */}
+      <section className="w-full py-24 bg-background">
+        <div className="content-wrapper">
+          <AnimatedSection>
+            <div className="text-center mb-20">
+              <div className="inline-block bg-gradient-to-r from-purple-500/10 to-pink-500/10 text-purple-400 px-6 py-2 rounded-full text-sm font-semibold mb-6">
+                🎁 BONUS FEATURES
+              </div>
+              <h2 className="text-5xl lg:text-6xl font-bold mb-6">
+                Even More <span className="text-gradient">Value</span>
+              </h2>
+            </div>
+          </AnimatedSection>
+
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 max-w-6xl mx-auto">
+            {additionalServices.map((service, index) => (
+              <AnimatedSection key={service.name} delay={index * 50}>
+                <Card className="bg-card/50 backdrop-blur-sm border border-border/50 p-8 text-center hover:scale-105 transition-all duration-300 h-full">
+                  <div className="w-16 h-16 bg-gradient-to-br from-primary to-purple-500 rounded-2xl flex items-center justify-center mx-auto mb-6">
+                    <service.icon className="w-8 h-8 text-white" />
                   </div>
-                  <h3 className="text-xl font-semibold mb-4">{service.name}</h3>
-                  <p className="text-muted-foreground leading-relaxed">{service.description}</p>
+                  <h3 className="text-xl font-bold mb-3">{service.name}</h3>
+                  <p className="text-muted-foreground">{service.description}</p>
                 </Card>
               </AnimatedSection>
             ))}
@@ -380,40 +370,100 @@ const Services = () => {
         </div>
       </section>
 
-      {/* Service Guarantee */}
-      <section className="section-spacing">
-        <div className="container mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="max-w-4xl mx-auto text-center">
-            <AnimatedSection>
-              <div className="w-20 h-20 bg-gradient-primary rounded-full flex items-center justify-center mx-auto mb-8">
-                <Shield className="w-10 h-10 text-primary-foreground" />
+      {/* Bundles - Full Width */}
+      <section className="w-full py-24 bg-gradient-to-b from-card/20 to-background">
+        <div className="content-wrapper">
+          <AnimatedSection>
+            <div className="text-center mb-20">
+              <div className="inline-block bg-gradient-to-r from-orange-500/10 to-red-500/10 text-orange-400 px-6 py-2 rounded-full text-sm font-semibold mb-6">
+                📦 SPECIAL BUNDLES
               </div>
-              <h2 className="text-3xl lg:text-4xl font-bold mb-6">
-                Our Service <span className="text-gradient">Guarantee</span>
+              <h2 className="text-5xl lg:text-6xl font-bold mb-6">
+                Save More with <span className="text-gradient">Bundles</span>
               </h2>
-              <p className="text-xl text-muted-foreground leading-relaxed mb-8">
-                We're committed to providing exceptional service quality. If you're not completely 
-                satisfied with any of our services, we offer a 30-day money-back guarantee. 
-                Our dedicated support team is available 24/7 to ensure your streaming experience 
-                is always perfect.
+              <p className="text-xl text-muted-foreground max-w-3xl mx-auto">
+                Combine services and save up to 25% on your monthly subscription
               </p>
-              <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mb-8">
-                <div className="text-center">
-                  <div className="text-2xl font-bold text-primary mb-2">99.9%</div>
-                  <div className="text-muted-foreground">Uptime Guarantee</div>
+            </div>
+          </AnimatedSection>
+
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-8 max-w-6xl mx-auto">
+            {bundles.map((bundle, index) => (
+              <AnimatedSection key={bundle.name} delay={index * 100}>
+                <Card className="bg-card/50 backdrop-blur-sm border border-border/50 p-10 h-full hover:scale-105 transition-all duration-300">
+                  <h3 className="text-2xl font-bold mb-4">{bundle.name}</h3>
+                  <p className="text-muted-foreground mb-6">{bundle.description}</p>
+                  
+                  <div className="mb-6">
+                    <div className="text-lg text-muted-foreground line-through mb-1">
+                      ${bundle.originalPrice.toFixed(2)}
+                    </div>
+                    <div className="text-4xl font-bold text-primary mb-1">
+                      ${bundle.bundlePrice.toFixed(2)}
+                    </div>
+                    <div className="text-sm text-green-500 font-semibold">
+                      Save ${bundle.savings.toFixed(2)}/month
+                    </div>
+                  </div>
+
+                  <ul className="space-y-2 mb-8">
+                    {bundle.services.map((svc, i) => (
+                      <li key={i} className="flex items-center justify-center space-x-2">
+                        <Star className="w-4 h-4 text-primary" />
+                        <span className="text-sm">{svc}</span>
+                      </li>
+                    ))}
+                  </ul>
+
+                  <Button className="btn-hero w-full">
+                    Get Bundle
+                  </Button>
+                </Card>
+              </AnimatedSection>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* Service Guarantee - Full Width */}
+      <section className="w-full py-24 bg-gradient-to-br from-primary/10 via-purple-500/5 to-background">
+        <div className="content-wrapper">
+          <div className="max-w-5xl mx-auto">
+            <AnimatedSection>
+              <div className="text-center mb-12">
+                <div className="w-24 h-24 bg-gradient-to-br from-primary to-purple-500 rounded-3xl flex items-center justify-center mx-auto mb-8">
+                  <Shield className="w-12 h-12 text-white" />
                 </div>
-                <div className="text-center">
-                  <div className="text-2xl font-bold text-primary mb-2">&lt; 2s</div>
-                  <div className="text-muted-foreground">Average Response Time</div>
-                </div>
-                <div className="text-center">
-                  <div className="text-2xl font-bold text-primary mb-2">24/7</div>
-                  <div className="text-muted-foreground">Customer Support</div>
-                </div>
+                <h2 className="text-5xl lg:text-6xl font-bold mb-8">
+                  Risk-Free <span className="text-gradient">Guarantee</span>
+                </h2>
+                <p className="text-2xl text-muted-foreground leading-relaxed mb-12 max-w-3xl mx-auto">
+                  Try Abplay TV completely risk-free with our 30-day money-back guarantee. Love it or get a full refund—no questions asked.
+                </p>
               </div>
-              <Button className="btn-hero text-xl px-12 py-6">
-                Start Your Trial
-              </Button>
+            </AnimatedSection>
+
+            <AnimatedSection delay={200}>
+              <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mb-12">
+                <Card className="bg-card/50 backdrop-blur-sm border border-border/50 p-8 text-center">
+                  <div className="text-4xl font-bold text-primary mb-2">99.9%</div>
+                  <div className="text-muted-foreground text-lg">Uptime Guaranteed</div>
+                </Card>
+                <Card className="bg-card/50 backdrop-blur-sm border border-border/50 p-8 text-center">
+                  <div className="text-4xl font-bold text-primary mb-2">&lt; 1min</div>
+                  <div className="text-muted-foreground text-lg">Avg Support Response</div>
+                </Card>
+                <Card className="bg-card/50 backdrop-blur-sm border border-border/50 p-8 text-center">
+                  <div className="text-4xl font-bold text-primary mb-2">24/7</div>
+                  <div className="text-muted-foreground text-lg">Expert Support</div>
+                </Card>
+              </div>
+              <div className="text-center">
+                <Button className="btn-hero text-xl px-14 py-7">
+                  Start Free Trial Today
+                </Button>
+                <p className="text-muted-foreground mt-4">No credit card required • Cancel anytime</p>
+              </div>
             </AnimatedSection>
           </div>
         </div>

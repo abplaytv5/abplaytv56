@@ -171,19 +171,6 @@ const Home = () => {
           className="absolute inset-0 bg-cover bg-center bg-no-repeat transition-transform duration-500 group-hover:scale-110"
           style={{ backgroundImage: `url(${item.poster})` }}
         />
-        <div className="absolute inset-0 bg-gradient-to-t from-background via-background/20 to-transparent" />
-        
-        <div className="absolute bottom-0 left-0 right-0 p-6">
-          <div className="flex items-center justify-between mb-2">
-            <h3 className="font-semibold text-lg text-white truncate">{item.title}</h3>
-            <div className="flex items-center space-x-1">
-              <Star className="w-4 h-4 text-yellow-500 fill-current" />
-              <span className="text-sm text-yellow-500">{item.rating}</span>
-            </div>
-          </div>
-          <p className="text-gray-300 text-sm mb-4">{item.genre}</p>
-          {/* Watch Now button intentionally removed */}
-        </div>
       </Card>
     </div>
   );
@@ -301,390 +288,580 @@ const Home = () => {
         </div>
       </section>
 
-      {/* Live TV Channels Section */}
-      <section className="section-spacing bg-card/30">
-        <div className="container mx-auto px-4 sm:px-6 lg:px-8">
+      {/* Live TV Channels Showcase - Redesigned */}
+      <section className="section-spacing relative overflow-hidden">
+        <div className="absolute inset-0 bg-gradient-to-b from-background via-primary/5 to-background" />
+        <div className="container mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
           <AnimatedSection>
-            <div className="text-center mb-12 md:mb-16">
-              <h2 className="text-2xl md:text-3xl lg:text-4xl font-bold mb-4 md:mb-6 px-4">
-                Watch Live TV from <span className="text-gradient">100+ Top Channels</span>
+            <div className="text-center mb-16">
+              <div className="inline-block bg-primary/10 text-primary px-6 py-2 rounded-full text-sm font-semibold mb-6">
+                ⚡ 100+ PREMIUM CHANNELS
+              </div>
+              <h2 className="text-3xl md:text-5xl lg:text-6xl font-bold mb-6 px-4">
+                Your Favorite Channels,<br />
+                <span className="text-gradient">All in One Place</span>
               </h2>
-              <p className="text-lg md:text-xl text-muted-foreground max-w-3xl mx-auto px-4">
-                Stream your favorite channels live with crystal-clear HD quality and zero buffering
+              <p className="text-xl md:text-2xl text-muted-foreground max-w-4xl mx-auto px-4 leading-relaxed">
+                Sports, news, entertainment, and more. Stream every major network in stunning HD quality.
               </p>
             </div>
           </AnimatedSection>
 
-          <div className="overflow-hidden">
-            <div className="flex space-x-12 carousel-infinite">
-              {channels.map((channel, index) => (
-                <div key={index} className="flex-shrink-0">
-                  <div className="w-32 h-20 bg-card rounded-lg p-4 flex items-center justify-center hover:shadow-glow transition-all duration-300">
-                    <img 
-                      src={channel.logo} 
-                      alt={`${channel.name} logo`}
-                      className="max-w-full max-h-full object-contain"
-                    />
+          <div className="grid grid-cols-2 md:grid-cols-4 gap-6 mb-12 max-w-5xl mx-auto">
+            {channels.slice(0, 8).map((channel, index) => (
+              <AnimatedSection key={index} delay={index * 50}>
+                <div className="bg-card/50 backdrop-blur-sm rounded-2xl p-6 hover:bg-card hover:scale-105 transition-all duration-300 shadow-lg hover:shadow-2xl border border-border/50">
+                  <img 
+                    src={channel.logo} 
+                    alt={`${channel.name} logo`}
+                    className="w-full h-20 object-contain"
+                  />
+                </div>
+              </AnimatedSection>
+            ))}
+          </div>
+
+          <AnimatedSection delay={400}>
+            <div className="text-center">
+              <p className="text-lg text-muted-foreground mb-6">+ 92 more premium channels included</p>
+              <Link to="/services" onClick={handleNavigation}>
+                <Button className="btn-hero text-lg px-10 py-6">
+                  View All Channels
+                </Button>
+              </Link>
+            </div>
+          </AnimatedSection>
+        </div>
+      </section>
+
+      {/* Featured Content Grid - Modern Layout */}
+      <section className="section-spacing bg-gradient-to-br from-background via-card/20 to-background">
+        <div className="container mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center mb-20">
+            <AnimatedSection>
+              <div>
+                <div className="inline-block bg-gradient-to-r from-purple-500/10 to-pink-500/10 text-purple-400 px-6 py-2 rounded-full text-sm font-semibold mb-6">
+                  🎬 EXCLUSIVE ORIGINALS
+                </div>
+                <h2 className="text-4xl lg:text-5xl font-bold mb-6">
+                  Award-Winning<br />
+                  <span className="text-gradient">Original Content</span>
+                </h2>
+                <p className="text-xl text-muted-foreground mb-8 leading-relaxed">
+                  Experience critically acclaimed series and films you won't find anywhere else. 
+                  From gripping dramas to mind-bending sci-fi, we've got stories that captivate.
+                </p>
+                <div className="space-y-4">
+                  <div className="flex items-center space-x-3">
+                    <div className="w-12 h-12 bg-gradient-to-br from-purple-500 to-pink-500 rounded-xl flex items-center justify-center flex-shrink-0">
+                      <Star className="w-6 h-6 text-white" />
+                    </div>
+                    <div>
+                      <h4 className="font-semibold text-lg">Emmy Award Winners</h4>
+                      <p className="text-muted-foreground">15 Emmy wins this year alone</p>
+                    </div>
+                  </div>
+                  <div className="flex items-center space-x-3">
+                    <div className="w-12 h-12 bg-gradient-to-br from-blue-500 to-cyan-500 rounded-xl flex items-center justify-center flex-shrink-0">
+                      <Play className="w-6 h-6 text-white" />
+                    </div>
+                    <div>
+                      <h4 className="font-semibold text-lg">New Episodes Weekly</h4>
+                      <p className="text-muted-foreground">Fresh content every week</p>
+                    </div>
                   </div>
                 </div>
-              ))}
-            </div>
+              </div>
+            </AnimatedSection>
+
+            <AnimatedSection delay={200}>
+              <div className="grid grid-cols-2 gap-4">
+                {featuredShows.slice(0, 4).map((show, index) => (
+                  <div 
+                    key={index}
+                    className={`group relative overflow-hidden rounded-2xl ${index === 0 ? 'col-span-2 h-80' : 'h-64'}`}
+                  >
+                    <img 
+                      src={show.poster}
+                      alt={show.title}
+                      className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110"
+                    />
+                    <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
+                  </div>
+                ))}
+              </div>
+            </AnimatedSection>
+          </div>
+
+          {/* Trending Section */}
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
+            <AnimatedSection>
+              <div className="grid grid-cols-3 gap-4 lg:order-1">
+                {trendingMovies.slice(0, 6).map((movie, index) => (
+                  <div 
+                    key={index}
+                    className="group relative overflow-hidden rounded-xl aspect-[2/3] hover:scale-105 transition-all duration-300"
+                  >
+                    <img 
+                      src={movie.poster}
+                      alt={movie.title}
+                      className="w-full h-full object-cover"
+                    />
+                    <div className="absolute inset-0 bg-black/40 opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
+                  </div>
+                ))}
+              </div>
+            </AnimatedSection>
+
+            <AnimatedSection delay={200}>
+              <div className="lg:order-2">
+                <div className="inline-block bg-gradient-to-r from-red-500/10 to-orange-500/10 text-red-400 px-6 py-2 rounded-full text-sm font-semibold mb-6">
+                  🔥 TRENDING NOW
+                </div>
+                <h2 className="text-4xl lg:text-5xl font-bold mb-6">
+                  What Everyone's<br />
+                  <span className="text-gradient">Watching Today</span>
+                </h2>
+                <p className="text-xl text-muted-foreground mb-8 leading-relaxed">
+                  Join millions of viewers streaming the hottest movies and series. 
+                  From blockbusters to hidden gems, discover what's capturing hearts worldwide.
+                </p>
+                <div className="flex items-center space-x-8 mb-8">
+                  <div>
+                    <div className="text-3xl font-bold text-primary">10M+</div>
+                    <p className="text-muted-foreground">Watching Now</p>
+                  </div>
+                  <div>
+                    <div className="text-3xl font-bold text-primary">4.9★</div>
+                    <p className="text-muted-foreground">Average Rating</p>
+                  </div>
+                </div>
+                <Link to="/customize" onClick={handleNavigation}>
+                  <Button className="btn-hero text-lg px-10 py-6">
+                    Explore Full Library
+                  </Button>
+                </Link>
+              </div>
+            </AnimatedSection>
           </div>
         </div>
       </section>
 
-      {/* Featured Shows Carousel */}
-      <section className="section-spacing">
-        <div className="container mx-auto px-4 sm:px-6 lg:px-8">
+      {/* Features Showcase - Interactive Design */}
+      <section className="section-spacing relative">
+        <div className="absolute inset-0 bg-gradient-to-b from-transparent via-primary/10 to-transparent" />
+        <div className="container mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
           <AnimatedSection>
-            <div className="text-center mb-12">
-              <h2 className="text-3xl lg:text-4xl font-bold">Featured Originals</h2>
+            <div className="text-center mb-20">
+              <div className="inline-block bg-gradient-to-r from-blue-500/10 to-purple-500/10 text-blue-400 px-6 py-2 rounded-full text-sm font-semibold mb-6">
+                ✨ POWERFUL FEATURES
+              </div>
+              <h2 className="text-4xl lg:text-6xl font-bold mb-6">
+                Streaming Made <span className="text-gradient">Perfect</span>
+              </h2>
+              <p className="text-xl md:text-2xl text-muted-foreground max-w-4xl mx-auto leading-relaxed">
+                Advanced technology meets simple design. Everything you need, nothing you don't.
+              </p>
             </div>
           </AnimatedSection>
 
-          <div className="overflow-hidden">
-            <div className="flex space-x-6 carousel-infinite">
-              {featuredShows.map((show, index) => (
-                <CarouselItem key={`featured-${index}`} item={show} />
-              ))}
-            </div>
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-6xl mx-auto">
+            {features.map((feature, index) => (
+              <AnimatedSection key={feature.title} delay={index * 100}>
+                <div className="group relative overflow-hidden rounded-3xl bg-card/50 backdrop-blur-sm border border-border/50 hover:border-primary/50 transition-all duration-500 h-full">
+                  <div 
+                    className="absolute inset-0 bg-cover bg-center opacity-0 group-hover:opacity-20 transition-opacity duration-700"
+                    style={{ backgroundImage: `url(${feature.overlayImage})` }}
+                  />
+                  
+                  <div className="relative p-8 lg:p-10 h-full flex flex-col">
+                    <div className="w-16 h-16 bg-gradient-to-br from-primary to-primary/50 rounded-2xl flex items-center justify-center mb-6 group-hover:scale-110 transition-transform duration-300">
+                      <feature.icon className="w-8 h-8 text-white" />
+                    </div>
+                    
+                    <h3 className="text-2xl lg:text-3xl font-bold mb-4">{feature.title}</h3>
+                    <p className="text-muted-foreground text-lg mb-6 leading-relaxed flex-grow">
+                      {feature.detailedDescription}
+                    </p>
+                    
+                    <div className="flex items-center text-primary font-semibold opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                      <span>Learn More</span>
+                      <ChevronRight className="w-5 h-5 ml-2 group-hover:translate-x-2 transition-transform" />
+                    </div>
+                  </div>
+                </div>
+              </AnimatedSection>
+            ))}
           </div>
         </div>
       </section>
 
-      {/* Trending Movies Carousel */}
-      <section className="section-spacing bg-card/30">
-        <div className="container mx-auto px-4 sm:px-6 lg:px-8">
-          <AnimatedSection>
-            <div className="text-center mb-12">
-              <h2 className="text-3xl lg:text-4xl font-bold">Trending Now</h2>
-            </div>
-          </AnimatedSection>
-
-          <div className="overflow-hidden">
-            <div className="flex space-x-6 carousel-infinite-reverse">
-              {trendingMovies.map((movie, index) => (
-                <CarouselItem key={`trending-${index}`} item={movie} />
-              ))}
-            </div>
-          </div>
-        </div>
-      </section>
-
-      {/* Features Section */}
-      <section className="section-spacing">
+      {/* Multi-Device Experience */}
+      <section className="section-spacing bg-gradient-to-br from-background via-primary/5 to-background">
         <div className="container mx-auto px-4 sm:px-6 lg:px-8">
           <AnimatedSection>
             <div className="text-center mb-16">
-              <h2 className="text-3xl lg:text-4xl font-bold mb-6">
-                Everything You Need for <span className="text-gradient">Premium Entertainment</span>
+              <div className="inline-block bg-gradient-to-r from-green-500/10 to-blue-500/10 text-green-400 px-6 py-2 rounded-full text-sm font-semibold mb-6">
+                📱 SEAMLESS STREAMING
+              </div>
+              <h2 className="text-4xl lg:text-6xl font-bold mb-6">
+                Your Shows Follow <span className="text-gradient">You Everywhere</span>
               </h2>
-              <p className="text-xl text-muted-foreground max-w-3xl mx-auto">
-                Abplay TV brings you the ultimate streaming experience with cutting-edge features
+              <p className="text-xl md:text-2xl text-muted-foreground max-w-4xl mx-auto leading-relaxed">
+                Start on one device, continue on another. Your content syncs perfectly across all screens.
+              </p>
+            </div>
+          </AnimatedSection>
+
+          <div className="grid grid-cols-1 lg:grid-cols-3 gap-8 mb-16">
+            {[
+              { icon: Tv, label: "Smart TV", desc: "4K streaming on the big screen", color: "from-blue-500 to-cyan-500" },
+              { icon: Smartphone, label: "Mobile", desc: "Watch anywhere on the go", color: "from-purple-500 to-pink-500" },
+              { icon: Tablet, label: "Tablet", desc: "Perfect for travel & commute", color: "from-orange-500 to-red-500" },
+            ].map((device, index) => (
+              <AnimatedSection key={device.label} delay={index * 100}>
+                <div className="group relative overflow-hidden rounded-2xl bg-card/50 backdrop-blur-sm border border-border/50 p-8 hover:scale-105 transition-all duration-300">
+                  <div className={`w-16 h-16 bg-gradient-to-br ${device.color} rounded-2xl flex items-center justify-center mb-6 group-hover:rotate-6 transition-transform`}>
+                    <device.icon className="w-8 h-8 text-white" />
+                  </div>
+                  <h3 className="text-2xl font-bold mb-3">{device.label}</h3>
+                  <p className="text-muted-foreground text-lg">{device.desc}</p>
+                </div>
+              </AnimatedSection>
+            ))}
+          </div>
+
+          <AnimatedSection delay={400}>
+            <div className="relative max-w-5xl mx-auto">
+              <div className="bg-gradient-to-r from-primary/20 to-purple-500/20 rounded-3xl p-1">
+                <div className="bg-background rounded-3xl p-8 lg:p-12">
+                  <div className="grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
+                    <div>
+                      <h3 className="text-3xl font-bold mb-6">Synced Across Devices</h3>
+                      <ul className="space-y-4">
+                        {[
+                          "Pick up right where you left off",
+                          "Watchlist syncs automatically",
+                          "Download for offline viewing",
+                          "Up to 3 simultaneous streams"
+                        ].map((feature, i) => (
+                          <li key={i} className="flex items-center space-x-3">
+                            <Check className="w-6 h-6 text-primary flex-shrink-0" />
+                            <span className="text-lg text-muted-foreground">{feature}</span>
+                          </li>
+                        ))}
+                      </ul>
+                    </div>
+                    <div className="relative">
+                      <video 
+                        className="w-full rounded-2xl shadow-2xl"
+                        autoPlay
+                        muted
+                        loop
+                        playsInline
+                      >
+                        <source src="https://kstatic.googleusercontent.com/files/5e486b4163b0d76a440a0e561d7f358c38f462a5bab192e8c68db035e233d2f0e783b8ae9b945f982575b58f803310d3f690e1961f5c22493c9eae80e67cbeed" type="video/mp4" />
+                      </video>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </AnimatedSection>
+        </div>
+      </section>
+
+      {/* Social Proof - Testimonials */}
+      <section className="section-spacing relative overflow-hidden">
+        <div className="absolute inset-0 bg-gradient-to-br from-primary/10 via-transparent to-purple-500/10" />
+        <div className="container mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+          <AnimatedSection>
+            <div className="text-center mb-16">
+              <div className="inline-block bg-gradient-to-r from-yellow-500/10 to-orange-500/10 text-yellow-400 px-6 py-2 rounded-full text-sm font-semibold mb-6">
+                ⭐ 5-STAR REVIEWS
+              </div>
+              <h2 className="text-4xl lg:text-6xl font-bold mb-6">
+                Trusted by <span className="text-gradient">50M+ Viewers</span>
+              </h2>
+              <p className="text-xl md:text-2xl text-muted-foreground max-w-3xl mx-auto">
+                See why millions have switched to Abplay TV
+              </p>
+            </div>
+          </AnimatedSection>
+
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-8 max-w-6xl mx-auto">
+            {testimonials.map((testimonial, index) => (
+              <AnimatedSection key={testimonial.name} delay={index * 100}>
+                <div className="group relative">
+                  <div className="absolute -inset-1 bg-gradient-to-r from-primary to-purple-500 rounded-3xl opacity-0 group-hover:opacity-100 blur transition-all duration-300"></div>
+                  <div className="relative bg-card rounded-3xl p-8 h-full">
+                    <div className="flex items-center mb-6">
+                      <div className="text-5xl mr-4">{testimonial.avatar}</div>
+                      <div>
+                        <h3 className="font-bold text-lg">{testimonial.name}</h3>
+                        <div className="flex items-center mt-1">
+                          {[...Array(testimonial.rating)].map((_, i) => (
+                            <Star key={i} className="w-5 h-5 text-yellow-500 fill-current" />
+                          ))}
+                        </div>
+                      </div>
+                    </div>
+                    <p className="text-muted-foreground text-lg leading-relaxed">
+                      "{testimonial.comment}"
+                    </p>
+                  </div>
+                </div>
+              </AnimatedSection>
+            ))}
+          </div>
+
+          <AnimatedSection delay={400}>
+            <div className="text-center mt-16">
+              <div className="inline-flex items-center space-x-8 bg-card/50 backdrop-blur-sm rounded-full px-12 py-6 border border-border/50">
+                <div>
+                  <div className="text-3xl font-bold text-primary">4.9/5</div>
+                  <p className="text-muted-foreground text-sm">Average Rating</p>
+                </div>
+                <div className="w-px h-12 bg-border"></div>
+                <div>
+                  <div className="text-3xl font-bold text-primary">500K+</div>
+                  <p className="text-muted-foreground text-sm">Reviews</p>
+                </div>
+                <div className="w-px h-12 bg-border"></div>
+                <div>
+                  <div className="text-3xl font-bold text-primary">99%</div>
+                  <p className="text-muted-foreground text-sm">Satisfaction</p>
+                </div>
+              </div>
+            </div>
+          </AnimatedSection>
+        </div>
+      </section>
+
+      {/* Content Library Showcase */}
+      <section className="section-spacing bg-gradient-to-b from-background to-card/30">
+        <div className="container mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
+            <AnimatedSection>
+              <div className="lg:order-2">
+                <div className="inline-block bg-gradient-to-r from-pink-500/10 to-purple-500/10 text-pink-400 px-6 py-2 rounded-full text-sm font-semibold mb-6">
+                  🎬 MASSIVE LIBRARY
+                </div>
+                <h2 className="text-4xl lg:text-5xl font-bold mb-6">
+                  Endless Entertainment <span className="text-gradient">Awaits</span>
+                </h2>
+                <p className="text-xl text-muted-foreground mb-8 leading-relaxed">
+                  Dive into a universe of content. From the latest blockbusters to timeless classics, 
+                  discover something new every day.
+                </p>
+                
+                <div className="grid grid-cols-2 gap-6 mb-8">
+                  {[
+                    { icon: "🎬", number: "10K+", label: "Movies & Shows" },
+                    { icon: "🏆", number: "50+", label: "Award Winners" },
+                    { icon: "🆕", number: "100+", label: "Added Weekly" },
+                    { icon: "🌐", number: "20+", label: "Languages" }
+                  ].map((stat, i) => (
+                    <div key={i} className="bg-card/50 backdrop-blur-sm rounded-2xl p-6 text-center hover:scale-105 transition-transform">
+                      <div className="text-3xl mb-2">{stat.icon}</div>
+                      <div className="text-2xl font-bold text-primary mb-1">{stat.number}</div>
+                      <p className="text-sm text-muted-foreground">{stat.label}</p>
+                    </div>
+                  ))}
+                </div>
+                
+                <Link to="/customize" onClick={handleNavigation}>
+                  <Button className="btn-hero text-lg px-10 py-6">
+                    Browse Content
+                  </Button>
+                </Link>
+              </div>
+            </AnimatedSection>
+
+            <AnimatedSection delay={200}>
+              <div className="lg:order-1 relative">
+                <div className="relative rounded-3xl overflow-hidden shadow-2xl">
+                  <img 
+                    src={contentGrid}
+                    alt="Content library showcase"
+                    className="w-full"
+                  />
+                  <div className="absolute inset-0 bg-gradient-to-t from-background/80 via-transparent to-transparent" />
+                  <div className="absolute bottom-8 left-8 right-8">
+                    <div className="bg-card/95 backdrop-blur-md rounded-2xl p-6 border border-border/50">
+                      <div className="flex items-center space-x-3 mb-3">
+                        <div className="w-2 h-2 bg-green-500 rounded-full animate-pulse"></div>
+                        <span className="text-sm font-semibold text-green-500">NOW WATCHING</span>
+                      </div>
+                      <h4 className="font-bold text-xl mb-2">Breaking Boundaries</h4>
+                      <p className="text-muted-foreground">Season 2 • Episode 5</p>
+                      <div className="mt-4 w-full bg-border/50 h-1 rounded-full overflow-hidden">
+                        <div className="bg-primary h-full w-2/3 rounded-full"></div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </AnimatedSection>
+          </div>
+        </div>
+      </section>
+
+      {/* Premium Quality Experience */}
+      <section className="section-spacing relative overflow-hidden">
+        <div className="absolute inset-0">
+          <div className="absolute inset-0 bg-gradient-to-br from-blue-500/10 via-purple-500/10 to-pink-500/10" />
+          <div className="absolute top-1/4 left-1/4 w-96 h-96 bg-primary/20 rounded-full blur-3xl" />
+          <div className="absolute bottom-1/4 right-1/4 w-96 h-96 bg-purple-500/20 rounded-full blur-3xl" />
+        </div>
+        
+        <div className="container mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+          <AnimatedSection>
+            <div className="text-center mb-16">
+              <div className="inline-block bg-gradient-to-r from-blue-500/10 to-cyan-500/10 text-blue-400 px-6 py-2 rounded-full text-sm font-semibold mb-6">
+                🎭 CINEMA QUALITY
+              </div>
+              <h2 className="text-4xl lg:text-6xl font-bold mb-6">
+                Picture Perfect <span className="text-gradient">Every Time</span>
+              </h2>
+              <p className="text-xl md:text-2xl text-muted-foreground max-w-4xl mx-auto leading-relaxed">
+                Experience movies and shows the way they were meant to be seen
+              </p>
+            </div>
+          </AnimatedSection>
+
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center max-w-6xl mx-auto">
+            <AnimatedSection delay={200}>
+              <div className="relative group">
+                <div className="absolute -inset-4 bg-gradient-to-r from-primary to-purple-500 rounded-3xl opacity-20 group-hover:opacity-30 blur-2xl transition-opacity"></div>
+                <div className="relative rounded-3xl overflow-hidden shadow-2xl">
+                  <img 
+                    src={premiumViewing}
+                    alt="Premium viewing experience"
+                    className="w-full"
+                  />
+                  <div className="absolute inset-0 bg-gradient-to-t from-background/60 via-transparent to-transparent" />
+                  
+                  <div className="absolute top-6 right-6 bg-card/95 backdrop-blur-md rounded-xl px-4 py-2 border border-green-500/50">
+                    <div className="flex items-center space-x-2">
+                      <div className="w-2 h-2 bg-green-500 rounded-full animate-pulse" />
+                      <span className="text-sm font-semibold">LIVE 4K</span>
+                    </div>
+                  </div>
+                  
+                  <div className="absolute bottom-6 left-6 right-6">
+                    <div className="bg-card/95 backdrop-blur-md rounded-2xl p-4 border border-border/50">
+                      <div className="flex items-center justify-between mb-2">
+                        <div className="flex items-center space-x-3">
+                          <div className="w-10 h-10 bg-primary/20 rounded-full flex items-center justify-center">
+                            <Play className="w-5 h-5 text-primary" />
+                          </div>
+                          <span className="font-semibold">4K Ultra HD • Dolby Atmos</span>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </AnimatedSection>
+
+            <AnimatedSection delay={400}>
+              <div className="space-y-6">
+                {[
+                  { 
+                    icon: "4K", 
+                    title: "4K Ultra HD",
+                    desc: "Stream in stunning 4K resolution with HDR support for vibrant colors and deep contrasts",
+                    color: "from-blue-500 to-cyan-500"
+                  },
+                  { 
+                    icon: "🎵", 
+                    title: "Dolby Atmos",
+                    desc: "Immersive 3D audio that places you at the center of the action",
+                    color: "from-purple-500 to-pink-500"
+                  },
+                  { 
+                    icon: "⚡", 
+                    title: "Instant Playback",
+                    desc: "Lightning-fast streaming with adaptive bitrate for zero buffering",
+                    color: "from-orange-500 to-red-500"
+                  },
+                  { 
+                    icon: "💾", 
+                    title: "Offline Downloads",
+                    desc: "Download your favorites and watch offline anywhere, anytime",
+                    color: "from-green-500 to-emerald-500"
+                  }
+                ].map((feature, i) => (
+                  <div key={i} className="flex items-start space-x-4 group/item">
+                    <div className={`w-14 h-14 bg-gradient-to-br ${feature.color} rounded-2xl flex items-center justify-center text-2xl flex-shrink-0 group-hover/item:scale-110 transition-transform`}>
+                      {feature.icon}
+                    </div>
+                    <div>
+                      <h4 className="text-xl font-bold mb-2">{feature.title}</h4>
+                      <p className="text-muted-foreground leading-relaxed">{feature.desc}</p>
+                    </div>
+                  </div>
+                ))}
+              </div>
+            </AnimatedSection>
+          </div>
+        </div>
+      </section>
+
+      {/* Impact Stats */}
+      <section className="section-spacing bg-gradient-to-b from-card/30 to-background">
+        <div className="container mx-auto px-4 sm:px-6 lg:px-8">
+          <AnimatedSection>
+            <div className="text-center mb-20">
+              <div className="inline-block bg-gradient-to-r from-indigo-500/10 to-purple-500/10 text-indigo-400 px-6 py-2 rounded-full text-sm font-semibold mb-6">
+                📈 BY THE NUMBERS
+              </div>
+              <h2 className="text-4xl lg:text-6xl font-bold mb-6">
+                Making Waves <span className="text-gradient">Worldwide</span>
+              </h2>
+              <p className="text-xl md:text-2xl text-muted-foreground max-w-3xl mx-auto">
+                Join the global community that's changing entertainment
               </p>
             </div>
           </AnimatedSection>
 
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
-            {features.map((feature, index) => (
-              <AnimatedSection key={feature.title} delay={index * 100}>
-                <div className="flip-card group cursor-pointer h-80">
-                  <div className="flip-card-inner">
-                    {/* Front of card */}
-                    <div className="flip-card-front">
-                      <Card className="card-premium p-6 text-center h-full flex flex-col justify-center">
-                        <div className="w-16 h-16 bg-gradient-primary rounded-2xl flex items-center justify-center mx-auto mb-6">
-                          <feature.icon className="w-8 h-8 text-primary-foreground" />
-                        </div>
-                        <h3 className="text-xl font-semibold mb-4">{feature.title}</h3>
-                        <p className="text-muted-foreground">{feature.description}</p>
-                      </Card>
-                    </div>
-                    
-                    {/* Back of card */}
-                    <div className="flip-card-back">
-                      <Card className="h-full overflow-hidden relative">
-                        <div 
-                          className="absolute inset-0 bg-cover bg-center bg-no-repeat"
-                          style={{ backgroundImage: `url(${feature.overlayImage})` }}
-                        />
-                        <div className="absolute inset-0 bg-gradient-to-t from-background/90 via-background/50 to-transparent" />
-                        
-                        <div className="relative z-10 p-6 h-full flex flex-col justify-end">
-                          <div className="w-12 h-12 bg-gradient-primary rounded-xl flex items-center justify-center mb-4">
-                            <feature.icon className="w-6 h-6 text-primary-foreground" />
-                          </div>
-                          <h3 className="text-lg font-semibold mb-3 text-white">{feature.title}</h3>
-                          <p className="text-gray-200 text-sm leading-relaxed">{feature.detailedDescription}</p>
-                        </div>
-                      </Card>
-                    </div>
-                  </div>
-                </div>
-              </AnimatedSection>
-            ))}
-          </div>
-        </div>
-      </section>
-
-      {/* Watch Anywhere Section */}
-      <section className="section-spacing bg-card/30">
-        <div className="container mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
-            <AnimatedSection>
-              <div>
-                <h2 className="text-3xl lg:text-4xl font-bold mb-6">
-                  Watch Anywhere, <span className="text-gradient">Anytime</span>
-                </h2>
-                <p className="text-xl text-muted-foreground mb-8 leading-relaxed">
-                  Stream on your Smart TV, phone, tablet, computer, or gaming console. 
-                  Your entertainment follows you wherever you go.
-                </p>
-                
-                <div className="grid grid-cols-2 gap-4 mb-8">
-                  {[
-                    { icon: Tv, label: "Smart TV" },
-                    { icon: Smartphone, label: "Mobile" },
-                    { icon: Tablet, label: "Tablet" },
-                    { icon: Monitor, label: "Computer" }
-                  ].map((device) => (
-                    <div key={device.label} className="flex items-center space-x-3 p-3 bg-card rounded-lg">
-                      <device.icon className="w-6 h-6 text-primary" />
-                      <span className="font-medium">{device.label}</span>
-                    </div>
-                  ))}
-                </div>
-                {/* Download Apps button intentionally removed */}
-              </div>
-            </AnimatedSection>
-
-            <AnimatedSection delay={200}>
-              <div className="relative">
-                {/* TV Frame Design */}
-                <div className="relative bg-gray-800 p-4 md:p-6 lg:p-8 rounded-2xl md:rounded-3xl shadow-2xl">
-                  {/* TV Stand */}
-                  <div className="absolute -bottom-2 md:-bottom-4 left-1/2 transform -translate-x-1/2 w-12 md:w-20 h-4 md:h-6 bg-gray-700 rounded-full"></div>
-                  <div className="absolute -bottom-3 md:-bottom-6 left-1/2 transform -translate-x-1/2 w-20 md:w-32 h-1 md:h-2 bg-gray-600 rounded-full"></div>
-                  
-                  {/* TV Screen */}
-                  <div className="relative bg-black rounded-2xl overflow-hidden aspect-video shadow-inner">
-                    <video 
-                      className="w-full h-full object-cover"
-                      autoPlay
-                      muted
-                      loop
-                      playsInline
-                    >
-                      <source src="https://kstatic.googleusercontent.com/files/5e486b4163b0d76a440a0e561d7f358c38f462a5bab192e8c68db035e233d2f0e783b8ae9b945f982575b58f803310d3f690e1961f5c22493c9eae80e67cbeed" type="video/mp4" />
-                    </video>
-                    
-                    {/* TV Screen Reflection Effect */}
-                    <div className="absolute inset-0 bg-gradient-to-br from-white/5 via-transparent to-transparent pointer-events-none"></div>
-                  </div>
-                  
-                  {/* TV Brand/Power Light */}
-                  <div className="absolute bottom-2 right-6 w-2 h-2 bg-green-400 rounded-full opacity-80 shadow-lg shadow-green-400/50"></div>
-                </div>
-              </div>
-            </AnimatedSection>
-          </div>
-        </div>
-      </section>
-
-      {/* Testimonials */}
-      <section className="section-spacing">
-        <div className="container mx-auto px-4 sm:px-6 lg:px-8">
-          <AnimatedSection>
-            <div className="text-center mb-16">
-              <h2 className="text-3xl lg:text-4xl font-bold mb-6">
-                Loved by <span className="text-gradient">Millions</span>
-              </h2>
-              <p className="text-xl text-muted-foreground">
-                Join millions of satisfied customers who made the switch
-              </p>
-            </div>
-          </AnimatedSection>
-
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-            {testimonials.map((testimonial, index) => (
-              <AnimatedSection key={testimonial.name} delay={index * 150}>
-                <Card className="card-premium p-6">
-                  <div className="flex items-center mb-4">
-                    <div className="text-3xl mr-4">{testimonial.avatar}</div>
-                    <div>
-                      <h3 className="font-semibold">{testimonial.name}</h3>
-                      <div className="flex items-center">
-                        {[...Array(testimonial.rating)].map((_, i) => (
-                          <Star key={i} className="w-4 h-4 text-yellow-500 fill-current" />
-                        ))}
-                      </div>
-                    </div>
-                  </div>
-                  <p className="text-muted-foreground italic leading-relaxed">
-                    "{testimonial.comment}"
-                  </p>
-                </Card>
-              </AnimatedSection>
-            ))}
-          </div>
-        </div>
-      </section>
-
-      {/* Premium Content Showcase */}
-      <section className="section-spacing bg-card/30">
-        <div className="container mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
-            <AnimatedSection>
-              <div>
-                <h2 className="text-3xl lg:text-4xl font-bold mb-6">
-                  Premium Content <span className="text-gradient">Library</span>
-                </h2>
-                <p className="text-xl text-muted-foreground mb-8 leading-relaxed">
-                  Discover thousands of exclusive movies, award-winning series, and original content 
-                  available only on Abplay TV. From blockbuster hits to indie gems.
-                </p>
-                
-                <div className="space-y-4 mb-8">
-                  {[
-                    { title: "10,000+ Movies & Shows", desc: "Largest streaming library available" },
-                    { title: "Exclusive Originals", desc: "Award-winning content produced exclusively for Abplay" },
-                    { title: "4K Ultra HD Quality", desc: "Crystal clear streaming up to 4K resolution" },
-                    { title: "New Content Weekly", desc: "Fresh movies and episodes added every week" }
-                  ].map((item, i) => (
-                    <div key={i} className="flex items-start space-x-4">
-                      <div className="w-2 h-2 bg-primary rounded-full mt-2 flex-shrink-0" />
-                      <div>
-                        <h4 className="font-semibold text-lg">{item.title}</h4>
-                        <p className="text-muted-foreground">{item.desc}</p>
-                      </div>
-                    </div>
-                  ))}
-                </div>
-                
-                <Link to="/customize">
-                  <Button className="btn-hero">
-                    Explore Content Library
-                  </Button>
-                </Link>
-              </div>
-            </AnimatedSection>
-
-            <AnimatedSection delay={200}>
-              <div className="relative">
-                <img 
-                  src={contentGrid}
-                  alt="Content library showcase"
-                  className="w-full rounded-2xl shadow-premium"
-                />
-                <div className="absolute inset-0 bg-gradient-to-t from-background/20 to-transparent rounded-2xl" />
-                <div className="absolute bottom-6 left-6 right-6">
-                  <div className="bg-card/90 backdrop-blur-sm rounded-xl p-4">
-                    <h4 className="font-semibold mb-2">Now Watching</h4>
-                    <p className="text-sm text-muted-foreground">Breaking Boundaries - Season 2 Episode 5</p>
-                  </div>
-                </div>
-              </div>
-            </AnimatedSection>
-          </div>
-        </div>
-      </section>
-
-      {/* Ultimate Viewing Experience */}
-      <section className="section-spacing">
-        <div className="container mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
-            <AnimatedSection>
-              <div className="relative">
-                <img 
-                  src={premiumViewing}
-                  alt="Ultimate viewing experience"
-                  className="w-full rounded-2xl shadow-premium"
-                />
-                <div className="absolute inset-0 bg-gradient-to-t from-background/20 to-transparent rounded-2xl" />
-                
-                {/* Floating UI elements */}
-                <div className="absolute top-6 right-6 bg-card/90 backdrop-blur-sm rounded-lg p-3">
-                  <div className="flex items-center space-x-2">
-                    <div className="w-2 h-2 bg-green-500 rounded-full animate-pulse" />
-                    <span className="text-sm font-medium">Live</span>
-                  </div>
-                </div>
-                
-                <div className="absolute bottom-6 left-6 bg-card/90 backdrop-blur-sm rounded-lg p-3">
-                  <div className="flex items-center space-x-2">
-                    <Play className="w-4 h-4" />
-                    <span className="text-sm">4K Ultra HD</span>
-                  </div>
-                </div>
-              </div>
-            </AnimatedSection>
-
-            <AnimatedSection delay={200}>
-              <div>
-                <h2 className="text-3xl lg:text-4xl font-bold mb-6">
-                  Cinema-Quality <span className="text-gradient">Experience</span>
-                </h2>
-                <p className="text-xl text-muted-foreground mb-8 leading-relaxed">
-                  Immerse yourself in stunning 4K Ultra HD quality with Dolby Atmos sound. 
-                  Every detail is crystal clear, every sound is perfectly balanced.
-                </p>
-                
-                <div className="grid grid-cols-2 gap-6 mb-8">
-                  {[
-                    { icon: "4K", label: "Ultra HD Quality", desc: "4K streaming" },
-                    { icon: "🔊", label: "Dolby Atmos", desc: "Immersive audio" },
-                    { icon: "🚀", label: "Zero Buffering", desc: "Instant streaming" },
-                    { icon: "📱", label: "All Devices", desc: "Any screen size" }
-                  ].map((feature, i) => (
-                    <div key={i} className="text-center p-4 bg-card rounded-lg">
-                      <div className="text-2xl mb-2">{feature.icon}</div>
-                      <h4 className="font-semibold mb-1">{feature.label}</h4>
-                      <p className="text-sm text-muted-foreground">{feature.desc}</p>
-                    </div>
-                  ))}
-                </div>
-                
-                <Link to="/features">
-                  <Button className="btn-hero">
-                    Experience Premium Quality
-                  </Button>
-                </Link>
-              </div>
-            </AnimatedSection>
-          </div>
-        </div>
-      </section>
-
-      {/* Stats Section */}
-      <section className="section-spacing bg-card/30">
-        <div className="container mx-auto px-4 sm:px-6 lg:px-8">
-          <AnimatedSection>
-            <div className="text-center mb-16">
-              <h2 className="text-3xl lg:text-4xl font-bold mb-6">
-                Trusted by <span className="text-gradient">Millions</span>
-              </h2>
-              <p className="text-xl text-muted-foreground">
-                Join the streaming revolution that's changing how people watch TV
-              </p>
-            </div>
-          </AnimatedSection>
-
-          <div className="grid grid-cols-1 md:grid-cols-4 gap-8">
             {[
-              { number: "50M+", label: "Active Subscribers", desc: "Growing every day" },
-              { number: "10K+", label: "Movies & Shows", desc: "In our library" },
-              { number: "99.9%", label: "Uptime Guarantee", desc: "Always available" },
-              { number: "150+", label: "Countries", desc: "Available worldwide" }
+              { number: "50M+", label: "Active Viewers", desc: "Streaming daily", icon: Users, color: "from-blue-500 to-cyan-500" },
+              { number: "10K+", label: "Content Titles", desc: "Always growing", icon: Tv, color: "from-purple-500 to-pink-500" },
+              { number: "99.9%", label: "Uptime", desc: "Always online", icon: Check, color: "from-green-500 to-emerald-500" },
+              { number: "150+", label: "Countries", desc: "Global reach", icon: Play, color: "from-orange-500 to-red-500" }
             ].map((stat, index) => (
               <AnimatedSection key={stat.label} delay={index * 100}>
-                <div className="text-center">
-                  <div className="text-4xl lg:text-5xl font-bold text-primary mb-2">{stat.number}</div>
-                  <h3 className="text-xl font-semibold mb-2">{stat.label}</h3>
-                  <p className="text-muted-foreground">{stat.desc}</p>
+                <div className="group relative">
+                  <div className="absolute -inset-1 bg-gradient-to-r opacity-0 group-hover:opacity-100 blur transition-all duration-300 rounded-3xl" style={{backgroundImage: `linear-gradient(to right, var(--tw-gradient-stops))`}}></div>
+                  <div className="relative bg-card rounded-3xl p-8 text-center hover:scale-105 transition-transform duration-300 border border-border/50">
+                    <div className={`w-16 h-16 bg-gradient-to-br ${stat.color} rounded-2xl flex items-center justify-center mx-auto mb-6`}>
+                      <stat.icon className="w-8 h-8 text-white" />
+                    </div>
+                    <div className="text-4xl lg:text-5xl font-bold text-primary mb-3">{stat.number}</div>
+                    <h3 className="text-xl font-bold mb-2">{stat.label}</h3>
+                    <p className="text-muted-foreground">{stat.desc}</p>
+                  </div>
                 </div>
               </AnimatedSection>
             ))}
           </div>
+
+          <AnimatedSection delay={500}>
+            <div className="mt-20 text-center">
+              <div className="bg-gradient-to-r from-primary/10 to-purple-500/10 rounded-3xl p-12 max-w-4xl mx-auto border border-border/50">
+                <h3 className="text-3xl font-bold mb-4">Ready to Join the Community?</h3>
+                <p className="text-xl text-muted-foreground mb-8">Start your free trial and see what millions are watching</p>
+                <Link to="/services" onClick={handleNavigation}>
+                  <Button className="btn-hero text-lg px-12 py-6">
+                    Get Started Free
+                  </Button>
+                </Link>
+              </div>
+            </div>
+          </AnimatedSection>
         </div>
       </section>
 

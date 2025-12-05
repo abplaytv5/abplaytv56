@@ -17,9 +17,9 @@ const Layout = ({ children, className = "" }: LayoutProps) => {
   }, [location.pathname]);
 
   return (
-    <div className="min-h-screen bg-background">
+    <div className="min-h-screen bg-background w-full overflow-x-hidden">
       <Header />
-      <main className={`pt-16 lg:pt-20 ${className}`}>
+      <main className={`pt-16 lg:pt-20 w-full ${className}`}>
         {children}
       </main>
       <Footer />

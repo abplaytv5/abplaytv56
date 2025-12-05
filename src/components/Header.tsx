@@ -48,7 +48,7 @@ const Header = () => {
             <div className="w-8 h-8 bg-gradient-primary rounded-lg flex items-center justify-center group-hover:shadow-glow transition-all duration-300">
               <Play className="w-4 h-4 text-primary-foreground fill-current" />
             </div>
-            <span className="text-2xl font-bold text-gradient">Abplay TV</span>
+            <span className="text-2xl font-bold text-gradient">Horizon Cast TV</span>
           </Link>
 
           {/* Desktop Navigation */}

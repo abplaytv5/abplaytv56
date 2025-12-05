@@ -98,6 +98,20 @@ All colors MUST be HSL for consistency.
 
   body {
     @apply bg-background text-foreground font-sans;
+  }
+
+  /* Full width sections - remove container constraints */
+  .full-width-section {
+    @apply w-full max-w-none;
+  }
+
+  /* Content wrapper for readability - use this inside full-width sections */
+  .content-wrapper {
+    @apply mx-auto px-4 sm:px-6 lg:px-8 max-w-[1920px];
+  }
+
+  body {
+    @apply bg-background text-foreground font-sans;
     font-feature-settings: "cv02", "cv03", "cv04", "cv11";
   }
 

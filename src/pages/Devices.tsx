@@ -135,83 +135,87 @@ const Devices = () => {
 
   return (
     <Layout>
-      {/* Hero Section */}
-      <section className="relative min-h-screen flex items-center justify-center overflow-hidden">
+      {/* Hero Section - Full Width */}
+      <section className="relative min-h-screen flex items-center justify-center overflow-hidden w-full">
         <div 
           className="absolute inset-0 bg-cover bg-center bg-no-repeat"
           style={{ backgroundImage: `url(${devicesHero})` }}
         />
-        <div className="hero-overlay" />
+        <div className="absolute inset-0 bg-gradient-to-b from-black/80 via-black/60 to-background" />
         
-        <div className="relative z-10 container mx-auto px-4 sm:px-6 lg:px-8 text-center">
+        <div className="relative z-10 w-full content-wrapper py-20">
           <AnimatedSection>
-            <h1 className="text-4xl sm:text-6xl lg:text-7xl font-bold mb-6 leading-tight">
-              Stream on Every
-              <span className="text-gradient block">Device You Own</span>
-            </h1>
-            <p className="text-xl sm:text-2xl text-muted-foreground mb-8 max-w-3xl mx-auto leading-relaxed">
-              Abplay TV works seamlessly across 100+ device types. Start watching on one device and continue on another.
-            </p>
-          </AnimatedSection>
-          
-          <AnimatedSection delay={200}>
-            <Button className="btn-hero text-xl px-12 py-6">
-              Download Apps
-            </Button>
+            <div className="text-center max-w-5xl mx-auto">
+              <div className="inline-block bg-gradient-to-r from-primary/20 to-purple-500/20 text-primary px-8 py-3 rounded-full text-sm font-bold mb-8 border border-primary/30">
+                📱 UNIVERSAL STREAMING
+              </div>
+              <h1 className="text-5xl sm:text-6xl lg:text-8xl font-bold mb-8 leading-tight">
+                Stream on Every
+                <span className="text-gradient block mt-2">Device You Own</span>
+              </h1>
+              <p className="text-2xl sm:text-3xl text-muted-foreground mb-8 leading-relaxed">
+                Watch Horizon Cast TV on 100+ devices seamlessly
+              </p>
+              <p className="text-xl text-muted-foreground mb-12 max-w-3xl mx-auto">
+                Start on your phone, continue on your TV, resume on your tablet
+              </p>
+            </div>
           </AnimatedSection>
         </div>
       </section>
 
-      {/* Device Categories */}
-      <section className="section-spacing">
-        <div className="container mx-auto px-4 sm:px-6 lg:px-8">
+      {/* Device Categories - Full Width */}
+      <section className="w-full py-24 bg-gradient-to-b from-background to-card/20">
+        <div className="content-wrapper">
           <AnimatedSection>
-            <div className="text-center mb-16">
-              <h2 className="text-3xl lg:text-4xl font-bold mb-6">
-                Supported <span className="text-gradient">Devices</span>
+            <div className="text-center mb-20">
+              <div className="inline-block bg-gradient-to-r from-blue-500/10 to-cyan-500/10 text-blue-400 px-6 py-2 rounded-full text-sm font-semibold mb-6">
+                ✅ SUPPORTED DEVICES
+              </div>
+              <h2 className="text-5xl lg:text-6xl font-bold mb-6">
+                Watch On All <span className="text-gradient">Platforms</span>
               </h2>
-              <p className="text-xl text-muted-foreground">
-                Watch Abplay TV on virtually any screen in your home
+              <p className="text-xl text-muted-foreground max-w-3xl mx-auto">
+                Compatible with virtually every modern device in your home
               </p>
             </div>
           </AnimatedSection>
 
-          <div className="space-y-12">
+          <div className="space-y-12 max-w-7xl mx-auto">
             {deviceCategories.map((category, categoryIndex) => (
               <AnimatedSection key={category.title} delay={categoryIndex * 100}>
-                <Card className="card-premium p-8">
-                  <div className="flex items-center mb-8">
-                    <div className="w-16 h-16 bg-gradient-primary rounded-2xl flex items-center justify-center mr-6">
-                      <category.icon className="w-8 h-8 text-primary-foreground" />
+                <Card className="bg-card/50 backdrop-blur-sm border border-border/50 p-10">
+                  <div className="flex items-start mb-10">
+                    <div className="w-20 h-20 bg-gradient-to-br from-primary to-purple-500 rounded-2xl flex items-center justify-center mr-8 flex-shrink-0">
+                      <category.icon className="w-10 h-10 text-white" />
                     </div>
                     <div>
-                      <h3 className="text-2xl font-bold mb-2">{category.title}</h3>
-                      <p className="text-muted-foreground">{category.description}</p>
+                      <h3 className="text-3xl font-bold mb-2">{category.title}</h3>
+                      <p className="text-muted-foreground text-lg">{category.description}</p>
                     </div>
                   </div>
 
-                  <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-                    {category.devices.map((device, deviceIndex) => (
+                  <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
+                    {category.devices.map((device) => (
                       <div 
                         key={device.name}
-                        className={`p-4 rounded-lg border transition-all duration-300 ${
+                        className={`p-5 rounded-xl border-2 transition-all ${
                           device.available 
-                            ? "border-border hover:border-primary bg-card" 
-                            : "border-border/50 bg-muted/50 opacity-60"
+                            ? "border-border/50 bg-card/50 hover:border-primary/50 hover:scale-105" 
+                            : "border-border/30 bg-muted/30 opacity-50"
                         }`}
                       >
-                        <div className="flex items-center justify-between mb-2">
-                          <h4 className="font-semibold">{device.name}</h4>
+                        <div className="flex items-center justify-between">
+                          <div className="flex-1">
+                            <h4 className="font-semibold text-lg">{device.name}</h4>
+                            <p className="text-sm text-muted-foreground">{device.years}</p>
+                          </div>
                           {device.available ? (
-                            <CheckCircle className="w-5 h-5 text-green-500" />
+                            <CheckCircle className="w-6 h-6 text-green-500 flex-shrink-0 ml-3" />
                           ) : (
-                            <div className="w-5 h-5 rounded-full border-2 border-muted-foreground/30" />
+                            <div className="w-6 h-6 rounded-full border-2 border-muted-foreground/30 flex-shrink-0 ml-3" />
                           )}
                         </div>
-                        <p className="text-sm text-muted-foreground">{device.years}</p>
-                        {!device.available && (
-                          <p className="text-xs text-muted-foreground mt-1">Not available</p>
-                        )}
                       </div>
                     ))}
                   </div>
@@ -222,28 +226,31 @@ const Devices = () => {
         </div>
       </section>
 
-      {/* Features */}
-      <section className="section-spacing bg-card/30">
-        <div className="container mx-auto px-4 sm:px-6 lg:px-8">
+      {/* Cross-Device Features - Full Width */}
+      <section className="w-full py-24 bg-background">
+        <div className="content-wrapper">
           <AnimatedSection>
-            <div className="text-center mb-16">
-              <h2 className="text-3xl lg:text-4xl font-bold mb-6">
-                Cross-Device <span className="text-gradient">Features</span>
+            <div className="text-center mb-20">
+              <div className="inline-block bg-gradient-to-r from-purple-500/10 to-pink-500/10 text-purple-400 px-6 py-2 rounded-full text-sm font-semibold mb-6">
+                ⚡ SMART FEATURES
+              </div>
+              <h2 className="text-5xl lg:text-6xl font-bold mb-6">
+                Intelligent <span className="text-gradient">Syncing</span>
               </h2>
-              <p className="text-xl text-muted-foreground">
-                Advanced capabilities that work across all your devices
+              <p className="text-xl text-muted-foreground max-w-3xl mx-auto">
+                Advanced features that connect all your devices
               </p>
             </div>
           </AnimatedSection>
 
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 max-w-7xl mx-auto">
             {features.map((feature, index) => (
               <AnimatedSection key={feature.title} delay={index * 100}>
-                <Card className="card-premium p-6 text-center h-full">
-                  <div className="w-16 h-16 bg-gradient-primary rounded-2xl flex items-center justify-center mx-auto mb-6">
-                    <feature.icon className="w-8 h-8 text-primary-foreground" />
+                <Card className="bg-card/50 backdrop-blur-sm border border-border/50 p-8 text-center hover:scale-105 transition-all duration-300 h-full">
+                  <div className="w-16 h-16 bg-gradient-to-br from-primary to-purple-500 rounded-2xl flex items-center justify-center mx-auto mb-6">
+                    <feature.icon className="w-8 h-8 text-white" />
                   </div>
-                  <h3 className="text-xl font-semibold mb-4">{feature.title}</h3>
+                  <h3 className="text-xl font-bold mb-4">{feature.title}</h3>
                   <p className="text-muted-foreground leading-relaxed">{feature.description}</p>
                 </Card>
               </AnimatedSection>
@@ -252,29 +259,32 @@ const Devices = () => {
         </div>
       </section>
 
-      {/* System Requirements */}
-      <section className="section-spacing">
-        <div className="container mx-auto px-4 sm:px-6 lg:px-8">
+      {/* System Requirements - Full Width */}
+      <section className="w-full py-24 bg-gradient-to-b from-card/20 to-background">
+        <div className="content-wrapper">
           <AnimatedSection>
-            <div className="text-center mb-16">
-              <h2 className="text-3xl lg:text-4xl font-bold mb-6">
-                System <span className="text-gradient">Requirements</span>
+            <div className="text-center mb-20">
+              <div className="inline-block bg-gradient-to-r from-green-500/10 to-emerald-500/10 text-green-400 px-6 py-2 rounded-full text-sm font-semibold mb-6">
+                📋 REQUIREMENTS
+              </div>
+              <h2 className="text-5xl lg:text-6xl font-bold mb-6">
+                Minimum <span className="text-gradient">Specs</span>
               </h2>
-              <p className="text-xl text-muted-foreground">
-                Make sure your devices meet these minimum requirements
+              <p className="text-xl text-muted-foreground max-w-3xl mx-auto">
+                Make sure your devices meet these basic requirements
               </p>
             </div>
           </AnimatedSection>
 
-          <div className="grid grid-cols-1 lg:grid-cols-3 gap-8">
+          <div className="grid grid-cols-1 lg:grid-cols-3 gap-8 max-w-6xl mx-auto">
             {specifications.map((spec, index) => (
-              <AnimatedSection key={spec.category} delay={index * 150}>
-                <Card className="card-premium p-8 h-full">
-                  <h3 className="text-xl font-bold mb-6 text-center">{spec.category}</h3>
-                  <ul className="space-y-4">
+              <AnimatedSection key={spec.category} delay={index * 100}>
+                <Card className="bg-card/50 backdrop-blur-sm border border-border/50 p-10 h-full">
+                  <h3 className="text-2xl font-bold mb-8 text-center">{spec.category}</h3>
+                  <ul className="space-y-5">
                     {spec.requirements.map((req, i) => (
                       <li key={i} className="flex items-start space-x-3">
-                        <CheckCircle className="w-5 h-5 text-primary flex-shrink-0 mt-0.5" />
+                        <CheckCircle className="w-6 h-6 text-primary flex-shrink-0 mt-0.5" />
                         <span className="text-muted-foreground leading-relaxed">{req}</span>
                       </li>
                     ))}
@@ -286,42 +296,42 @@ const Devices = () => {
         </div>
       </section>
 
-      {/* Download Section */}
-      <section className="section-spacing bg-gradient-to-r from-primary/10 via-primary/5 to-transparent">
-        <div className="container mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="max-w-4xl mx-auto text-center">
-            <AnimatedSection>
-              <h2 className="text-3xl lg:text-5xl font-bold mb-6">
-                Get Started on <span className="text-gradient">Any Device</span>
+      {/* Download Section - Full Width */}
+      <section className="w-full py-24 bg-gradient-to-br from-primary/10 via-purple-500/5 to-background">
+        <div className="content-wrapper">
+          <AnimatedSection>
+            <div className="text-center max-w-4xl mx-auto">
+              <h2 className="text-5xl lg:text-6xl font-bold mb-8">
+                Start Streaming <span className="text-gradient">Today</span>
               </h2>
-              <p className="text-xl text-muted-foreground mb-8">
-                Download the Abplay TV app or visit our website to start streaming
+              <p className="text-2xl text-muted-foreground mb-12">
+                Download apps or visit horizoncasttv.com to start your free trial
               </p>
               
-              <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 mb-8">
-                <Button className="btn-hero p-6 h-auto flex-col space-y-2">
-                  <Smartphone className="w-8 h-8" />
-                  <span>Mobile Apps</span>
+              <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 mb-12">
+                <Button className="btn-hero p-8 h-auto flex-col space-y-3 text-lg">
+                  <Smartphone className="w-10 h-10" />
+                  <span>Mobile</span>
                 </Button>
-                <Button className="btn-hero p-6 h-auto flex-col space-y-2">
-                  <Tv className="w-8 h-8" />
+                <Button className="btn-hero p-8 h-auto flex-col space-y-3 text-lg">
+                  <Tv className="w-10 h-10" />
                   <span>Smart TV</span>
                 </Button>
-                <Button className="btn-hero p-6 h-auto flex-col space-y-2">
-                  <Monitor className="w-8 h-8" />
-                  <span>Web Browser</span>
+                <Button className="btn-hero p-8 h-auto flex-col space-y-3 text-lg">
+                  <Monitor className="w-10 h-10" />
+                  <span>Browser</span>
                 </Button>
-                <Button className="btn-hero p-6 h-auto flex-col space-y-2">
-                  <Cast className="w-8 h-8" />
+                <Button className="btn-hero p-8 h-auto flex-col space-y-3 text-lg">
+                  <Cast className="w-10 h-10" />
                   <span>Streaming Box</span>
                 </Button>
               </div>
               
-              <p className="text-muted-foreground">
+              <p className="text-muted-foreground text-lg">
                 Available on App Store, Google Play, and all major streaming platforms
               </p>
-            </AnimatedSection>
-          </div>
+            </div>
+          </AnimatedSection>
         </div>
       </section>
     </Layout>
