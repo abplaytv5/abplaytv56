@@ -10,7 +10,7 @@ const Terms = () => {
     {
       title: "1. Service Agreement",
       content: [
-        "These Terms of Service ('Terms') govern your use of Abplay TV streaming services owned and operated by AB Textiles ('we', 'us', or 'our').",
+        "These Terms of Service ('Terms') govern your use of Horizon Cast TV streaming services ('Services'). By accessing or using our services, you agree to be bound by these Terms.",
         "By creating an account or using our services, you agree to be bound by these Terms and our Privacy Policy.",
         "You must be at least 18 years old or have parental consent to use our services.",
         "AB Textiles reserves the right to modify these Terms at any time. Continued use of the service constitutes acceptance of updated Terms."
@@ -29,7 +29,7 @@ const Terms = () => {
     {
       title: "3. Service Availability",
       content: [
-        "Abplay TV services are provided 'as is' and are subject to availability.",
+        "Horizon Cast TV services are provided 'as is' and are subject to availability.",,
         "We strive for 99.9% uptime but cannot guarantee uninterrupted service.",
         "Content availability may vary by location and is subject to licensing agreements.",
         "AB Textiles reserves the right to modify, suspend, or discontinue any aspect of the service.",
@@ -39,7 +39,7 @@ const Terms = () => {
     {
       title: "4. Content and Usage",
       content: [
-        "All content on Abplay TV is owned by AB Textiles or licensed from third parties.",
+        "All content on Horizon Cast TV is owned by Horizon Cast TV or licensed from third parties.",,
         "You may stream content for personal, non-commercial use only.",
         "Downloading or redistribution of content is strictly prohibited unless explicitly allowed.",
         "You may not use VPNs or other methods to circumvent geographic restrictions.",
@@ -60,7 +60,7 @@ const Terms = () => {
       title: "6. Prohibited Activities",
       content: [
         "You may not share your account credentials with others outside your household.",
-        "Commercial use of Abplay TV services is strictly prohibited.",
+        "Commercial use of Horizon Cast TV services is strictly prohibited.",,
         "You may not attempt to hack, reverse engineer, or compromise our systems.",
         "Creating multiple accounts or using false information is prohibited.",
         "Any illegal or harmful activities using our services will result in immediate termination."
@@ -122,8 +122,8 @@ const Terms = () => {
                 Terms of <span className="text-gradient">Service</span>
               </h1>
               <p className="text-xl text-muted-foreground max-w-3xl mx-auto leading-relaxed">
-                Please read these terms carefully. By using Abplay TV, you agree to be bound by these Terms of Service.
-                Abplay TV is owned and operated by AB Textiles.
+                Please read these terms carefully. By using Horizon Cast TV, you agree to be bound by these Terms of Service.
+                Horizon Cast TV is a premium streaming entertainment service.
               </p>
             </div>
           </AnimatedSection>
@@ -204,7 +204,7 @@ const Terms = () => {
                 <Card className="card-premium p-6">
                   <h3 className="text-lg font-semibold mb-4">Customer Support</h3>
                   <p className="text-muted-foreground mb-2">General Inquiries</p>
-                  <p className="text-muted-foreground mb-4">support@abplaytv.com</p>
+                  <p className="text-muted-foreground mb-4">support@horizoncasttv.com</p>
                   <Link to="/contact" onClick={() => window.scrollTo({ top: 0, behavior: 'smooth' })}>
                     <Button className="btn-hero w-full">
                       Contact Support

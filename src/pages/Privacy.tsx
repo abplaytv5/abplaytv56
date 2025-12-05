@@ -28,7 +28,7 @@ const Privacy = () => {
     {
       icon: Eye,
       title: "Service Provision",
-      description: "To provide, maintain, and improve Abplay TV streaming services"
+      description: "To provide, maintain, and improve Horizon Cast TV streaming services"
     },
     {
       icon: Settings,
@@ -98,7 +98,7 @@ const Privacy = () => {
               </h1>
               <p className="text-xl text-muted-foreground max-w-3xl mx-auto leading-relaxed">
                 Your privacy is our priority. Learn how AB Textiles collects, uses, and protects your personal 
-                information when you use Abplay TV services.
+                information when you use Horizon Cast TV services.
               </p>
             </div>
           </AnimatedSection>
@@ -112,7 +112,7 @@ const Privacy = () => {
                     <h3 className="text-lg font-semibold mb-2">Privacy Commitment</h3>
                     <p className="text-muted-foreground">
                       AB Textiles is committed to protecting your privacy and ensuring the security of your personal information. 
-                      This Privacy Policy explains how we collect, use, and safeguard your data when you use Abplay TV services.
+                      This Privacy Policy explains how we collect, use, and safeguard your data when you use Horizon Cast TV services.
                     </p>
                   </div>
                 </div>
@@ -305,7 +305,7 @@ const Privacy = () => {
                 <Card className="card-premium p-6">
                   <h3 className="text-lg font-semibold mb-4">Data Requests</h3>
                   <p className="text-muted-foreground mb-2">Data Access & Deletion</p>
-                  <p className="text-muted-foreground">datarequests@abplaytv.com</p>
+                  <p className="text-muted-foreground">datarequests@horizoncasttv.com</p>
                 </Card>
               </div>
             </AnimatedSection>

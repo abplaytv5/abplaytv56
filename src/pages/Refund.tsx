@@ -95,11 +95,11 @@ const Refund = () => {
   const faqs = [
     {
       question: "How do I request a refund?",
-      answer: "You can request a refund by logging into your account and visiting the billing section, or by contacting our customer support team at support@abplaytv.com."
+      answer: "You can request a refund by logging into your account and visiting the billing section, or by contacting our customer support team at support@horizoncasttv.com."
     },
     {
       question: "Will I lose access immediately after requesting a refund?",
-      answer: "No, you'll continue to have access to Abplay TV until the end of your current billing period, even if a refund is approved."
+      answer: "No, you'll continue to have access to Horizon Cast TV until the end of your current billing period, even if a refund is approved."
     },
     {
       question: "Can I get a partial refund if I cancel mid-month?",
@@ -130,7 +130,7 @@ const Refund = () => {
               </h1>
               <p className="text-xl text-muted-foreground max-w-3xl mx-auto leading-relaxed">
                 AB Textiles is committed to customer satisfaction. Learn about our straightforward refund policy 
-                for Abplay TV services and how to request a refund if needed.
+                for Horizon Cast TV services and how to request a refund if needed.
               </p>
             </div>
           </AnimatedSection>
@@ -143,7 +143,7 @@ const Refund = () => {
                   <div>
                     <h3 className="text-lg font-semibold mb-2">30-Day Satisfaction Guarantee</h3>
                     <p className="text-muted-foreground">
-                      We're confident you'll love Abplay TV. If you're not completely satisfied within your first 30 days, 
+                      We're confident you'll love Horizon Cast TV. If you're not completely satisfied within your first 30 days, 
                       we'll provide a full refund. AB Textiles stands behind the quality of our streaming services.
                     </p>
                   </div>
@@ -342,12 +342,12 @@ const Refund = () => {
                 <Card className="card-premium p-6">
                   <h3 className="text-lg font-semibold mb-4">Billing Support</h3>
                   <p className="text-muted-foreground mb-2">Refunds & Billing Issues</p>
-                  <p className="text-muted-foreground">billing@abplaytv.com</p>
+                  <p className="text-muted-foreground">billing@horizoncasttv.com</p>
                 </Card>
                 <Card className="card-premium p-6">
                   <h3 className="text-lg font-semibold mb-4">Customer Service</h3>
                   <p className="text-muted-foreground mb-2">General Support</p>
-                  <p className="text-muted-foreground">support@abplaytv.com</p>
+                  <p className="text-muted-foreground">support@horizoncasttv.com</p>
                 </Card>
               </div>
               <Link to="/contact" onClick={() => window.scrollTo({ top: 0, behavior: 'smooth' })}>

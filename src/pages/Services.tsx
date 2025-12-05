@@ -172,7 +172,7 @@ const Services = () => {
   const bundles = [
     {
       name: "Entertainment Bundle",
-      services: ["Abplay TV Pro", "Music Streaming", "E-book Library"],
+      services: ["Horizon Cast TV Pro", "Music Streaming", "E-book Library"],
       originalPrice: 79.97,
       bundlePrice: 59.99,
       savings: 19.98,
@@ -180,7 +180,7 @@ const Services = () => {
     },
     {
       name: "Sports Fan Bundle",
-      services: ["Abplay TV Premium", "Sports Add-on", "Fantasy Sports Pro"],
+      services: ["Horizon Cast TV Premium", "Sports Add-on", "Fantasy Sports Pro"],
       originalPrice: 99.97,
       bundlePrice: 79.99,
       savings: 19.98,
@@ -188,7 +188,7 @@ const Services = () => {
     },
     {
       name: "Family Complete",
-      services: ["Abplay TV Pro", "Kids Learning Apps", "Parental Controls Pro"],
+      services: ["Horizon Cast TV Pro", "Kids Learning Apps", "Parental Controls Pro"],
       originalPrice: 69.97,
       bundlePrice: 54.99,
       savings: 14.98,
@@ -438,7 +438,7 @@ const Services = () => {
                   Risk-Free <span className="text-gradient">Guarantee</span>
                 </h2>
                 <p className="text-2xl text-muted-foreground leading-relaxed mb-12 max-w-3xl mx-auto">
-                  Try Abplay TV completely risk-free with our 30-day money-back guarantee. Love it or get a full refund—no questions asked.
+                  Try Horizon Cast TV completely risk-free with our 30-day money-back guarantee. Love it or get a full refund—no questions asked.
                 </p>
               </div>
             </AnimatedSection>

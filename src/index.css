@@ -2,7 +2,7 @@
 @tailwind components;
 @tailwind utilities;
 
-/* Abplay TV Design System - Premium Streaming Platform
+/* Horizon Cast TV Design System - Premium Streaming Platform
 All colors MUST be HSL for consistency.
 */
 
@@ -20,7 +20,7 @@ All colors MUST be HSL for consistency.
     --popover: 220 20% 10%;
     --popover-foreground: 0 0% 95%;
 
-    /* Brand colors - Abplay TV red theme */
+    /* Brand colors - Horizon Cast TV gradient theme */
     --primary: 0 84% 52%;
     --primary-foreground: 0 0% 100%;
     --primary-glow: 0 100% 65%;
