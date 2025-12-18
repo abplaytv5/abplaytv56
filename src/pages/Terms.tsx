@@ -10,57 +10,57 @@ const Terms = () => {
     {
       title: "1. Service Agreement",
       content: [
-        "These Terms of Service ('Terms') govern your use of Horizon Cast TV streaming services ('Services'). By accessing or using our services, you agree to be bound by these Terms.",
-        "By creating an account or using our services, you agree to be bound by these Terms and our Privacy Policy.",
+        "These Terms of Service ('Terms') govern your use of HorizonCast TV assistance services ('Services'). By accessing or using our services, you agree to be bound by these Terms.",
+        "By creating an account or requesting assistance, you agree to be bound by these Terms and our Privacy Policy.",
         "You must be at least 18 years old or have parental consent to use our services.",
-        "AB Textiles reserves the right to modify these Terms at any time. Continued use of the service constitutes acceptance of updated Terms."
+        "HorizonCast TV reserves the right to modify these Terms at any time. Continued use of the service constitutes acceptance of updated Terms."
       ]
     },
     {
       title: "2. Account Responsibilities",
       content: [
         "You are responsible for maintaining the confidentiality of your account credentials.",
-        "You agree to provide accurate and complete information when creating your account.",
-        "One account per household is permitted for personal, non-commercial use only.",
+        "You agree to provide accurate and complete information when requesting assistance.",
+        "Accounts are for individual or household use for personal assistance purposes only.",
         "You must notify us immediately of any unauthorized use of your account.",
-        "AB Textiles reserves the right to suspend or terminate accounts that violate these Terms."
+        "HorizonCast TV reserves the right to suspend or terminate accounts that violate these Terms."
       ]
     },
     {
       title: "3. Service Availability",
       content: [
-        "Horizon Cast TV services are provided 'as is' and are subject to availability.",,
-        "We strive for 99.9% uptime but cannot guarantee uninterrupted service.",
-        "Content availability may vary by location and is subject to licensing agreements.",
-        "AB Textiles reserves the right to modify, suspend, or discontinue any aspect of the service.",
-        "Some features may not be available on all devices or in all regions."
+        "HorizonCast TV assistance services are provided 'as is' and are subject to availability.",
+        "We strive to provide timely responses but cannot guarantee immediate availability.",
+        "Assistance availability may vary based on demand and consultant schedules.",
+        "HorizonCast TV reserves the right to modify, suspend, or discontinue any aspect of the service.",
+        "Some assistance areas may not be available in all regions."
       ]
     },
     {
-      title: "4. Content and Usage",
+      title: "4. Service Usage and Restrictions",
       content: [
-        "All content on Horizon Cast TV is owned by Horizon Cast TV or licensed from third parties.",,
-        "You may stream content for personal, non-commercial use only.",
-        "Downloading or redistribution of content is strictly prohibited unless explicitly allowed.",
-        "You may not use VPNs or other methods to circumvent geographic restrictions.",
-        "Recording or capturing of streamed content is prohibited by copyright law."
+        "All educational materials and guidance provided by HorizonCast TV are for personal use only.",
+        "You may use our assistance services for personal, non-commercial purposes.",
+        "Redistribution or resale of our assistance services is strictly prohibited.",
+        "You agree to use our services in good faith and provide accurate information during consultations.",
+        "Misuse of our services or providing false information may result in service termination."
       ]
     },
     {
       title: "5. Payment and Billing",
       content: [
-        "Subscription fees are billed in advance on a monthly or annual basis.",
-        "All fees are non-refundable except as required by law or stated in our Refund Policy.",
-        "Price changes will be communicated at least 30 days in advance.",
-        "AB Textiles uses secure third-party payment processors for all transactions.",
-        "You authorize automatic renewal unless you cancel before the next billing period."
+        "Assistance service fees are charged based on the package or consultation selected.",
+        "Fees are subject to our Refund Policy, which allows refunds within 7-15 days of service delivery.",
+        "Pricing will be clearly communicated before you agree to any assistance services.",
+        "HorizonCast TV uses secure third-party payment processors for all transactions.",
+        "Separate assistance fees apply to all services. There are no subscriptions or automatic renewals."
       ]
     },
     {
       title: "6. Prohibited Activities",
       content: [
         "You may not share your account credentials with others outside your household.",
-        "Commercial use of Horizon Cast TV services is strictly prohibited.",,
+        "Commercial resale or redistribution of our assistance services is strictly prohibited.",
         "You may not attempt to hack, reverse engineer, or compromise our systems.",
         "Creating multiple accounts or using false information is prohibited.",
         "Any illegal or harmful activities using our services will result in immediate termination."
@@ -70,40 +70,40 @@ const Terms = () => {
       title: "7. Privacy and Data",
       content: [
         "Your privacy is important to us. Please review our Privacy Policy for details on data collection and use.",
-        "AB Textiles collects viewing data to improve recommendations and service quality.",
+        "HorizonCast TV collects consultation and usage data to improve assistance quality.",
         "We implement industry-standard security measures to protect your personal information.",
-        "You can control many privacy settings through your account preferences.",
+        "You can control privacy settings through your account preferences.",
         "We do not sell your personal information to third parties."
       ]
     },
     {
       title: "8. Limitation of Liability",
       content: [
-        "AB Textiles' liability is limited to the amount you paid for the service in the past 12 months.",
+        "HorizonCast TV's liability is limited to the amount you paid for assistance services in the past 12 months.",
         "We are not liable for indirect, incidental, or consequential damages.",
         "Some jurisdictions do not allow limitation of liability, so these limits may not apply to you.",
-        "Our services are provided without warranties of any kind, express or implied.",
-        "You agree to indemnify AB Textiles against claims arising from your use of the service."
+        "Our assistance services are educational and provided without warranties of specific outcomes.",
+        "You agree to indemnify HorizonCast TV against claims arising from your use of the service."
       ]
     },
     {
       title: "9. Termination",
       content: [
-        "You may cancel your subscription at any time through your account settings.",
-        "AB Textiles may terminate your account for violation of these Terms.",
-        "Upon termination, your access to the service will cease immediately.",
-        "Downloaded content will no longer be accessible after account termination.",
+        "You may close your account at any time through your account settings.",
+        "HorizonCast TV may terminate your account for violation of these Terms.",
+        "Upon termination, your access to assistance services will cease immediately.",
+        "Educational materials provided during consultations remain available per our data retention policy.",
         "These Terms survive termination where applicable by law."
       ]
     },
     {
       title: "10. Governing Law",
       content: [
-        "These Terms are governed by the laws of the jurisdiction where AB Textiles is incorporated.",
+        "These Terms are governed by the laws of the jurisdiction where HorizonCast TV operates.",
         "Any disputes will be resolved through binding arbitration.",
         "Class action lawsuits are waived except where prohibited by law.",
         "If any provision of these Terms is invalid, the remaining provisions remain in effect.",
-        "These Terms constitute the entire agreement between you and AB Textiles regarding the service."
+        "These Terms constitute the entire agreement between you and HorizonCast TV regarding the assistance services."
       ]
     }
   ];
@@ -122,8 +122,8 @@ const Terms = () => {
                 Terms of <span className="text-gradient">Service</span>
               </h1>
               <p className="text-xl text-muted-foreground max-w-3xl mx-auto leading-relaxed">
-                Please read these terms carefully. By using Horizon Cast TV, you agree to be bound by these Terms of Service.
-                Horizon Cast TV is a premium streaming entertainment service.
+                Please read these terms carefully. By using HorizonCast TV, you agree to be bound by these Terms of Service.
+                HorizonCast TV is an independent third-party cable, internet, and streaming assistance service founded in 2025.
               </p>
             </div>
           </AnimatedSection>
@@ -136,20 +136,20 @@ const Terms = () => {
                   <div>
                     <h3 className="text-lg font-semibold mb-2">Important Notice</h3>
                     <p className="text-muted-foreground">
-                      These Terms of Service were last updated on January 1, 2024. 
-                      AB Textiles reserves the right to modify these terms at any time. 
-                      Continued use of the service after changes constitutes acceptance of the new terms.
+                      These Terms of Service were last updated on January 1, 2025. 
+                      HorizonCast TV reserves the right to modify these terms at any time. 
+                      Continued use of the assistance services after changes constitutes acceptance of the new terms.
                     </p>
                   </div>
                 </div>
                 <div className="flex items-center space-x-4 text-sm text-muted-foreground">
                   <div className="flex items-center space-x-2">
                     <Clock className="w-4 h-4" />
-                    <span>Last Updated: January 1, 2024</span>
+                    <span>Last Updated: January 1, 2025</span>
                   </div>
                   <div className="flex items-center space-x-2">
                     <Scale className="w-4 h-4" />
-                    <span>Governing Law: AB Textiles Jurisdiction</span>
+                    <span>Founded: 2025 | Independent Service</span>
                   </div>
                 </div>
               </Card>
@@ -198,8 +198,8 @@ const Terms = () => {
               <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
                 <Card className="card-premium p-6">
                   <h3 className="text-lg font-semibold mb-4">Legal Department</h3>
-                  <p className="text-muted-foreground mb-2">AB Textiles Legal Team</p>
-                  <p className="text-muted-foreground">legal@abtextiles.com</p>
+                  <p className="text-muted-foreground mb-2">HorizonCast TV Legal Team</p>
+                  <p className="text-muted-foreground">legal@horizoncasttv.com</p>
                 </Card>
                 <Card className="card-premium p-6">
                   <h3 className="text-lg font-semibold mb-4">Customer Support</h3>

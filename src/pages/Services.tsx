@@ -1,136 +1,135 @@
+import { useEffect } from "react";
 import { 
-  Play, 
-  Tv, 
-  Cloud, 
+  HelpCircle, 
+  Lightbulb, 
+  Headphones, 
   Users, 
   Shield, 
-  Headphones, 
+  CheckCircle, 
   Zap, 
   Globe,
-  Download,
-  Cast,
-  Settings,
-  Award,
-  CheckCircle,
-  Star
+  Star,
+  Info,
+  Clock,
+  BookOpen
 } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Card } from "@/components/ui/card";
-import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
+import { Link } from "react-router-dom";
 import Layout from "@/components/Layout";
 import AnimatedSection from "@/components/AnimatedSection";
 import contentGrid from "@/assets/content-grid.jpg";
 
 const Services = () => {
-  const subscriptionPlans = [
+  useEffect(() => {
+    window.scrollTo({ top: 0, behavior: 'smooth' });
+  }, []);
+
+  const assistancePackages = [
     {
-      name: "Starter",
-      price: 24.99,
-      popular: false,
-      badge: "Best Value",
+      name: "Basic Consultation",
+      description: "Perfect for quick questions and general guidance",
       features: [
-        "60+ Live TV Channels",
-        "50 Hours Cloud DVR",
-        "2 Simultaneous Streams",
-        "3 User Profiles",
-        "Full HD 1080p Quality",
-        "Mobile & TV Access",
-        "Cancel Anytime"
+        "30-minute phone consultation",
+        "Service comparison overview",
+        "General recommendations",
+        "Email follow-up support",
+        "Educational resources access"
       ],
-      ideal: "Great for solo streamers"
+      ideal: "Great for specific questions",
+      icon: HelpCircle,
+      color: "from-blue-500 to-cyan-500"
     },
     {
-      name: "Family",
-      price: 49.99,
+      name: "Comprehensive Guidance",
+      description: "In-depth assistance for making informed decisions",
       popular: true,
-      badge: "Most Popular",
       features: [
-        "100+ Live TV Channels",
-        "Unlimited Cloud DVR",
-        "4 Simultaneous Streams",
-        "6 User Profiles",
-        "4K Ultra HD + HDR",
-        "All Devices Included",
-        "Offline Downloads",
-        "Priority Support",
-        "No Contracts"
+        "60-minute detailed consultation",
+        "Personalized service comparison",
+        "Technical requirements review",
+        "Setup guidance documentation",
+        "Provider contact assistance",
+        "30-day follow-up support",
+        "Priority email support"
       ],
-      ideal: "Perfect for families"
+      ideal: "Perfect for most users",
+      icon: Lightbulb,
+      color: "from-purple-500 to-pink-500"
     },
     {
-      name: "Ultimate",
-      price: 79.99,
-      popular: false,
-      badge: "Premium",
+      name: "Premium Support Package",
+      description: "Complete assistance from start to finish",
       features: [
-        "Everything in Family",
-        "Premium Sports Package",
-        "HBO, Showtime & More",
-        "Exclusive Originals",
-        "Early Movie Releases",
-        "VIP Customer Support",
-        "Dolby Atmos Audio",
-        "8K Ready Streaming",
-        "Global Access"
+        "Multiple consultation sessions",
+        "Dedicated support specialist",
+        "Complete setup assistance guidance",
+        "Ongoing troubleshooting help",
+        "Provider negotiation tips",
+        "90-day extended support",
+        "Priority phone & email support",
+        "Customized service roadmap"
       ],
-      ideal: "Ultimate experience"
+      ideal: "Comprehensive support",
+      icon: Star,
+      color: "from-orange-500 to-red-500"
     }
   ];
 
   const coreServices = [
     {
-      name: "Live TV Excellence",
-      icon: Tv,
-      description: "Stream 100+ premium channels with zero buffering and crystal-clear picture quality",
+      name: "Cable & TV Guidance",
+      icon: HelpCircle,
+      description: "Assistance understanding cable and TV service options, packages, and pricing structures",
       features: [
-        "Every major broadcast network",
-        "Round-the-clock news coverage",
-        "Complete sports lineup",
-        "Premium entertainment channels",
-        "Local stations in your area",
-        "Live events in real-time"
+        "Package comparison assistance",
+        "Channel lineup explanations",
+        "Pricing structure breakdowns",
+        "Contract terms guidance",
+        "Bundle options analysis",
+        "Provider availability checks"
       ],
       color: "from-blue-500 to-cyan-500"
     },
     {
-      name: "Massive Content Library",
-      icon: Play,
-      description: "Explore 100,000+ hours of on-demand movies, series, and exclusive originals",
+      name: "Internet Service Help",
+      icon: Zap,
+      description: "Guidance on selecting the right internet service based on your speed and usage needs",
       features: [
-        "Latest blockbuster releases",
-        "Award-winning original series",
-        "Timeless classic collections",
-        "International cinema",
-        "Family-friendly programming",
-        "Fresh content added daily"
+        "Speed requirement calculations",
+        "Provider comparison support",
+        "Technology explanations (fiber, cable, DSL)",
+        "Router and equipment guidance",
+        "Installation process overview",
+        "Troubleshooting basics education"
       ],
       color: "from-purple-500 to-pink-500"
     },
     {
-      name: "Infinite Cloud DVR",
-      icon: Cloud,
-      description: "Never miss a moment with unlimited recording and 12-month storage",
+      name: "Streaming Platform Guidance",
+      icon: Lightbulb,
+      description: "Help navigating the world of streaming services and device compatibility",
       features: [
-        "Truly unlimited storage",
-        "Keep recordings for a full year",
-        "Skip ads with ease",
-        "Record 10 shows at once",
-        "Watch on any device",
-        "Smart series recording"
+        "Platform comparison assistance",
+        "Content library overviews",
+        "Device compatibility checks",
+        "Setup process guidance",
+        "Account management tips",
+        "Cost-saving strategies"
       ],
       color: "from-green-500 to-emerald-500"
     },
     {
-      name: "Personalized Profiles",
-      icon: Users,
-      description: "Everyone gets their own personalized entertainment hub with AI-powered recommendations",
+      name: "Technical Support Education",
+      icon: Headphones,
+      description: "Learn about common technical issues and how to resolve them independently",
       features: [
-        "6 fully customized profiles",
-        "AI content suggestions",
-        "Individual viewing history",
-        "Advanced parental controls",
-        "Personal watchlists",
-        "Smart content filtering"
+        "Connection troubleshooting guides",
+        "Wi-Fi optimization tips",
+        "Device setup walkthroughs",
+        "Account security education",
+        "Billing question guidance",
+        "Self-help resource library"
       ],
       color: "from-orange-500 to-red-500"
     }
@@ -138,61 +137,34 @@ const Services = () => {
 
   const additionalServices = [
     {
-      name: "Premium Support",
-      icon: Headphones,
-      description: "24/7 customer support with live chat, phone, and email assistance"
-    },
-    {
-      name: "Device Setup",
-      icon: Settings,
-      description: "Free assistance setting up Abplay TV on all your devices"
-    },
-    {
-      name: "Content Curation",
-      icon: Award,
-      description: "Expert-curated collections and personalized recommendations"
-    },
-    {
-      name: "Global Access",
+      name: "Nationwide Coverage",
       icon: Globe,
-      description: "Stream your content while traveling internationally"
+      description: "Assistance available for services in all 50 states"
     },
     {
-      name: "Offline Viewing",
-      icon: Download,
-      description: "Download content to watch without an internet connection"
+      name: "Independent Advice",
+      icon: Shield,
+      description: "Unbiased guidance with no provider affiliations"
     },
     {
-      name: "Screen Casting",
-      icon: Cast,
-      description: "Cast from mobile devices to TVs and streaming devices"
-    }
-  ];
-
-  const bundles = [
-    {
-      name: "Entertainment Bundle",
-      services: ["Horizon Cast TV Pro", "Music Streaming", "E-book Library"],
-      originalPrice: 79.97,
-      bundlePrice: 59.99,
-      savings: 19.98,
-      description: "Complete entertainment package for the whole family"
+      name: "Educational Resources",
+      icon: BookOpen,
+      description: "Comprehensive guides and learning materials"
     },
     {
-      name: "Sports Fan Bundle",
-      services: ["Horizon Cast TV Premium", "Sports Add-on", "Fantasy Sports Pro"],
-      originalPrice: 99.97,
-      bundlePrice: 79.99,
-      savings: 19.98,
-      description: "Everything a sports enthusiast needs"
+      name: "Flexible Scheduling",
+      icon: Clock,
+      description: "Consultations available at your convenience"
     },
     {
-      name: "Family Complete",
-      services: ["Horizon Cast TV Pro", "Kids Learning Apps", "Parental Controls Pro"],
-      originalPrice: 69.97,
-      bundlePrice: 54.99,
-      savings: 14.98,
-      description: "Perfect package for families with children"
+      name: "Personalized Support",
+      icon: Users,
+      description: "Tailored assistance for your specific needs"
+    },
+    {
+      name: "Ongoing Updates",
+      icon: Info,
+      description: "Stay informed about service changes and options"
     }
   ];
 
@@ -210,42 +182,50 @@ const Services = () => {
           <AnimatedSection>
             <div className="text-center max-w-5xl mx-auto">
               <div className="inline-block bg-gradient-to-r from-primary/20 to-purple-500/20 text-primary px-8 py-3 rounded-full text-sm font-bold mb-8 border border-primary/30">
-                💎 PREMIUM PLANS & SERVICES
+                🤝 ASSISTANCE SERVICES
               </div>
               <h1 className="text-5xl sm:text-6xl lg:text-8xl font-bold mb-8 leading-tight">
-                Entertainment
-                <span className="text-gradient block mt-2">Your Way</span>
+                Guidance
+                <span className="text-gradient block mt-2">You Can Trust</span>
               </h1>
               <p className="text-2xl sm:text-3xl text-muted-foreground mb-8 leading-relaxed">
-                Flexible plans. Unlimited possibilities. Zero compromises.
+                Independent. Educational. User-Focused.
               </p>
               <p className="text-xl text-muted-foreground mb-12 max-w-3xl mx-auto">
-                Choose the perfect plan for your lifestyle with premium features, unlimited content, and the freedom to cancel anytime.
+                We provide personalized assistance to help you navigate cable, internet, and streaming service options. Separate assistance fees apply.
               </p>
+              <Card className="max-w-3xl mx-auto bg-accent/30 border-primary/20 p-6">
+                <div className="flex items-start gap-4">
+                  <Info className="w-6 h-6 text-primary flex-shrink-0 mt-1" />
+                  <p className="text-sm text-foreground">
+                    <strong>Important:</strong> HorizonCast TV is an independent third-party service assistance startup, launched in 2025. We are not affiliated with any cable, internet, or streaming service provider.
+                  </p>
+                </div>
+              </Card>
             </div>
           </AnimatedSection>
         </div>
       </section>
 
-      {/* Subscription Plans - Full Width */}
+      {/* Assistance Packages - Full Width */}
       <section className="w-full py-24 bg-gradient-to-b from-background to-card/20">
         <div className="content-wrapper">
           <AnimatedSection>
             <div className="text-center mb-20">
               <div className="inline-block bg-gradient-to-r from-green-500/10 to-emerald-500/10 text-green-400 px-6 py-2 rounded-full text-sm font-semibold mb-6">
-                💰 FLEXIBLE PRICING
+                🎯 ASSISTANCE OPTIONS
               </div>
               <h2 className="text-5xl lg:text-6xl font-bold mb-6">
-                Choose Your <span className="text-gradient">Perfect Plan</span>
+                Choose Your <span className="text-gradient">Assistance Level</span>
               </h2>
               <p className="text-xl text-muted-foreground max-w-3xl mx-auto">
-                All plans include 14-day free trial. No credit card required. Cancel anytime.
+                Select the package that matches your needs. All services have separate assistance fees.
               </p>
             </div>
           </AnimatedSection>
 
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8 max-w-7xl mx-auto">
-                {subscriptionPlans.map((plan, index) => (
+                {assistancePackages.map((plan, index) => (
                   <AnimatedSection key={plan.name} delay={index * 100}>
                     <div className={`group relative h-full ${plan.popular ? 'md:-translate-y-4' : ''}`}>
                       {plan.popular && (
@@ -267,10 +247,6 @@ const Services = () => {
                         <div className="text-center mb-8 mt-4">
                           <h3 className="text-3xl font-bold mb-3">{plan.name}</h3>
                           <p className="text-muted-foreground text-lg mb-6">{plan.ideal}</p>
-                          <div className="mb-6">
-                            <span className="text-6xl font-bold text-primary">${plan.price}</span>
-                            <span className="text-muted-foreground text-xl">/mo</span>
-                          </div>
                         </div>
 
                         <ul className="space-y-4 mb-8">
@@ -285,7 +261,7 @@ const Services = () => {
                         </ul>
 
                         <Button className={plan.popular ? "btn-hero w-full text-lg py-6" : "btn-outline-hero w-full text-lg py-6"}>
-                          Start Free Trial
+                          Request Assistance
                         </Button>
                       </Card>
                     </div>
@@ -301,13 +277,13 @@ const Services = () => {
           <AnimatedSection>
             <div className="text-center mb-20">
               <div className="inline-block bg-gradient-to-r from-blue-500/10 to-purple-500/10 text-blue-400 px-6 py-2 rounded-full text-sm font-semibold mb-6">
-                ⚡ POWERFUL FEATURES
+                🎯 HOW WE HELP
               </div>
               <h2 className="text-5xl lg:text-6xl font-bold mb-6">
-                Everything You <span className="text-gradient">Need</span>
+                Assistance <span className="text-gradient">Categories</span>
               </h2>
               <p className="text-xl text-muted-foreground max-w-3xl mx-auto">
-                Premium features that elevate your streaming experience
+                Expert guidance across all service types
               </p>
             </div>
           </AnimatedSection>
@@ -346,10 +322,10 @@ const Services = () => {
           <AnimatedSection>
             <div className="text-center mb-20">
               <div className="inline-block bg-gradient-to-r from-purple-500/10 to-pink-500/10 text-purple-400 px-6 py-2 rounded-full text-sm font-semibold mb-6">
-                🎁 BONUS FEATURES
+                ✨ WHY CHOOSE US
               </div>
               <h2 className="text-5xl lg:text-6xl font-bold mb-6">
-                Even More <span className="text-gradient">Value</span>
+                Independent <span className="text-gradient">Advantage</span>
               </h2>
             </div>
           </AnimatedSection>
@@ -370,62 +346,8 @@ const Services = () => {
         </div>
       </section>
 
-      {/* Bundles - Full Width */}
-      <section className="w-full py-24 bg-gradient-to-b from-card/20 to-background">
-        <div className="content-wrapper">
-          <AnimatedSection>
-            <div className="text-center mb-20">
-              <div className="inline-block bg-gradient-to-r from-orange-500/10 to-red-500/10 text-orange-400 px-6 py-2 rounded-full text-sm font-semibold mb-6">
-                📦 SPECIAL BUNDLES
-              </div>
-              <h2 className="text-5xl lg:text-6xl font-bold mb-6">
-                Save More with <span className="text-gradient">Bundles</span>
-              </h2>
-              <p className="text-xl text-muted-foreground max-w-3xl mx-auto">
-                Combine services and save up to 25% on your monthly subscription
-              </p>
-            </div>
-          </AnimatedSection>
 
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-8 max-w-6xl mx-auto">
-            {bundles.map((bundle, index) => (
-              <AnimatedSection key={bundle.name} delay={index * 100}>
-                <Card className="bg-card/50 backdrop-blur-sm border border-border/50 p-10 h-full hover:scale-105 transition-all duration-300">
-                  <h3 className="text-2xl font-bold mb-4">{bundle.name}</h3>
-                  <p className="text-muted-foreground mb-6">{bundle.description}</p>
-                  
-                  <div className="mb-6">
-                    <div className="text-lg text-muted-foreground line-through mb-1">
-                      ${bundle.originalPrice.toFixed(2)}
-                    </div>
-                    <div className="text-4xl font-bold text-primary mb-1">
-                      ${bundle.bundlePrice.toFixed(2)}
-                    </div>
-                    <div className="text-sm text-green-500 font-semibold">
-                      Save ${bundle.savings.toFixed(2)}/month
-                    </div>
-                  </div>
-
-                  <ul className="space-y-2 mb-8">
-                    {bundle.services.map((svc, i) => (
-                      <li key={i} className="flex items-center justify-center space-x-2">
-                        <Star className="w-4 h-4 text-primary" />
-                        <span className="text-sm">{svc}</span>
-                      </li>
-                    ))}
-                  </ul>
-
-                  <Button className="btn-hero w-full">
-                    Get Bundle
-                  </Button>
-                </Card>
-              </AnimatedSection>
-            ))}
-          </div>
-        </div>
-      </section>
-
-      {/* Service Guarantee - Full Width */}
+      {/* Service Commitment - Full Width */}
       <section className="w-full py-24 bg-gradient-to-br from-primary/10 via-purple-500/5 to-background">
         <div className="content-wrapper">
           <div className="max-w-5xl mx-auto">
@@ -435,10 +357,10 @@ const Services = () => {
                   <Shield className="w-12 h-12 text-white" />
                 </div>
                 <h2 className="text-5xl lg:text-6xl font-bold mb-8">
-                  Risk-Free <span className="text-gradient">Guarantee</span>
+                  Our <span className="text-gradient">Commitment</span>
                 </h2>
                 <p className="text-2xl text-muted-foreground leading-relaxed mb-12 max-w-3xl mx-auto">
-                  Try Horizon Cast TV completely risk-free with our 30-day money-back guarantee. Love it or get a full refund—no questions asked.
+                  We provide honest, educational assistance with a 7-15 day refund policy for our services. Your success in finding the right service is our priority.
                 </p>
               </div>
             </AnimatedSection>
@@ -446,23 +368,23 @@ const Services = () => {
             <AnimatedSection delay={200}>
               <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mb-12">
                 <Card className="bg-card/50 backdrop-blur-sm border border-border/50 p-8 text-center">
-                  <div className="text-4xl font-bold text-primary mb-2">99.9%</div>
-                  <div className="text-muted-foreground text-lg">Uptime Guaranteed</div>
+                  <div className="text-4xl font-bold text-primary mb-2">100%</div>
+                  <div className="text-muted-foreground text-lg">Independent Guidance</div>
                 </Card>
                 <Card className="bg-card/50 backdrop-blur-sm border border-border/50 p-8 text-center">
-                  <div className="text-4xl font-bold text-primary mb-2">&lt; 1min</div>
-                  <div className="text-muted-foreground text-lg">Avg Support Response</div>
+                  <div className="text-4xl font-bold text-primary mb-2">7-15</div>
+                  <div className="text-muted-foreground text-lg">Day Refund Window</div>
                 </Card>
                 <Card className="bg-card/50 backdrop-blur-sm border border-border/50 p-8 text-center">
-                  <div className="text-4xl font-bold text-primary mb-2">24/7</div>
-                  <div className="text-muted-foreground text-lg">Expert Support</div>
+                  <div className="text-4xl font-bold text-primary mb-2">2025</div>
+                  <div className="text-muted-foreground text-lg">Founded & Independent</div>
                 </Card>
               </div>
               <div className="text-center">
                 <Button className="btn-hero text-xl px-14 py-7">
-                  Start Free Trial Today
+                  Request Assistance
                 </Button>
-                <p className="text-muted-foreground mt-4">No credit card required • Cancel anytime</p>
+                <p className="text-muted-foreground mt-4">Separate assistance fees apply • See refund policy for details</p>
               </div>
             </AnimatedSection>
           </div>

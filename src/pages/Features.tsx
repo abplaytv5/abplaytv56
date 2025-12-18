@@ -1,16 +1,16 @@
 import { 
-  Tv, 
-  Cloud, 
+  Lightbulb, 
+  HelpCircle, 
   Users, 
   Smartphone, 
-  Zap, 
+  BookOpen, 
   Shield, 
-  Download, 
-  Cast,
-  Monitor,
+  Target, 
+  CheckCircle,
+  Info,
   Headphones,
   Settings,
-  Star
+  Globe
 } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Card } from "@/components/ui/card";
@@ -21,54 +21,44 @@ import premiumViewing from "@/assets/premium-viewing.jpg";
 const Features = () => {
   const mainFeatures = [
     {
-      icon: Tv,
-      title: "100+ Live TV Channels",
-      description: "Stream premium channels with crystal-clear picture and zero buffering. Major networks, sports, entertainment, and international content all in one place.",
-      benefits: ["Complete network coverage", "Live sports & events", "Premium entertainment", "Local & international channels"],
+      icon: Lightbulb,
+      title: "Service Option Education",
+      description: "We help you understand different cable, internet, and streaming service options available in your area. Our guidance is independent and educational.",
+      benefits: ["Unbiased service comparisons", "Local availability insights", "Feature explanations", "Technology guidance"],
       color: "from-blue-500 to-cyan-500"
     },
     {
-      icon: Cloud,
-      title: "Unlimited Cloud DVR",
-      description: "Record every show you love with unlimited storage. Never miss a moment with recordings available for 12 months.",
-      benefits: ["Truly unlimited storage", "12-month retention", "Skip ads feature", "10 simultaneous recordings"],
+      icon: HelpCircle,
+      title: "Personalized Consultation",
+      description: "One-on-one assistance to help you evaluate service options based on your specific needs, preferences, and budget.",
+      benefits: ["Individual guidance sessions", "Budget analysis help", "Need assessment support", "Decision-making assistance"],
       color: "from-purple-500 to-pink-500"
     },
     {
-      icon: Users,
-      title: "6 Personalized Profiles",
-      description: "Everyone in your family gets their own profile with custom recommendations, watch history, and parental controls.",
-      benefits: ["AI recommendations", "Individual profiles", "Smart parental controls", "Personal watchlists"],
+      icon: BookOpen,
+      title: "Educational Resources",
+      description: "Access comprehensive guides and educational materials about cable, internet, and streaming technology to make informed decisions.",
+      benefits: ["How-to guides", "Service explainers", "Technology tutorials", "Industry insights"],
       color: "from-green-500 to-emerald-500"
     },
     {
-      icon: Smartphone,
-      title: "Multi-Device Streaming",
-      description: "Watch on any device - TVs, phones, tablets, computers, and gaming consoles. Up to 4 simultaneous streams.",
-      benefits: ["Cross-device sync", "4 simultaneous streams", "Offline downloads", "Universal compatibility"],
+      icon: Target,
+      title: "Technical Support Guidance",
+      description: "Get help understanding technical requirements, device compatibility, and setup processes for various services.",
+      benefits: ["Device compatibility info", "Setup guidance", "Troubleshooting education", "Technical Q&A support"],
       color: "from-orange-500 to-red-500"
     }
   ];
 
   const additionalFeatures = [
-    { icon: Zap, title: "4K Ultra HD", description: "Crystal-clear 4K streaming on all supported devices and content" },
-    { icon: Shield, title: "Bank-Level Security", description: "Enterprise encryption protects your data and privacy" },
-    { icon: Download, title: "Download & Watch", description: "Save shows and movies to watch offline anytime" },
-    { icon: Cast, title: "Smart Casting", description: "Easily cast to TVs with Chromecast and AirPlay support" },
-    { icon: Monitor, title: "All Screen Sizes", description: "Optimized experience from phones to 85-inch TVs" },
-    { icon: Headphones, title: "Dolby Atmos", description: "Premium immersive audio on compatible content" },
-    { icon: Settings, title: "AI Recommendations", description: "Smart engine learns your preferences and suggests content" },
-    { icon: Star, title: "Exclusive Originals", description: "Original series and movies available only on Horizon Cast TV" }
-  ];
-
-  const comparisonFeatures = [
-    { feature: "Live TV Channels", horizonCast: "100+", competitor1: "75+", competitor2: "65+" },
-    { feature: "Cloud DVR Storage", horizonCast: "Unlimited", competitor1: "50 hours", competitor2: "20 hours" },
-    { feature: "Simultaneous Streams", horizonCast: "4", competitor1: "2", competitor2: "1" },
-    { feature: "User Profiles", horizonCast: "6", competitor1: "4", competitor2: "5" },
-    { feature: "4K Content", horizonCast: "✓", competitor1: "✓", competitor2: "✗" },
-    { feature: "Offline Downloads", horizonCast: "✓", competitor1: "✗", competitor2: "✓" },
-    { feature: "Free Trial", horizonCast: "14 days", competitor1: "7 days", competitor2: "3 days" }
+    { icon: Globe, title: "Nationwide Coverage", description: "Assistance available for services across all 50 states" },
+    { icon: Shield, title: "Independent Advice", description: "Unbiased guidance with no provider affiliations" },
+    { icon: Users, title: "Personalized Approach", description: "Tailored assistance based on your unique situation" },
+    { icon: CheckCircle, title: "Transparent Process", description: "Clear explanations of our assistance services and fees" },
+    { icon: Smartphone, title: "Multiple Channels", description: "Get help via phone, email, or online consultation" },
+    { icon: Headphones, title: "Responsive Support", description: "Timely responses to your questions and concerns" },
+    { icon: Settings, title: "Ongoing Updates", description: "Stay informed about changes in service offerings" },
+    { icon: Info, title: "Educational Focus", description: "Empowering you to make informed service decisions" }
   ];
 
   return (
@@ -85,17 +75,25 @@ const Features = () => {
           <AnimatedSection>
             <div className="text-center max-w-5xl mx-auto">
               <div className="inline-block bg-gradient-to-r from-primary/20 to-purple-500/20 text-primary px-8 py-3 rounded-full text-sm font-bold mb-8 border border-primary/30">
-                ✨ PREMIUM FEATURES
+                ✨ ASSISTANCE FEATURES
               </div>
               <h1 className="text-5xl sm:text-6xl lg:text-8xl font-bold mb-8 leading-tight">
-                Powered By <span className="text-gradient">Innovation</span>
+                Expert <span className="text-gradient">Guidance</span>
               </h1>
               <p className="text-2xl sm:text-3xl text-muted-foreground mb-8 leading-relaxed">
-                Cutting-edge technology meets entertainment excellence
+                Independent assistance for your service decisions
               </p>
               <p className="text-xl text-muted-foreground mb-12 max-w-3xl mx-auto">
-                Discover the features that make Horizon Cast TV the ultimate streaming choice for millions
+                Discover how our educational platform helps you navigate cable, internet, and streaming options
               </p>
+              <Card className="max-w-3xl mx-auto bg-accent/30 border-primary/20 p-6">
+                <div className="flex items-start gap-4">
+                  <Info className="w-6 h-6 text-primary flex-shrink-0 mt-1" />
+                  <p className="text-sm text-foreground">
+                    <strong>Important:</strong> HorizonCast TV is an independent third-party service assistance startup, launched in 2025. We are not affiliated with any cable, internet, or streaming service provider. Separate assistance fees apply.
+                  </p>
+                </div>
+              </Card>
             </div>
           </AnimatedSection>
         </div>
@@ -107,13 +105,13 @@ const Features = () => {
           <AnimatedSection>
             <div className="text-center mb-20">
               <div className="inline-block bg-gradient-to-r from-blue-500/10 to-cyan-500/10 text-blue-400 px-6 py-2 rounded-full text-sm font-semibold mb-6">
-                🎯 CORE FEATURES
+                🎯 HOW WE ASSIST
               </div>
               <h2 className="text-5xl lg:text-6xl font-bold mb-6">
-                Everything You <span className="text-gradient">Deserve</span>
+                Guidance You <span className="text-gradient">Can Trust</span>
               </h2>
               <p className="text-xl text-muted-foreground max-w-3xl mx-auto">
-                Premium features built for the ultimate streaming experience
+                Independent assistance features designed to help you succeed
               </p>
             </div>
           </AnimatedSection>
@@ -146,19 +144,19 @@ const Features = () => {
         </div>
       </section>
 
-      {/* Advanced Capabilities - Full Width */}
+      {/* Additional Benefits - Full Width */}
       <section className="w-full py-24 bg-background">
         <div className="content-wrapper">
           <AnimatedSection>
             <div className="text-center mb-20">
               <div className="inline-block bg-gradient-to-r from-purple-500/10 to-pink-500/10 text-purple-400 px-6 py-2 rounded-full text-sm font-semibold mb-6">
-                ⚡ ADVANCED TECHNOLOGY
+                ✨ MORE BENEFITS
               </div>
               <h2 className="text-5xl lg:text-6xl font-bold mb-6">
-                Cutting-Edge <span className="text-gradient">Capabilities</span>
+                Why Choose <span className="text-gradient">Us</span>
               </h2>
               <p className="text-xl text-muted-foreground max-w-3xl mx-auto">
-                Advanced technology for superior entertainment
+                Independent assistance with your success in mind
               </p>
             </div>
           </AnimatedSection>
@@ -179,68 +177,22 @@ const Features = () => {
         </div>
       </section>
 
-      {/* Comparison - Full Width */}
-      <section className="w-full py-24 bg-gradient-to-b from-card/20 to-background">
-        <div className="content-wrapper">
-          <AnimatedSection>
-            <div className="text-center mb-20">
-              <div className="inline-block bg-gradient-to-r from-green-500/10 to-emerald-500/10 text-green-400 px-6 py-2 rounded-full text-sm font-semibold mb-6">
-                📊 HOW WE COMPARE
-              </div>
-              <h2 className="text-5xl lg:text-6xl font-bold mb-6">
-                Why Choose <span className="text-gradient">Horizon Cast TV</span>
-              </h2>
-              <p className="text-xl text-muted-foreground max-w-3xl mx-auto">
-                Industry-leading features at unbeatable value
-              </p>
-            </div>
-          </AnimatedSection>
-
-          <AnimatedSection delay={200}>
-            <div className="overflow-x-auto max-w-6xl mx-auto">
-              <table className="w-full">
-                <thead>
-                  <tr className="bg-gradient-to-r from-primary to-purple-500">
-                    <th className="text-left p-6 text-white font-semibold">Feature</th>
-                    <th className="text-center p-6 text-white font-semibold">Horizon Cast TV</th>
-                    <th className="text-center p-6 text-white font-semibold">Competitor A</th>
-                    <th className="text-center p-6 text-white font-semibold">Competitor B</th>
-                  </tr>
-                </thead>
-                <tbody>
-                  {comparisonFeatures.map((row, index) => (
-                    <tr key={row.feature} className={`border-b border-border/50 ${index % 2 === 0 ? "bg-card/30" : "bg-card/10"}`}>
-                      <td className="p-6 font-semibold">{row.feature}</td>
-                      <td className="p-6 text-center">
-                        <span className="font-bold text-primary">{row.horizonCast}</span>
-                      </td>
-                      <td className="p-6 text-center text-muted-foreground">{row.competitor1}</td>
-                      <td className="p-6 text-center text-muted-foreground">{row.competitor2}</td>
-                    </tr>
-                  ))}
-                </tbody>
-              </table>
-            </div>
-          </AnimatedSection>
-        </div>
-      </section>
-
       {/* CTA - Full Width */}
       <section className="w-full py-24 bg-gradient-to-br from-primary/10 via-purple-500/5 to-background">
         <div className="content-wrapper">
           <AnimatedSection>
             <div className="text-center max-w-4xl mx-auto">
               <h2 className="text-5xl lg:text-6xl font-bold mb-8">
-                Experience Premium <span className="text-gradient">Free</span>
+                Ready to Get <span className="text-gradient">Started?</span>
               </h2>
               <p className="text-2xl text-muted-foreground mb-12">
-                Try all features risk-free for 14 days with our complete trial
+                Connect with our assistance team to explore your service options
               </p>
               <Button className="btn-hero text-xl px-14 py-7 mb-6">
-                Start Free Trial Now
+                Request Assistance
               </Button>
               <p className="text-muted-foreground text-lg">
-                No credit card • Full feature access • Cancel anytime
+                Separate assistance fees apply • 7-15 day refund policy • Independent guidance
               </p>
             </div>
           </AnimatedSection>

@@ -1,57 +1,62 @@
+import { useEffect } from "react";
 import { Link } from "react-router-dom";
-import { RefreshCw, Clock, CreditCard, CheckCircle, XCircle, AlertCircle } from "lucide-react";
+import { RefreshCw, Clock, CreditCard, CheckCircle, XCircle, AlertCircle, Info } from "lucide-react";
 import { Card } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import Layout from "@/components/Layout";
 import AnimatedSection from "@/components/AnimatedSection";
 
 const Refund = () => {
+  useEffect(() => {
+    window.scrollTo({ top: 0, behavior: 'smooth' });
+  }, []);
+
   const refundScenarios = [
     {
-      scenario: "Free Trial Cancellation",
+      scenario: "Initial Consultation Assistance",
       eligible: true,
-      timeframe: "Before trial ends",
-      process: "Automatic - no charges applied",
+      timeframe: "Within 7 days of purchase",
+      process: "Full refund if services not yet delivered",
       icon: CheckCircle,
       color: "text-green-500"
     },
     {
-      scenario: "Monthly Subscription",
+      scenario: "Setup Guidance Services",
       eligible: true,
-      timeframe: "Within 7 days of billing",
-      process: "Full refund to original payment method",
+      timeframe: "Within 10 days of purchase",
+      process: "Partial refund if guidance partially delivered",
       icon: CheckCircle,
       color: "text-green-500"
     },
     {
-      scenario: "Annual Subscription",
+      scenario: "Comprehensive Support Package",
       eligible: true,
-      timeframe: "Within 30 days of billing",
-      process: "Prorated refund based on unused time",
+      timeframe: "Within 15 days of purchase",
+      process: "Prorated refund based on services utilized",
       icon: CheckCircle,
       color: "text-green-500"
     },
     {
-      scenario: "Add-on Services",
-      eligible: true,
-      timeframe: "Within 14 days of purchase",
-      process: "Full refund to original payment method",
-      icon: CheckCircle,
-      color: "text-green-500"
-    },
-    {
-      scenario: "Gift Subscriptions",
+      scenario: "One-Time Phone Consultation",
       eligible: false,
-      timeframe: "After activation",
-      process: "Non-refundable once activated",
+      timeframe: "After consultation completed",
+      process: "Non-refundable once service delivered",
       icon: XCircle,
       color: "text-red-500"
     },
     {
-      scenario: "Promotional Rates",
+      scenario: "Services Fully Rendered",
       eligible: false,
-      timeframe: "After promotional period",
-      process: "Standard rates apply, limited refunds",
+      timeframe: "After assistance completed",
+      process: "Non-refundable when services fully delivered",
+      icon: XCircle,
+      color: "text-red-500"
+    },
+    {
+      scenario: "Emergency Support Services",
+      eligible: false,
+      timeframe: "Immediate assistance",
+      process: "Non-refundable due to immediate delivery",
       icon: AlertCircle,
       color: "text-yellow-500"
     }
@@ -61,57 +66,63 @@ const Refund = () => {
     {
       step: 1,
       title: "Request Submission",
-      description: "Submit your refund request through your account dashboard or contact customer support",
+      description: "Contact us via email or phone to submit your refund request with service details",
       timeframe: "Immediate"
     },
     {
       step: 2,
-      title: "Request Review",
-      description: "Our team reviews your request and verifies eligibility based on our refund policy",
-      timeframe: "1-2 business days"
+      title: "Eligibility Review",
+      description: "Our team reviews your request based on service type, delivery status, and timeframe",
+      timeframe: "1-3 business days"
     },
     {
       step: 3,
       title: "Approval & Processing",
-      description: "Once approved, the refund is processed back to your original payment method",
-      timeframe: "2-3 business days"
+      description: "If approved, refund is processed back to your original payment method",
+      timeframe: "3-5 business days"
     },
     {
       step: 4,
       title: "Refund Completion",
-      description: "Refund appears in your account (timing varies by bank/payment provider)",
-      timeframe: "3-10 business days"
+      description: "Refund appears in your account (timing varies by financial institution)",
+      timeframe: "5-10 business days"
     }
   ];
 
   const exceptions = [
-    "Service interruptions due to technical issues beyond AB Textiles' control",
-    "Account suspension due to violation of Terms of Service",
-    "Chargebacks or disputed payments (refunds become void)",
-    "Requests made after the applicable refund timeframe",
-    "Services used extensively (>80% of billing period)"
+    "Services that have been fully delivered and completed",
+    "Refund requests submitted outside the applicable timeframe (7-15 days depending on service type)",
+    "Assistance services where guidance has already been provided in full",
+    "Emergency or immediate-delivery support services",
+    "Situations where user provided false or misleading information",
+    "Accounts suspended or terminated due to Terms of Service violations",
+    "Chargebacks or payment disputes (refunds become void upon dispute initiation)"
   ];
 
   const faqs = [
     {
       question: "How do I request a refund?",
-      answer: "You can request a refund by logging into your account and visiting the billing section, or by contacting our customer support team at support@horizoncasttv.com."
+      answer: "Contact our support team at abplaytv5@gmail.com or call (833) 814-7663 within the applicable timeframe. Include your service details, purchase date, and reason for the refund request."
     },
     {
-      question: "Will I lose access immediately after requesting a refund?",
-      answer: "No, you'll continue to have access to Horizon Cast TV until the end of your current billing period, even if a refund is approved."
+      question: "What is the refund timeframe?",
+      answer: "Refund eligibility ranges from 7 to 15 days depending on the type of assistance service purchased. Initial consultations: 7 days. Setup guidance: 10 days. Comprehensive packages: 15 days. The timeframe begins from your purchase date."
     },
     {
-      question: "Can I get a partial refund if I cancel mid-month?",
-      answer: "For monthly subscriptions cancelled within 7 days, you receive a full refund. For annual subscriptions, prorated refunds are available within 30 days."
+      question: "Will I receive a full or partial refund?",
+      answer: "This depends on the services already delivered. If no guidance has been provided, you may receive a full refund within the timeframe. If services have been partially delivered, a prorated refund may apply based on what was utilized."
     },
     {
       question: "What if my payment method is no longer valid?",
-      answer: "If we cannot refund to your original payment method, we'll contact you to arrange an alternative refund method, such as account credit or bank transfer."
+      answer: "If we cannot process a refund to your original payment method, we'll contact you to arrange an alternative such as bank transfer or account credit for future services."
     },
     {
-      question: "Are there any fees for processing refunds?",
-      answer: "AB Textiles does not charge any fees for processing legitimate refunds. However, your bank or payment provider may have their own policies."
+      question: "Are there any refund processing fees?",
+      answer: "HorizonCast TV does not charge fees for legitimate refund requests. However, your bank or payment processor may have their own policies regarding returned payments."
+    },
+    {
+      question: "Can I get a refund if I'm unsatisfied with provider service?",
+      answer: "Our refund policy applies only to the assistance services we provide, not to the quality of services provided by cable, internet, or streaming companies. For provider service issues, you must contact the provider directly."
     }
   ];
 
@@ -121,7 +132,7 @@ const Refund = () => {
       <section className="section-spacing bg-gradient-to-b from-background to-card/30">
         <div className="container mx-auto px-4 sm:px-6 lg:px-8">
           <AnimatedSection>
-            <div className="text-center mb-16">
+            <div className="text-center mb-12">
               <div className="w-20 h-20 bg-gradient-primary rounded-full flex items-center justify-center mx-auto mb-8">
                 <RefreshCw className="w-10 h-10 text-primary-foreground" />
               </div>
@@ -129,27 +140,48 @@ const Refund = () => {
                 Refund <span className="text-gradient">Policy</span>
               </h1>
               <p className="text-xl text-muted-foreground max-w-3xl mx-auto leading-relaxed">
-                AB Textiles is committed to customer satisfaction. Learn about our straightforward refund policy 
-                for Horizon Cast TV services and how to request a refund if needed.
+                HorizonCast TV is committed to customer satisfaction. Learn about our refund policy 
+                for assistance services and how to request a refund if needed.
+              </p>
+              <p className="text-sm text-muted-foreground mt-4">
+                Last Updated: December 17, 2025
               </p>
             </div>
           </AnimatedSection>
 
+          {/* Independent Service Disclosure */}
           <AnimatedSection delay={200}>
+            <div className="max-w-4xl mx-auto mb-12">
+              <Card className="card-premium p-6 border-primary/30">
+                <div className="flex items-start space-x-4">
+                  <div className="w-12 h-12 bg-gradient-primary rounded-lg flex items-center justify-center flex-shrink-0">
+                    <Info className="w-6 h-6 text-primary-foreground" />
+                  </div>
+                  <div>
+                    <h3 className="text-lg font-semibold mb-2">Important Notice</h3>
+                    <p className="text-muted-foreground leading-relaxed">
+                      <strong>HorizonCast TV is an independent third-party service assistance startup, launched in 2025.</strong> This refund policy applies exclusively to the assistance and guidance services we provide. We do not sell, provide, or manage cable, internet, or streaming services. Any subscriptions or services you purchase from providers are subject to those providers' own refund and cancellation policies.
+                    </p>
+                  </div>
+                </div>
+              </Card>
+            </div>
+          </AnimatedSection>
+
+          <AnimatedSection delay={300}>
             <div className="max-w-4xl mx-auto">
               <Card className="card-premium p-8">
                 <div className="flex items-start space-x-4 mb-6">
                   <CheckCircle className="w-6 h-6 text-green-500 flex-shrink-0 mt-1" />
                   <div>
-                    <h3 className="text-lg font-semibold mb-2">30-Day Satisfaction Guarantee</h3>
+                    <h3 className="text-lg font-semibold mb-2">7-15 Day Refund Window</h3>
                     <p className="text-muted-foreground">
-                      We're confident you'll love Horizon Cast TV. If you're not completely satisfied within your first 30 days, 
-                      we'll provide a full refund. AB Textiles stands behind the quality of our streaming services.
+                      We offer refunds within 7 to 15 days of purchase, depending on the type of assistance service and whether our guidance has already been delivered. Refund eligibility is evaluated based on service utilization and delivery status.
                     </p>
                   </div>
                 </div>
                 <p className="text-sm text-muted-foreground">
-                  Policy effective: January 1, 2024 | Applies to all new subscriptions
+                  Policy effective: January 1, 2025 | Applies to all assistance services
                 </p>
               </Card>
             </div>
@@ -249,9 +281,11 @@ const Refund = () => {
                             </div>
                             <div className="lg:text-right">
                               {index === 0 && (
-                                <Button className="btn-hero w-full lg:w-auto">
-                                  Start Refund Request
-                                </Button>
+                                <a href="mailto:abplaytv5@gmail.com">
+                                  <Button className="btn-hero w-full lg:w-auto">
+                                    Request Assistance Refund
+                                  </Button>
+                                </a>
                               )}
                             </div>
                           </div>
@@ -332,22 +366,21 @@ const Refund = () => {
                 <CreditCard className="w-8 h-8 text-primary-foreground" />
               </div>
               <h2 className="text-3xl font-bold mb-6">
-                Need Help with a <span className="text-gradient">Refund?</span>
+                Need Help with a <span className="text-gradient">Refund Request?</span>
               </h2>
               <p className="text-xl text-muted-foreground mb-8">
-                Our billing support team is here to help with any refund questions or requests.
-                AB Textiles is committed to making the process as smooth as possible.
+                Our support team is here to help with refund questions or requests for our assistance services.
               </p>
               <div className="grid grid-cols-1 md:grid-cols-2 gap-8 mb-8">
                 <Card className="card-premium p-6">
-                  <h3 className="text-lg font-semibold mb-4">Billing Support</h3>
-                  <p className="text-muted-foreground mb-2">Refunds & Billing Issues</p>
-                  <p className="text-muted-foreground">billing@horizoncasttv.com</p>
+                  <h3 className="text-lg font-semibold mb-4">Email Support</h3>
+                  <p className="text-muted-foreground mb-2">Refund Requests & Questions</p>
+                  <a href="mailto:abplaytv5@gmail.com" className="text-primary hover:underline">abplaytv5@gmail.com</a>
                 </Card>
                 <Card className="card-premium p-6">
-                  <h3 className="text-lg font-semibold mb-4">Customer Service</h3>
-                  <p className="text-muted-foreground mb-2">General Support</p>
-                  <p className="text-muted-foreground">support@horizoncasttv.com</p>
+                  <h3 className="text-lg font-semibold mb-4">Phone Support</h3>
+                  <p className="text-muted-foreground mb-2">Speak with Our Team</p>
+                  <a href="tel:+18338147663" className="text-primary hover:underline">(833) 814-7663</a>
                 </Card>
               </div>
               <Link to="/contact" onClick={() => window.scrollTo({ top: 0, behavior: 'smooth' })}>
@@ -356,9 +389,20 @@ const Refund = () => {
                 </Button>
               </Link>
               <p className="text-muted-foreground mt-4">
-                Available 24/7 • Average response time: 2 hours
+                Business Hours: Monday - Friday, 9:00 AM - 6:00 PM EST
               </p>
             </AnimatedSection>
+          </div>
+        </div>
+      </section>
+
+      {/* Bottom Disclosure */}
+      <section className="bg-accent/50 border-t border-border">
+        <div className="container mx-auto px-4 sm:px-6 lg:px-8 py-6">
+          <div className="max-w-4xl mx-auto text-center">
+            <p className="text-sm text-muted-foreground leading-relaxed">
+              HorizonCast TV is an independent third-party service assistance startup. We are not affiliated with, endorsed by, or sponsored by any cable, internet, or streaming service provider. All trademarks belong to their respective owners.
+            </p>
           </div>
         </div>
       </section>

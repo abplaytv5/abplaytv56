@@ -14,22 +14,14 @@ const Footer = () => {
       { name: "Devices", path: "/devices" },
     ],
     support: [
-      { name: "Help Center", path: "#" },
+      { name: "FAQ", path: "/faq" },
       { name: "Contact Us", path: "/contact" },
-      { name: "System Status", path: "#" },
-      { name: "Accessibility", path: "#" },
+      { name: "Disclaimer", path: "/disclaimer" },
     ],
     legal: [
       { name: "Terms of Service", path: "/terms" },
       { name: "Privacy Policy", path: "/privacy" },
       { name: "Refund Policy", path: "/refund" },
-      { name: "Cookie Policy", path: "#" },
-    ],
-    resources: [
-      { name: "Download Apps", path: "#" },
-      { name: "Gift Cards", path: "#" },
-      { name: "Media Center", path: "#" },
-      { name: "Investor Relations", path: "#" },
     ],
   };
 
@@ -42,19 +34,27 @@ const Footer = () => {
   return (
     <footer className="bg-card border-t border-border">
       <div className="container mx-auto px-4 sm:px-6 lg:px-8 py-12 lg:py-16">
+        {/* Independent Service Disclosure - Above Footer Content */}
+        <div className="mb-8 pb-8 border-b border-border">
+          <div className="bg-accent/30 border border-primary/20 rounded-lg p-6">
+            <p className="text-sm text-center leading-relaxed text-foreground">
+              <strong className="font-semibold">Important Disclosure:</strong> HorizonCast TV is an independent third-party service assistance startup, launched in 2025, and is not affiliated with, endorsed by, or sponsored by any cable, internet, or streaming service provider. We provide educational guidance and support only. All trademarks belong to their respective owners.
+            </p>
+          </div>
+        </div>
+
         {/* Main Footer Content */}
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-8 lg:gap-12">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 lg:gap-12">
           {/* Brand Section */}
           <div className="lg:col-span-1">
             <Link to="/" className="flex items-center space-x-2 mb-6" onClick={handleNavigation}>
               <div className="w-8 h-8 bg-gradient-primary rounded-lg flex items-center justify-center">
                 <Play className="w-4 h-4 text-primary-foreground fill-current" />
               </div>
-              <span className="text-xl font-bold text-gradient">Horizon Cast TV</span>
+              <span className="text-xl font-bold text-gradient">HorizonCast TV</span>
             </Link>
             <p className="text-muted-foreground text-sm leading-relaxed mb-4">
-              Premium streaming entertainment platform owned and operated by AB Textiles. 
-              Experience unlimited movies, shows, and live TV anywhere, anytime.
+              Independent service assistance platform helping users navigate cable, internet, and streaming options since 2025.
             </p>
             
             {/* Contact Info */}
@@ -108,16 +108,23 @@ const Footer = () => {
         </div>
 
         {/* Bottom Bar */}
-        <div className="border-t border-border mt-12 pt-8 flex flex-col lg:flex-row justify-between items-center space-y-4 lg:space-y-0">
-          <div className="text-muted-foreground text-sm">
-            © {new Date().getFullYear()} Horizon Cast TV. Premium Streaming Entertainment. All rights reserved.
+        <div className="border-t border-border mt-12 pt-8">
+          <div className="text-center mb-4">
+            <p className="text-muted-foreground text-sm leading-relaxed">
+              HorizonCast TV is an independent third-party service assistance startup. All trademarks and service names referenced on this site belong to their respective owners. We are not affiliated with, endorsed by, or sponsored by any cable, internet, or streaming service provider.
+            </p>
           </div>
-          
-          <div className="flex items-center space-x-6">
-            <span className="text-muted-foreground text-sm">Available worldwide</span>
-            <div className="flex items-center space-x-2">
-              <div className="w-2 h-2 bg-green-500 rounded-full animate-pulse"></div>
-              <span className="text-green-500 text-sm font-medium">Service Active</span>
+          <div className="flex flex-col lg:flex-row justify-between items-center space-y-4 lg:space-y-0">
+            <div className="text-muted-foreground text-sm">
+              © {new Date().getFullYear()} HorizonCast TV. Independent Service Assistance Platform. All rights reserved.
+            </div>
+            
+            <div className="flex items-center space-x-6">
+              <span className="text-muted-foreground text-sm">Nationwide Assistance Available</span>
+              <div className="flex items-center space-x-2">
+                <div className="w-2 h-2 bg-green-500 rounded-full animate-pulse"></div>
+                <span className="text-green-500 text-sm font-medium">Support Active</span>
+              </div>
             </div>
           </div>
         </div>

@@ -4,10 +4,10 @@ import {
   Tablet, 
   Monitor, 
   Gamepad2, 
-  Cast,
-  Download,
-  Wifi,
-  Settings,
+  HelpCircle,
+  BookOpen,
+  Lightbulb,
+  Info,
   CheckCircle
 } from "lucide-react";
 import { Button } from "@/components/ui/button";
@@ -19,116 +19,116 @@ import devicesHero from "@/assets/devices-hero.jpg";
 const Devices = () => {
   const deviceCategories = [
     {
-      title: "Smart TVs",
+      title: "Smart TV Assistance",
       icon: Tv,
-      description: "Watch directly on your smart TV with built-in apps",
+      description: "We help you understand smart TV options and setup",
       devices: [
-        { name: "Samsung Smart TV", years: "2018-2024", available: true },
-        { name: "LG webOS TV", years: "2018-2024", available: true },
-        { name: "Sony Android TV", years: "2019-2024", available: true },
-        { name: "TCL Roku TV", years: "2017-2024", available: true },
-        { name: "Hisense VIDAA TV", years: "2020-2024", available: true },
-        { name: "Vizio SmartCast", years: "2018-2024", available: true }
+        { name: "Brand Comparisons", years: "Samsung, LG, Sony, TCL", available: true },
+        { name: "Feature Guidance", years: "4K, HDR, Smart Features", available: true },
+        { name: "App Help", years: "Streaming App Setup", available: true },
+        { name: "Connection Support", years: "WiFi, Ethernet, HDMI", available: true },
+        { name: "Picture Settings", years: "Optimization Tips", available: true },
+        { name: "Sound System Help", years: "Audio Setup Guidance", available: true }
       ]
     },
     {
-      title: "Streaming Devices",
-      icon: Cast,
-      description: "Connect any TV to the world of streaming",
+      title: "Streaming Device Guidance",
+      icon: HelpCircle,
+      description: "Learn about different streaming device options",
       devices: [
-        { name: "Roku Ultra/Express", years: "All models", available: true },
-        { name: "Apple TV 4K/HD", years: "4th gen+", available: true },
-        { name: "Amazon Fire TV Stick", years: "All models", available: true },
-        { name: "Google Chromecast", years: "3rd gen+", available: true },
-        { name: "NVIDIA Shield TV", years: "All models", available: true },
-        { name: "Xiaomi Mi Box", years: "S/4K", available: true }
+        { name: "Roku Education", years: "Model Differences", available: true },
+        { name: "Apple TV Info", years: "Features & Setup", available: true },
+        { name: "Fire TV Support", years: "Amazon Device Help", available: true },
+        { name: "Chromecast Tips", years: "Google Device Guide", available: true },
+        { name: "Device Comparison", years: "Finding Best Fit", available: true },
+        { name: "Setup Walkthroughs", years: "Installation Help", available: true }
       ]
     },
     {
-      title: "Mobile Devices",
+      title: "Mobile Device Help",
       icon: Smartphone,
-      description: "Stream on the go with our mobile apps",
+      description: "Assistance with streaming on mobile devices",
       devices: [
-        { name: "iPhone", years: "iOS 12+", available: true },
-        { name: "iPad", years: "iOS 12+", available: true },
-        { name: "Android Phone", years: "Android 7+", available: true },
-        { name: "Android Tablet", years: "Android 7+", available: true },
-        { name: "Windows Phone", years: "Discontinued", available: false },
-        { name: "Amazon Fire Tablet", years: "7th gen+", available: true }
+        { name: "iPhone Setup", years: "iOS App Help", available: true },
+        { name: "iPad Optimization", years: "Tablet Streaming", available: true },
+        { name: "Android Phone Tips", years: "Setup & Usage", available: true },
+        { name: "Android Tablet Guide", years: "App Installation", available: true },
+        { name: "Data Usage Tips", years: "Mobile Streaming", available: true },
+        { name: "Tablet Guidance", years: "Amazon Fire & More", available: true }
       ]
     },
     {
-      title: "Computers",
+      title: "Computer Assistance",
       icon: Monitor,
-      description: "Watch on any computer with a web browser",
+      description: "Help with streaming on computers and laptops",
       devices: [
-        { name: "Windows PC", years: "Windows 10+", available: true },
-        { name: "Mac", years: "macOS 10.14+", available: true },
-        { name: "Chromebook", years: "ChromeOS 88+", available: true },
-        { name: "Linux", years: "Ubuntu 18+", available: true },
-        { name: "Web Browsers", years: "Chrome, Firefox, Safari, Edge", available: true }
+        { name: "Windows PC Help", years: "Browser Streaming", available: true },
+        { name: "Mac Support", years: "macOS Guidance", available: true },
+        { name: "Chromebook Tips", years: "Chrome OS Help", available: true },
+        { name: "Linux Guidance", years: "Ubuntu & More", available: true },
+        { name: "Browser Selection", years: "Chrome, Firefox, etc", available: true }
       ]
     },
     {
-      title: "Gaming Consoles",
+      title: "Gaming Console Support",
       icon: Gamepad2,
-      description: "Game and stream all in one place",
+      description: "Learn about streaming through game consoles",
       devices: [
-        { name: "PlayStation 5", years: "All models", available: true },
-        { name: "PlayStation 4", years: "All models", available: true },
-        { name: "Xbox Series X/S", years: "All models", available: true },
-        { name: "Xbox One", years: "All models", available: true },
-        { name: "Nintendo Switch", years: "Coming soon", available: false }
+        { name: "PlayStation Setup", years: "PS4 & PS5", available: true },
+        { name: "Xbox Guidance", years: "One & Series X/S", available: true },
+        { name: "App Installation", years: "Console Apps", available: true },
+        { name: "Network Help", years: "Connection Issues", available: true },
+        { name: "Feature Tips", years: "Console Streaming", available: true }
       ]
     }
   ];
 
   const features = [
     {
-      icon: Wifi,
-      title: "Seamless Sync",
-      description: "Start watching on one device and continue on another without missing a beat"
+      icon: BookOpen,
+      title: "Educational Guides",
+      description: "Comprehensive guides to help you understand device compatibility and setup processes"
     },
     {
-      icon: Download,
-      title: "Offline Viewing",
-      description: "Download content on mobile devices to watch without an internet connection"
+      icon: HelpCircle,
+      title: "Technical Q&A",
+      description: "Get answers to your device-related questions from our assistance team"
     },
     {
-      icon: Settings,
-      title: "Quality Control",
-      description: "Automatic quality adjustment based on your internet speed and device capabilities"
+      icon: Lightbulb,
+      title: "Setup Tips",
+      description: "Best practices and tips for optimizing your streaming device experience"
     },
     {
-      icon: Cast,
-      title: "Screen Casting",
-      description: "Cast from your phone or tablet to any compatible TV or streaming device"
+      icon: Info,
+      title: "Compatibility Info",
+      description: "Learn which devices work with different streaming services and platforms"
     }
   ];
 
   const specifications = [
     {
-      category: "Internet Speed",
+      category: "Internet Requirements",
       requirements: [
-        "Minimum: 5 Mbps for HD quality",
-        "Recommended: 25 Mbps for 4K quality",
-        "Multiple streams: +5 Mbps per additional stream"
+        "Understanding bandwidth needs for streaming",
+        "Comparing internet speed options",
+        "Multi-device streaming considerations"
       ]
     },
     {
-      category: "Storage Space",
+      category: "Device Selection Help",
       requirements: [
-        "Mobile app: 100 MB initial download",
-        "Offline downloads: 500 MB - 2 GB per hour",
-        "Smart TV apps: 50-200 MB depending on platform"
+        "Choosing between smart TVs and streaming devices",
+        "Understanding device capabilities and features",
+        "Budget-friendly device recommendations"
       ]
     },
     {
-      category: "Operating Systems",
+      category: "Setup & Installation",
       requirements: [
-        "iOS: Version 12.0 or higher",
-        "Android: Version 7.0 (API level 24) or higher",
-        "Windows: Windows 10 version 1903 or higher"
+        "Step-by-step setup guidance",
+        "Troubleshooting common issues",
+        "Optimizing your device settings"
       ]
     }
   ];
@@ -147,18 +147,26 @@ const Devices = () => {
           <AnimatedSection>
             <div className="text-center max-w-5xl mx-auto">
               <div className="inline-block bg-gradient-to-r from-primary/20 to-purple-500/20 text-primary px-8 py-3 rounded-full text-sm font-bold mb-8 border border-primary/30">
-                📱 UNIVERSAL STREAMING
+                📱 DEVICE ASSISTANCE
               </div>
               <h1 className="text-5xl sm:text-6xl lg:text-8xl font-bold mb-8 leading-tight">
-                Stream on Every
-                <span className="text-gradient block mt-2">Device You Own</span>
+                Help For Every
+                <span className="text-gradient block mt-2">Device Type</span>
               </h1>
               <p className="text-2xl sm:text-3xl text-muted-foreground mb-8 leading-relaxed">
-                Watch Horizon Cast TV on 100+ devices seamlessly
+                Understanding your device options and setup needs
               </p>
               <p className="text-xl text-muted-foreground mb-12 max-w-3xl mx-auto">
-                Start on your phone, continue on your TV, resume on your tablet
+                Get educational guidance for TVs, streaming devices, phones, tablets, and more
               </p>
+              <Card className="max-w-3xl mx-auto bg-accent/30 border-primary/20 p-6">
+                <div className="flex items-start gap-4">
+                  <Info className="w-6 h-6 text-primary flex-shrink-0 mt-1" />
+                  <p className="text-sm text-foreground">
+                    <strong>Important:</strong> HorizonCast TV is an independent third-party service assistance startup. We provide device guidance and education, not device sales or manufacturer support. Separate assistance fees apply.
+                  </p>
+                </div>
+              </Card>
             </div>
           </AnimatedSection>
         </div>
@@ -170,13 +178,13 @@ const Devices = () => {
           <AnimatedSection>
             <div className="text-center mb-20">
               <div className="inline-block bg-gradient-to-r from-blue-500/10 to-cyan-500/10 text-blue-400 px-6 py-2 rounded-full text-sm font-semibold mb-6">
-                ✅ SUPPORTED DEVICES
+                🎯 ASSISTANCE AREAS
               </div>
               <h2 className="text-5xl lg:text-6xl font-bold mb-6">
-                Watch On All <span className="text-gradient">Platforms</span>
+                Device <span className="text-gradient">Guidance</span>
               </h2>
               <p className="text-xl text-muted-foreground max-w-3xl mx-auto">
-                Compatible with virtually every modern device in your home
+                Educational assistance for all device types and platforms
               </p>
             </div>
           </AnimatedSection>
@@ -226,19 +234,19 @@ const Devices = () => {
         </div>
       </section>
 
-      {/* Cross-Device Features - Full Width */}
+      {/* Assistance Features - Full Width */}
       <section className="w-full py-24 bg-background">
         <div className="content-wrapper">
           <AnimatedSection>
             <div className="text-center mb-20">
               <div className="inline-block bg-gradient-to-r from-purple-500/10 to-pink-500/10 text-purple-400 px-6 py-2 rounded-full text-sm font-semibold mb-6">
-                ⚡ SMART FEATURES
+                ✨ HOW WE HELP
               </div>
               <h2 className="text-5xl lg:text-6xl font-bold mb-6">
-                Intelligent <span className="text-gradient">Syncing</span>
+                Independent <span className="text-gradient">Support</span>
               </h2>
               <p className="text-xl text-muted-foreground max-w-3xl mx-auto">
-                Advanced features that connect all your devices
+                Educational resources to help you succeed
               </p>
             </div>
           </AnimatedSection>
@@ -259,19 +267,19 @@ const Devices = () => {
         </div>
       </section>
 
-      {/* System Requirements - Full Width */}
+      {/* Guidance Topics - Full Width */}
       <section className="w-full py-24 bg-gradient-to-b from-card/20 to-background">
         <div className="content-wrapper">
           <AnimatedSection>
             <div className="text-center mb-20">
               <div className="inline-block bg-gradient-to-r from-green-500/10 to-emerald-500/10 text-green-400 px-6 py-2 rounded-full text-sm font-semibold mb-6">
-                📋 REQUIREMENTS
+                📚 TOPICS WE COVER
               </div>
               <h2 className="text-5xl lg:text-6xl font-bold mb-6">
-                Minimum <span className="text-gradient">Specs</span>
+                Comprehensive <span className="text-gradient">Guidance</span>
               </h2>
               <p className="text-xl text-muted-foreground max-w-3xl mx-auto">
-                Make sure your devices meet these basic requirements
+                Key areas where we provide device assistance
               </p>
             </div>
           </AnimatedSection>
@@ -296,39 +304,43 @@ const Devices = () => {
         </div>
       </section>
 
-      {/* Download Section - Full Width */}
+      {/* Get Started Section - Full Width */}
       <section className="w-full py-24 bg-gradient-to-br from-primary/10 via-purple-500/5 to-background">
         <div className="content-wrapper">
           <AnimatedSection>
             <div className="text-center max-w-4xl mx-auto">
               <h2 className="text-5xl lg:text-6xl font-bold mb-8">
-                Start Streaming <span className="text-gradient">Today</span>
+                Need Device <span className="text-gradient">Help?</span>
               </h2>
               <p className="text-2xl text-muted-foreground mb-12">
-                Download apps or visit horizoncasttv.com to start your free trial
+                Our assistance team can help you understand device options and setup processes
               </p>
               
               <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 mb-12">
-                <Button className="btn-hero p-8 h-auto flex-col space-y-3 text-lg">
-                  <Smartphone className="w-10 h-10" />
-                  <span>Mobile</span>
-                </Button>
-                <Button className="btn-hero p-8 h-auto flex-col space-y-3 text-lg">
-                  <Tv className="w-10 h-10" />
-                  <span>Smart TV</span>
-                </Button>
-                <Button className="btn-hero p-8 h-auto flex-col space-y-3 text-lg">
-                  <Monitor className="w-10 h-10" />
-                  <span>Browser</span>
-                </Button>
-                <Button className="btn-hero p-8 h-auto flex-col space-y-3 text-lg">
-                  <Cast className="w-10 h-10" />
-                  <span>Streaming Box</span>
-                </Button>
+                <Card className="bg-card/50 backdrop-blur-sm border border-border/50 p-8 text-center">
+                  <Smartphone className="w-10 h-10 mx-auto mb-3 text-primary" />
+                  <span className="font-semibold">Mobile Help</span>
+                </Card>
+                <Card className="bg-card/50 backdrop-blur-sm border border-border/50 p-8 text-center">
+                  <Tv className="w-10 h-10 mx-auto mb-3 text-primary" />
+                  <span className="font-semibold">TV Guidance</span>
+                </Card>
+                <Card className="bg-card/50 backdrop-blur-sm border border-border/50 p-8 text-center">
+                  <Monitor className="w-10 h-10 mx-auto mb-3 text-primary" />
+                  <span className="font-semibold">Computer Tips</span>
+                </Card>
+                <Card className="bg-card/50 backdrop-blur-sm border border-border/50 p-8 text-center">
+                  <Gamepad2 className="w-10 h-10 mx-auto mb-3 text-primary" />
+                  <span className="font-semibold">Console Support</span>
+                </Card>
               </div>
+
+              <Button className="btn-hero text-xl px-14 py-7 mb-6">
+                Request Assistance
+              </Button>
               
               <p className="text-muted-foreground text-lg">
-                Available on App Store, Google Play, and all major streaming platforms
+                Independent guidance • Separate assistance fees apply • 7-15 day refund policy
               </p>
             </div>
           </AnimatedSection>

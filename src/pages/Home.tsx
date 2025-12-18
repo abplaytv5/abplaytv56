@@ -1,6 +1,6 @@
 import { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
-import { ChevronLeft, ChevronRight, Play, Check, Star, Users, Tv, Smartphone, Monitor, Tablet } from "lucide-react";
+import { ChevronLeft, ChevronRight, Play, Check, Star, Users, Tv, Smartphone, Monitor, Tablet, HelpCircle, Lightbulb, Shield, Headphones } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Card } from "@/components/ui/card";
 import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "@/components/ui/accordion";
@@ -177,13 +177,11 @@ const Home = () => {
 
   return (
     <Layout>
-      {/* Promotional Banner */}
-      <section className="bg-blue-600 text-white py-2 md:py-3 relative z-50">
+      {/* Independent Service Disclosure Banner */}
+      <section className="bg-accent/50 border-b border-border py-4 relative z-50">
         <div className="container mx-auto px-4 text-center">
-          <p className="text-xs sm:text-sm md:text-base leading-relaxed">
-            <strong className="block sm:inline">Save $66 total for your first two months</strong>
-            <span className="block sm:inline"> - $9.99/mo for your first 2 months, then $82.99/mo. </span>
-            <span className="block sm:inline text-xs sm:text-sm">Offer ends September 30, 2025. New users only. Terms Apply. Cancel anytime.*</span>
+          <p className="text-xs sm:text-sm leading-relaxed text-foreground">
+            <strong className="font-semibold">Important Disclosure:</strong> HorizonCast TV is an independent third-party service assistance startup, launched in 2025, and is not affiliated with, endorsed by, or sponsored by any cable, internet, or streaming service provider.
           </p>
         </div>
       </section>
@@ -210,30 +208,30 @@ const Home = () => {
               <AnimatedSection>
                 <div className="mb-6 lg:mb-8">
                   <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl xl:text-7xl font-bold text-white mb-4 lg:mb-6 leading-tight">
-                    All your favorite live games. One place.
+                    Navigate Your Cable, Internet & Streaming Options with Confidence
                   </h1>
-                  <p className="text-white/90 text-lg md:text-xl font-medium">Never miss a touchdown, field goal, or game-changing play</p>
+                  <p className="text-white/90 text-lg md:text-xl font-medium">Independent guidance to help you make informed service decisions</p>
                 </div>
                 
                 <div className="space-y-4 lg:space-y-5">
                   <div className="flex flex-col sm:flex-row sm:items-center gap-4">
-                    <a href="#" className="block">
+                    <Link to="/contact">
                       <Button className="bg-blue-600 hover:bg-blue-700 text-white text-lg md:text-xl px-6 md:px-10 py-4 md:py-6 rounded-lg font-semibold transition-colors w-full sm:w-auto min-w-[200px]">
-                        TRY 10 DAYS FOR $0
+                        Get Assistance
                       </Button>
-                    </a>
+                    </Link>
                     
-                    <div className="bg-red-600 text-white px-4 py-2 rounded text-sm font-bold inline-block self-start">
-                      LIMITED TIME OFFER
+                    <div className="bg-primary/20 text-white px-4 py-2 rounded text-sm font-bold inline-block self-start border border-white/30">
+                      INDEPENDENT PLATFORM
                     </div>
                   </div>
                   
                   <div className="text-white/80 text-sm md:text-base leading-relaxed">
-                    <span className="line-through">$92.99/mo</span> $49.99/mo for your first 2 months, $82.99/mo thereafter for Abplay TV Base Plan.
+                    We provide educational guidance and support to help you understand your entertainment and connectivity options.
                   </div>
                   
                   <div className="text-white/70 text-xs md:text-sm leading-relaxed">
-                    New users only. Cancel anytime. <span className="underline cursor-pointer">Terms apply</span>. Offer ends September 30, 2025.
+                    Not affiliated with any service provider. Separate assistance fees apply. <Link to="/faq" className="underline cursor-pointer">Learn more</Link>
                   </div>
                 </div>
               </AnimatedSection>
@@ -242,44 +240,41 @@ const Home = () => {
             {/* Right Side - Promotional Cards */}
             <div className="lg:order-2 w-full space-y-4 md:space-y-6 flex flex-col justify-center">
               <AnimatedSection delay={200}>
-                {/* Sports Promotion Card */}
-                <div className="bg-gradient-to-r from-green-800/95 to-brown-800/95 backdrop-blur-sm rounded-xl md:rounded-2xl p-5 md:p-6 lg:p-8 text-white relative overflow-hidden min-h-[160px] md:min-h-[180px]">
+                {/* Service Guidance Card */}
+                <div className="bg-gradient-to-r from-green-800/95 to-blue-800/95 backdrop-blur-sm rounded-xl md:rounded-2xl p-5 md:p-6 lg:p-8 text-white relative overflow-hidden min-h-[160px] md:min-h-[180px]">
                   <div className="absolute right-4 top-4">
                     <div className="w-10 h-10 md:w-12 md:h-12 bg-white/20 rounded-lg flex items-center justify-center">
-                      <div className="w-6 h-6 md:w-8 md:h-8 bg-gradient-to-br from-red-500 to-blue-600 rounded flex items-center justify-center text-white text-xs font-bold">TV</div>
+                      <HelpCircle className="w-6 h-6 md:w-8 md:h-8 text-white" />
                     </div>
                   </div>
-                  <h3 className="text-lg md:text-xl lg:text-2xl font-bold mb-4 pr-16 leading-tight">Watch every team, every Sunday with exclusive out-of-market games</h3>
-                  <a href="#" className="block">
+                  <h3 className="text-lg md:text-xl lg:text-2xl font-bold mb-4 pr-16 leading-tight">Compare Cable, Internet & Streaming Services</h3>
+                  <Link to="/services">
                     <Button className="bg-blue-600 hover:bg-blue-700 text-white px-5 md:px-6 py-3 rounded font-medium text-sm md:text-base transition-colors shadow-lg">
-                      LEARN MORE
+                      View Our Services
                     </Button>
-                  </a>
+                  </Link>
                 </div>
               </AnimatedSection>
 
               <AnimatedSection delay={400}>
-                {/* Add-ons Enhancement Card */}
-                <div className="bg-gradient-to-r from-blue-900/95 to-purple-900/95 backdrop-blur-sm rounded-xl md:rounded-2xl p-5 md:p-6 lg:p-8 text-white relative overflow-hidden min-h-[180px] md:min-h-[200px]">
+                {/* Educational Resources Card */}
+                <div className="bg-gradient-to-r from-purple-900/95 to-pink-900/95 backdrop-blur-sm rounded-xl md:rounded-2xl p-5 md:p-6 lg:p-8 text-white relative overflow-hidden min-h-[180px] md:min-h-[200px]">
                   <div className="absolute right-4 top-4">
-                    <div className="grid grid-cols-2 gap-1">
-                      <div className="w-6 h-6 md:w-8 md:h-8 bg-blue-600 rounded-full flex items-center justify-center text-xs font-bold">NBA</div>
-                      <div className="w-6 h-6 md:w-8 md:h-8 bg-red-600 rounded-full flex items-center justify-center text-xs font-bold">ESPN</div>
-                      <div className="w-6 h-6 md:w-8 md:h-8 bg-yellow-600 rounded-full"></div>
-                      <div className="w-6 h-6 md:w-8 md:h-8 bg-green-600 rounded-full"></div>
+                    <div className="w-10 h-10 md:w-12 md:h-12 bg-white/20 rounded-lg flex items-center justify-center">
+                      <Lightbulb className="w-6 h-6 md:w-8 md:h-8 text-white" />
                     </div>
                   </div>
                   <h3 className="text-lg md:text-xl lg:text-2xl font-bold mb-3 pr-16 leading-tight">
-                    Enhance your experience with add-ons
+                    Expert Guidance & Educational Resources
                   </h3>
                   <p className="text-white/90 mb-5 text-sm md:text-base pr-12 leading-relaxed">
-                    Premium channels, sports packages, and more to customize your streaming experience
+                    Get personalized assistance to understand your options and make the best choice for your needs
                   </p>
-                  <a href="#" className="block">
+                  <Link to="/faq">
                     <Button className="bg-purple-600 hover:bg-purple-700 text-white px-5 md:px-6 py-3 rounded font-medium text-sm md:text-base transition-colors shadow-lg">
-                      EXPLORE ADD-ONS
+                      Learn More (FAQ)
                     </Button>
-                  </a>
+                  </Link>
                 </div>
               </AnimatedSection>
             </div>
@@ -295,38 +290,54 @@ const Home = () => {
           <AnimatedSection>
             <div className="text-center mb-16">
               <div className="inline-block bg-primary/10 text-primary px-6 py-2 rounded-full text-sm font-semibold mb-6">
-                ⚡ 100+ PREMIUM CHANNELS
+                🤝 INDEPENDENT GUIDANCE
               </div>
               <h2 className="text-3xl md:text-5xl lg:text-6xl font-bold mb-6 px-4">
-                Your Favorite Channels,<br />
-                <span className="text-gradient">All in One Place</span>
+                Assistance for<br />
+                <span className="text-gradient">All Service Providers</span>
               </h2>
               <p className="text-xl md:text-2xl text-muted-foreground max-w-4xl mx-auto px-4 leading-relaxed">
-                Sports, news, entertainment, and more. Stream every major network in stunning HD quality.
+                We help you understand and compare services from major cable, internet, and streaming providers across the nation.
               </p>
             </div>
           </AnimatedSection>
 
-          <div className="grid grid-cols-2 md:grid-cols-4 gap-6 mb-12 max-w-5xl mx-auto">
-            {channels.slice(0, 8).map((channel, index) => (
-              <AnimatedSection key={index} delay={index * 50}>
-                <div className="bg-card/50 backdrop-blur-sm rounded-2xl p-6 hover:bg-card hover:scale-105 transition-all duration-300 shadow-lg hover:shadow-2xl border border-border/50">
-                  <img 
-                    src={channel.logo} 
-                    alt={`${channel.name} logo`}
-                    className="w-full h-20 object-contain"
-                  />
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mb-12 max-w-5xl mx-auto">
+            <AnimatedSection delay={100}>
+              <Card className="bg-card/50 backdrop-blur-sm rounded-2xl p-8 hover:bg-card hover:scale-105 transition-all duration-300 shadow-lg hover:shadow-2xl border border-border/50 text-center">
+                <div className="w-16 h-16 bg-gradient-to-br from-blue-500 to-cyan-500 rounded-2xl flex items-center justify-center mx-auto mb-4">
+                  <Tv className="w-8 h-8 text-white" />
                 </div>
-              </AnimatedSection>
-            ))}
+                <h3 className="text-xl font-bold mb-2">Cable & TV Guidance</h3>
+                <p className="text-muted-foreground">Compare packages, understand pricing, and find the right fit</p>
+              </Card>
+            </AnimatedSection>
+            <AnimatedSection delay={200}>
+              <Card className="bg-card/50 backdrop-blur-sm rounded-2xl p-8 hover:bg-card hover:scale-105 transition-all duration-300 shadow-lg hover:shadow-2xl border border-border/50 text-center">
+                <div className="w-16 h-16 bg-gradient-to-br from-purple-500 to-pink-500 rounded-2xl flex items-center justify-center mx-auto mb-4">
+                  <Monitor className="w-8 h-8 text-white" />
+                </div>
+                <h3 className="text-xl font-bold mb-2">Internet Services</h3>
+                <p className="text-muted-foreground">Speed requirements, providers, and technical assistance</p>
+              </Card>
+            </AnimatedSection>
+            <AnimatedSection delay={300}>
+              <Card className="bg-card/50 backdrop-blur-sm rounded-2xl p-8 hover:bg-card hover:scale-105 transition-all duration-300 shadow-lg hover:shadow-2xl border border-border/50 text-center">
+                <div className="w-16 h-16 bg-gradient-to-br from-green-500 to-emerald-500 rounded-2xl flex items-center justify-center mx-auto mb-4">
+                  <Smartphone className="w-8 h-8 text-white" />
+                </div>
+                <h3 className="text-xl font-bold mb-2">Streaming Options</h3>
+                <p className="text-muted-foreground">Platform comparisons, device help, and setup support</p>
+              </Card>
+            </AnimatedSection>
           </div>
 
           <AnimatedSection delay={400}>
             <div className="text-center">
-              <p className="text-lg text-muted-foreground mb-6">+ 92 more premium channels included</p>
+              <p className="text-lg text-muted-foreground mb-6">Nationwide assistance for all major service providers</p>
               <Link to="/services" onClick={handleNavigation}>
                 <Button className="btn-hero text-lg px-10 py-6">
-                  View All Channels
+                  View Our Assistance Services
                 </Button>
               </Link>
             </div>

@@ -8,19 +8,19 @@ const Privacy = () => {
   const dataTypes = [
     {
       category: "Account Information",
-      items: ["Name and email address", "Password (encrypted)", "Payment information", "Subscription details", "Account preferences"]
+      items: ["Name and email address", "Password (encrypted)", "Payment information for assistance fees", "Service request details", "Account preferences"]
     },
     {
-      category: "Usage Data",
-      items: ["Content watched and viewing history", "Search queries", "Device information", "App usage patterns", "Time spent watching"]
+      category: "Consultation Data",
+      items: ["Assistance topics requested", "Consultation notes", "Service inquiries", "Communication preferences", "Follow-up requests"]
     },
     {
       category: "Technical Data",
-      items: ["IP address and location", "Device identifiers", "Browser information", "Connection speed", "Error logs and diagnostics"]
+      items: ["IP address and location", "Device identifiers", "Browser information", "Connection information", "Error logs and diagnostics"]
     },
     {
       category: "Communication Data",
-      items: ["Customer support interactions", "Survey responses", "Marketing preferences", "Feedback and reviews", "Social media interactions"]
+      items: ["Customer support interactions", "Survey responses", "Marketing preferences", "Feedback and reviews", "Consultation transcripts"]
     }
   ];
 
@@ -28,12 +28,12 @@ const Privacy = () => {
     {
       icon: Eye,
       title: "Service Provision",
-      description: "To provide, maintain, and improve Horizon Cast TV streaming services"
+      description: "To provide, maintain, and improve HorizonCast TV assistance services"
     },
     {
       icon: Settings,
       title: "Personalization",
-      description: "To customize content recommendations and improve user experience"
+      description: "To customize assistance recommendations and improve user experience"
     },
     {
       icon: Shield,
@@ -43,7 +43,7 @@ const Privacy = () => {
     {
       icon: Database,
       title: "Analytics",
-      description: "To analyze usage patterns and improve service performance"
+      description: "To analyze service usage patterns and improve assistance quality"
     }
   ];
 
@@ -97,8 +97,8 @@ const Privacy = () => {
                 Privacy <span className="text-gradient">Policy</span>
               </h1>
               <p className="text-xl text-muted-foreground max-w-3xl mx-auto leading-relaxed">
-                Your privacy is our priority. Learn how AB Textiles collects, uses, and protects your personal 
-                information when you use Horizon Cast TV services.
+                Your privacy is our priority. Learn how HorizonCast TV collects, uses, and protects your personal 
+                information when you use our independent third-party assistance services.
               </p>
             </div>
           </AnimatedSection>
@@ -111,13 +111,13 @@ const Privacy = () => {
                   <div>
                     <h3 className="text-lg font-semibold mb-2">Privacy Commitment</h3>
                     <p className="text-muted-foreground">
-                      AB Textiles is committed to protecting your privacy and ensuring the security of your personal information. 
-                      This Privacy Policy explains how we collect, use, and safeguard your data when you use Horizon Cast TV services.
+                      HorizonCast TV is committed to protecting your privacy and ensuring the security of your personal information. 
+                      This Privacy Policy explains how we collect, use, and safeguard your data when you use our cable, internet, and streaming assistance services.
                     </p>
                   </div>
                 </div>
                 <p className="text-sm text-muted-foreground">
-                  Last updated: January 1, 2024 | Effective Date: January 1, 2024
+                  Last updated: January 1, 2025 | Effective Date: January 1, 2025 | Independent Service Founded 2025
                 </p>
               </Card>
             </div>
@@ -134,7 +134,7 @@ const Privacy = () => {
                 What Data We <span className="text-gradient">Collect</span>
               </h2>
               <p className="text-xl text-muted-foreground max-w-3xl mx-auto">
-                We collect information to provide you with the best streaming experience possible
+                We collect information to provide you with the best assistance experience possible
               </p>
             </div>
           </AnimatedSection>
@@ -199,7 +199,7 @@ const Privacy = () => {
                   How We <span className="text-gradient">Protect Your Data</span>
                 </h2>
                 <p className="text-xl text-muted-foreground mb-8 leading-relaxed">
-                  AB Textiles employs industry-leading security measures to protect your personal information 
+                  HorizonCast TV employs industry-leading security measures to protect your personal information 
                   from unauthorized access, disclosure, or misuse.
                 </p>
                 
@@ -294,13 +294,13 @@ const Privacy = () => {
                 Questions About Your <span className="text-gradient">Privacy?</span>
               </h2>
               <p className="text-xl text-muted-foreground mb-8">
-                Our privacy team at AB Textiles is here to help with any questions about how we handle your data.
+                Our privacy team is here to help with any questions about how we handle your data.
               </p>
               <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
                 <Card className="card-premium p-6">
                   <h3 className="text-lg font-semibold mb-4">Data Protection Officer</h3>
-                  <p className="text-muted-foreground mb-2">AB Textiles Privacy Team</p>
-                  <p className="text-muted-foreground">privacy@abtextiles.com</p>
+                  <p className="text-muted-foreground mb-2">HorizonCast TV Privacy Team</p>
+                  <p className="text-muted-foreground">privacy@horizoncasttv.com</p>
                 </Card>
                 <Card className="card-premium p-6">
                   <h3 className="text-lg font-semibold mb-4">Data Requests</h3>

@@ -9,6 +9,8 @@ import Customize from "./pages/Customize";
 import Terms from "./pages/Terms";
 import Privacy from "./pages/Privacy";
 import Refund from "./pages/Refund";
+import FAQ from "./pages/FAQ";
+import Disclaimer from "./pages/Disclaimer";
 import NotFound from "./pages/NotFound";
 import "./App.css";
 
@@ -26,6 +28,8 @@ const App = () => {
         <Route path="/terms" element={<Terms />} />
         <Route path="/privacy" element={<Privacy />} />
         <Route path="/refund" element={<Refund />} />
+        <Route path="/faq" element={<FAQ />} />
+        <Route path="/disclaimer" element={<Disclaimer />} />
         <Route path="*" element={<NotFound />} />
       </Routes>
     </Router>
